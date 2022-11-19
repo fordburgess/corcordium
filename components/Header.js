@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeStyles, AppBar, ToolBar, Typography } from '@mui/styles';
-import theme from '../../styles/theme';
+import theme from '../styles/theme';
 
 const useStyles = makeStyles((theme) => {
   root: {}
