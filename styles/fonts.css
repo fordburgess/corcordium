@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../src/fonts/Alata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ZenKakuGothic";
+  src: local("ZenKakuGothicAntique-Regular"),
+    url("../src/fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../src/fonts/Georgia.ttf") format("truetype");
+}
