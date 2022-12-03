@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { makeStyles } from '@mui/styles';
 
 
-function Footer({}){
+export default function Footer({}) {
 
   return (
     <div>
