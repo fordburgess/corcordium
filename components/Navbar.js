@@ -1,24 +1,18 @@
 import { Typography } from "@mui/material";
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     width: "100%",
-//     height: "40px",
-//     backgroundColor: "#FFFFFF",
-//   }
-// }));
+import { makeStyles } from "@mui/styles";
+import styles from "./navbar.module.css"
 
 
 const Navbar = (props) => {
-  // const classes = useStyles();
 
   return (
-    <div>
-      <Typography>
-        Sur la Vogue
-      </Typography>
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        Corcordium
+      </h1>
     </div>
   );
 }
+
 
 export default Navbar;
