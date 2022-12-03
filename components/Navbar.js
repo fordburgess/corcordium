@@ -1,5 +1,4 @@
-// import * as React from 'react';
-// import theme from '../styles/theme';
+import { Typography } from "@mui/material";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -11,11 +10,13 @@
 
 
 const Navbar = (props) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <div>
+      <Typography>
         Sur la Vogue
+      </Typography>
     </div>
   );
 }
