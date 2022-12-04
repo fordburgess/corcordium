@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+
+.container {
+  font-family: Georgia;
+  width: 100vw;
+}
+
+.title {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.doublePhotoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 2px;
+}
+
+.singlePhotoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+  padding: 0 10px;
+}
+
+.smallImage {
+  width: 49.8%;
+  height: 300px;
+}
+
+.largeImage {
+  height: 300px;
+}
+
+.galleryLink {
+  color: #000000;
+
+}
+
+/* desktop */
+
+.desktopHero {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../media/angela6cropped.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2px;
+}
+
+.smallPhotoContainer {
+  display: flex;
+  padding: 0 -1px;
+}
+
+.smallPhotos {
+  height: 400px;
+  margin: 0 1px;
+}

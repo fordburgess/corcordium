@@ -17,3 +17,15 @@
   margin: 0;
   font-family: Alata;
 }
+
+@media (min-width: 800px) {
+  .container {
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    width: 100%;
+  }
+}
