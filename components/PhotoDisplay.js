@@ -12,6 +12,7 @@ import Angela6 from '../media/angela6.jpg'
 
 const PhotoDisplay = () => {
   const mobile = useMediaQuery('(max-width: 800px')
+  const photos = [Angela1, Angela2, Angela3, Angela4]
 
   if (mobile) {
     return (
@@ -38,8 +39,14 @@ const PhotoDisplay = () => {
   }
   else {
     return (
-      <div className={styles.desktopHero}>
+      <>
+      <div className={styles.desktopHero}></div>
+      <div className={styles.smallPhotoContainer}>
+        {photos.map((photo, index) => {
+          return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
+        })}
       </div>
+      </>
     )
   }
 }
