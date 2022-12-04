@@ -3,6 +3,11 @@
   src: local("Georgia"),
     url("../fonts/Georgia.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
 
 .container {
   font-family: Georgia;
@@ -42,4 +47,25 @@
 .galleryLink {
   color: #000000;
 
+}
+
+/* desktop */
+
+.desktopHero {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../media/angela6cropped.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.tempHeader {
+  width: 100%;
+  height: 12%;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Alata;
+  font-size: 24px;
 }
