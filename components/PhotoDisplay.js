@@ -11,7 +11,7 @@ import Angela6 from '../media/angela6.jpg'
 
 
 const PhotoDisplay = () => {
-  const mobile = useMediaQuery('(max-width: 800px')
+  const mobile = useMediaQuery('(max-width: 600px')
   const photos = [Angela1, Angela2, Angela3, Angela4]
 
   if (mobile) {
