@@ -28,7 +28,7 @@ export default function Home() {
         <div className={styles.singlePhotoContainer}>
           <Image className={styles.largeImage} src={Angela3} alt="angela3" />
         </div>
-        <div className={styles.doublePhotoContainer} style={{marginBottom: "5px"}}>
+        <div className={styles.doublePhotoContainer} style={{marginBottom: "30px"}}>
           <Image className={styles.smallImage} src={Angela4} alt="angela4"/>
           <Image className={styles.smallImage} src={Angela5} alt="angela5"/>
         </div>
