@@ -35,14 +35,14 @@ const Navbar = (props) => {
 
   return (
     <div className={styles.container} style={{justifyContent: "space-between", width: "100vw"}}>
-      <div className={styles.subcontainer} style={{display: show ? 'flex' : 'none'}}>
+      <div className={styles.subcontainer} style={{visibility: show ? 'visible' : 'hidden', opacity: show ? 1 : 0}}>
         {desktop ? (
           <Image src={LogoWhite} alt="logo" style={{height: "375px", width: "375px"}}/>
         ) : (
-          <Image src={LogoBlack} alt="logo" style={{height: "225px", width: "225px"}}/>
+          <Image src={LogoBlack} alt="logo" style={{height: "300px", width: "300px"}}/>
         )}
       </div>
-      <div className={desktop ? styles.linksDesktop : styles.linksMobile} style={{display: show ? 'none' : 'flex'}}>
+      <div className={desktop ? styles.linksDesktop : styles.linksMobile} style={{display: show ? 'none' : 'flex', transition: "0.3s"}}>
         <Link href="/about" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>About</h3></Link>
         <Link href="/" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Gallery</h3></Link>
         <Link href="/" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Placeholder</h3></Link>

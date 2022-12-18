@@ -4,16 +4,17 @@
     url("../fonts/Alata-Regular.ttf") format("truetype");
 }
 
-/* .container {
+.container {
   background-color: #FFFFFF;
-  color: #730017;
+  color: #000000;
   height: 10vh;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 10px 50px;
-  position: fixed;
-} */
+  position: sticky;
+  top: 0;
+}
 
 .logo {
   height: 375px;
@@ -29,6 +30,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
 }
 
 .subtitle {
