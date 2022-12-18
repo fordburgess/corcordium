@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useMediaQuery } from '@mui/material'
 import styles from './photodisplay.module.css'
 import Angela1 from '../media/angela1.jpg'
@@ -11,7 +12,7 @@ import Angela6 from '../media/angela6.jpg'
 
 
 const PhotoDisplay = () => {
-  const mobile = useMediaQuery('(max-width: 800px')
+  const mobile = useMediaQuery('(max-width: 600px')
   const photos = [Angela1, Angela2, Angela3, Angela4]
 
   if (mobile) {
@@ -32,21 +33,21 @@ const PhotoDisplay = () => {
           <Image className={styles.smallImage} src={Angela5} alt="angela5"/>
         </div>
         <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-          <a href="/gallery" className={styles.galleryLink}>Discover More</a>
+          <Link href="/gallery" className={styles.galleryLink}>Discover More</Link>
         </div>
       </div>
     )
   }
   else {
     return (
-      <>
+      <div className={styles.desktopContainer}>
       <div className={styles.desktopHero}></div>
       <div className={styles.smallPhotoContainer}>
         {photos.map((photo, index) => {
           return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
         })}
       </div>
-      </>
+      </div>
     )
   }
 }
