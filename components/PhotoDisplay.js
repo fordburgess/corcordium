@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useMediaQuery } from '@mui/material'
 import styles from './photodisplay.module.css'
 import Angela1 from '../media/angela1.jpg'
@@ -32,7 +33,7 @@ const PhotoDisplay = () => {
           <Image className={styles.smallImage} src={Angela5} alt="angela5"/>
         </div>
         <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-          <a href="/gallery" className={styles.galleryLink}>Discover More</a>
+          <Link href="/gallery" className={styles.galleryLink}>Discover More</Link>
         </div>
       </div>
     )

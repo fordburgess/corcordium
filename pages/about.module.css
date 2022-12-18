@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ZenKakuGothic";
+  src: local("ZenKakuGothicAntique-Regular"),
+    url("../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.subContainerLeft {
+  height: 100%;
+  width: 50%;
+  background-image: url('../media/leelou1.jpg');
+  background-size: cover;
+}
+
+.textContainerMobile {
+  width: 100vw;
+  padding: 0 25px;
+  box-sizing: border-box;
+  font-family: Georgia;
+}
+
+.header {
+  font-family: ZenKakuGothic;
+}

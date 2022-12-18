@@ -18,6 +18,18 @@
   font-family: Alata;
 }
 
+.subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle {
+  font-family: Alata;
+  margin: 0;
+}
+
 @media (min-width: 800px) {
   .container {
     background-color: transparent;
