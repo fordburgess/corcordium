@@ -4,7 +4,7 @@
     url("../fonts/Alata-Regular.ttf") format("truetype");
 }
 
-.container {
+/* .container {
   background-color: #FFFFFF;
   color: #730017;
   height: 10vh;
@@ -12,7 +12,8 @@
   align-items: center;
   box-sizing: border-box;
   padding: 10px 50px;
-}
+  position: fixed;
+} */
 
 .logo {
   height: 375px;
@@ -25,9 +26,9 @@
 
 .subcontainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .subtitle {
@@ -39,9 +40,23 @@
   text-decoration: none;
   font-family: Alata;
 }
+.linksDesktop {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.linksMobile {
+  width: 100%;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
 
 @media (min-width: 800px) {
   .container {
+    height: 10vh;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    align-items: center;
     background-color: transparent;
     position: fixed;
     display: flex;
