@@ -7,12 +7,17 @@
 .container {
   background-color: #FFFFFF;
   color: #730017;
-  height: 12vh;
+  height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px 50px;
 }
 
+.logo {
+  height: 375px;
+  width: 375px;
+}
 .title {
   margin: 0;
   font-family: Alata;
@@ -28,6 +33,11 @@
 .subtitle {
   font-family: Alata;
   margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  font-family: Alata;
 }
 
 @media (min-width: 800px) {
