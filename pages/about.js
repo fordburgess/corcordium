@@ -12,8 +12,8 @@ export default function About() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.subContainerLeft}></div>
-      <div className={styles.subContainerRight}>
+      <div className={styles.subContainerLeftDesktop}></div>
+      <div className={styles.subContainerRightDesktop}>
         <h1 className={styles.header}>About</h1>
         <div style={{textAlign: "left"}}>
           <p className={styles.content}>

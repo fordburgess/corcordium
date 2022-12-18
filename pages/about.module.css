@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.subContainerLeft {
+.subContainerLeftDesktop {
   height: 100%;
   flex-basis: 50%;
   min-width: 50%;
@@ -28,7 +28,7 @@
   white-space: nowrap;
 }
 
-.subContainerRight {
+.subContainerRightDesktop {
   flex-basis: 50%;
   min-width: 50%;
   box-sizing: border-box;
@@ -39,7 +39,7 @@
 
 .header {
   font-family: Alata;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 .content {
@@ -63,4 +63,21 @@
 }
 .link:visited {
   color: #000000;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: block;
+  }
+
+  .subContainerLeftDesktop {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .subContainerRightDesktop {
+    width: 100%;
+    padding: 40px 80px;
+  }
 }
