@@ -40,14 +40,14 @@ const PhotoDisplay = () => {
   }
   else {
     return (
-      <>
+      <div className={styles.desktopContainer}>
       <div className={styles.desktopHero}></div>
       <div className={styles.smallPhotoContainer}>
         {photos.map((photo, index) => {
           return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
         })}
       </div>
-      </>
+      </div>
     )
   }
 }

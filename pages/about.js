@@ -11,7 +11,9 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.subContainerLeft}></div>
-
+      <div className={styles.subContainerRight}>
+        <h1 className={styles.header}>About</h1>
+      </div>
     </div>
   )
 }
