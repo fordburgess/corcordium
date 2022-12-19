@@ -20,6 +20,8 @@ const Navbar = (props) => {
       } else {
         setShow(true);
       }
+
+      setLastScrollY(window.scrollY);
     }
   }
 
@@ -42,7 +44,7 @@ const Navbar = (props) => {
           <Image src={LogoBlack} alt="logo" style={{height: "300px", width: "300px"}}/>
         )}
       </div>
-      <div className={desktop ? styles.linksDesktop : styles.linksMobile} style={{display: show ? 'none' : 'flex', transition: "0.3s"}}>
+      <div className={styles.links} style={{visibility: show ? 'hidden' : 'visible', opacity: show ? 0 : 1}}>
         <Link href="/about" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>About</h3></Link>
         <Link href="/" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Gallery</h3></Link>
         <Link href="/" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Placeholder</h3></Link>

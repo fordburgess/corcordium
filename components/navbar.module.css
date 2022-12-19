@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  transition: visibility 0s, opacity 0.3s ease-in-out;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -49,16 +49,14 @@
   text-decoration: none;
   font-family: Alata;
 }
-.linksDesktop {
+
+.links {
   width: 100%;
   justify-content: space-between;
+  display: flex;
+  transition: 0.2s;
 }
 
-.linksMobile {
-  width: 100%;
-  justify-content: space-between;
-  background-color: #FFFFFF;
-}
 
 @media (min-width: 800px) {
   .container {
