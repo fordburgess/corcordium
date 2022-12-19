@@ -6,13 +6,20 @@
 
 .container {
   background-color: #FFFFFF;
-  color: #730017;
-  height: 12vh;
+  color: #000000;
+  height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px 50px;
+  position: sticky;
+  top: 0;
 }
 
+.logo {
+  height: 375px;
+  width: 375px;
+}
 .title {
   margin: 0;
   font-family: Alata;
@@ -20,9 +27,17 @@
 
 .subcontainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
 }
 
 .subtitle {
@@ -30,8 +45,25 @@
   margin: 0;
 }
 
+.link {
+  text-decoration: none;
+  font-family: Alata;
+}
+
+.links {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  transition: 0.2s;
+}
+
+
 @media (min-width: 800px) {
   .container {
+    height: 10vh;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    align-items: center;
     background-color: transparent;
     position: fixed;
     display: flex;
