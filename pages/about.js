@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Instagram from '../media/insta.svg'
-import Leelou from '../media/leelou1.jpg';
+import Leelou from '../media/LeelouAbout.jpeg';
+import Logo from '../media/logo1.png';
 import { useMediaQuery } from '@mui/material';
 import styles from "./about.module.css"
 
@@ -12,7 +13,9 @@ export default function About() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.subContainerLeftDesktop}></div>
+      <div className={styles.subContainerLeftDesktop}>
+        <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
+      </div>
       <div className={styles.subContainerRightDesktop}>
         <h1 className={styles.header}>About</h1>
         <div style={{textAlign: "left"}}>
@@ -26,7 +29,7 @@ export default function About() {
             And although I remain unsure of the exact answer to this question, I’ve finally understood what and how I wanted to create. I am passionate about people. I am inspired by those I meet, and, as I started to experiment more and grow confident about my work, I’ve realised that the common ground in all my projects was the central place that people occupied in them. Whether I write, photograph, style, I’m always working around the person who inspired the project, about the story they have to say.
             <br/>
             <br/>
-            Fashion is a second skin, a mean to communicate. It inherently conveys something about our own self, and I want to explore how people use it to twist and tell their own story. Fashion, to me, means unraveling what is beyond the garments. It is about interaction and the struggle of it, about the stories that have been misunderstood, about the essence of the person who makes fashion their own.
+            Fashion is a second skin, a means to communicate. It inherently conveys something about our own self, and I want to explore how people use it to twist and tell their own story. Fashion, to me, means unraveling what is beyond the garments. It is about interaction and the struggle of it, about the stories that have been misunderstood, about the essence of the person who makes fashion their own.
             <br/>
             <br/>
             So I guess I may have answered my question after all?

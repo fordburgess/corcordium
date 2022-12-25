@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.subContainer {
+  height: 500px;
+  padding: 50px 0;
+  width: 80%;
+}
+
+.header {
+  font-family: Georgia;
+}
+
+.post {
+  height: 300px;
+}
+.postImage {
+  height: 100%;
+}

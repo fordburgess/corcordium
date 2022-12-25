@@ -39,7 +39,7 @@ const Navbar = (props) => {
     <div className={styles.container} style={{justifyContent: "space-between", width: "100vw"}}>
       <div className={styles.subcontainer} style={{visibility: show ? 'visible' : 'hidden', opacity: show ? 1 : 0}}>
         {desktop ? (
-          <Image src={LogoWhite} alt="logo" style={{height: "375px", width: "375px"}}/>
+          <Image src={LogoWhite} alt="logo" style={{height: "400px", width: "400px"}}/>
         ) : (
           <Image src={LogoBlack} alt="logo" style={{height: "300px", width: "300px"}}/>
         )}
