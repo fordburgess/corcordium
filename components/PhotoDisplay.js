@@ -8,12 +8,14 @@ import Angela2 from '../media/angela2.jpg'
 import Angela3 from '../media/angela3.jpg'
 import Angela4 from '../media/angela4.jpg'
 import Angela5 from '../media/angela5.jpg'
-import Angela6 from '../media/angela6.jpg'
+import Angela7 from '../media/angela7.jpeg'
+import Kim1 from '../media/kim1.jpeg'
+import Kim2 from '../media/kim2.jpeg'
 
 
 const PhotoDisplay = () => {
   const mobile = useMediaQuery('(max-width: 900px')
-  const photos = [Angela1, Angela2, Angela3, Angela4]
+  const photos = [Angela7, Kim1, Angela3, Kim2]
 
   if (mobile) {
     return (
@@ -41,12 +43,12 @@ const PhotoDisplay = () => {
   else {
     return (
       <div className={styles.desktopContainer}>
-      <div className={styles.desktopHero}></div>
-      <div className={styles.smallPhotoContainer}>
-        {photos.map((photo, index) => {
-          return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
-        })}
-      </div>
+        <div className={styles.desktopHero}></div>
+        <div className={styles.smallPhotoContainer}>
+          {photos.map((photo, index) => {
+            return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
+          })}
+        </div>
       </div>
     )
   }
