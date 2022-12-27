@@ -41,12 +41,13 @@
 }
 
 .mainContent {
-  padding: 40px;
+  padding: 60px 40px 0;
 }
 
 .blurb {
   font-family: Georgia-Light;
-  font-size: 22px;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 .email {
@@ -55,12 +56,14 @@
 
 .emailAddress {
   font-family: Georgia-Light;
+  margin-bottom: 40px;
 }
 
 .contactForm {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  width: 96%;
 }
 
 .contactForm input {
@@ -84,6 +87,11 @@
   border: solid 1px #787777;
   padding: 15px 40px;
   font-family: Georgia-Light;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  transform: scale(1.01);
 }
 
 .miniFooter {
