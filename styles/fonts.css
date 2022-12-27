@@ -13,3 +13,8 @@
   src: local("Georgia"),
     url("../fonts/Georgia.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../fonts/SD_Georgia_Light.ttf") format("truetype");
+}

@@ -12,7 +12,7 @@ export default function Footer({}) {
     <div className={styles.container}>
       <div className={styles.top}>
         <Link href="/about" className={styles.link}>About</Link>
-        <Link href="" className={styles.link}>Contact</Link>
+        <Link href="/contact" className={styles.link}>Contact</Link>
       </div>
       <div className={styles.bottom}>
         <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>

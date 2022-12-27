@@ -7,26 +7,37 @@ import Footer from './Footer';
 export default function Layout({ children }) {
   const router = useRouter();
 
-  return (
-    <>
-      <style jsx global>
+  console.log(router.pathname)
+  if (!router.pathname.includes("about") && !router.pathname.includes("contact")) {
+    return (
+      <>
+        <style jsx global>
         {`
-        body {
-          margin: 0;
-          padding: 0;
-        }
-      `}
-      </style>
-      {!router.pathname.includes("about") ? (
-        <>
-          <Navbar />
-            <main>{children}</main>
-          <Footer />
-        </>
-      ) : (
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        `}
+        </style>
+        <Navbar />
+          <main>{children}</main>
+        <Footer />
+      </>
+    )
+  }
+  else {
+    return (
+      <>
+        <style jsx global>
+        {`
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        `}
+        </style>
         <main>{children}</main>
-      )
-      }
-    </>
-  )
+      </>
+    )
+  }
 }
