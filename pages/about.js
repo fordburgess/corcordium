@@ -38,7 +38,7 @@ export default function About() {
             Cor Cordium, what really lies within one, once they are stripped of all clothes, stripped of all fashion. Cor Cordium, for the people who make &/or wear it.
           </p>
           <div className={styles.miniFooter}>
-            <Link href="" className={styles.link}>Contact</Link>
+            <Link href="/contact" className={styles.link}>Contact</Link>
             <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
               <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
             </a>

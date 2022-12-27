@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../fonts/SD_Georgia_Light.ttf") format("truetype");
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  font-family: Alata;
+}
+
+.header h3 {
+  font-size: 22px;
+}
+
+.logo {
+  height: 44.9px;
+  width: 135px;
+  margin-top: 10px;
+}
+
+.mainContent {
+  padding: 60px 40px 0;
+}
+
+.blurb {
+  font-family: Georgia-Light;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.email {
+  font-family: Alata;
+}
+
+.emailAddress {
+  font-family: Georgia-Light;
+  margin-bottom: 40px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 96%;
+}
+
+.contactForm input {
+  border-radius: 0;
+  padding: 15px 10px;
+  border: solid 1px #787777;
+  border-bottom: none;
+  font-family: Georgia-Light;
+}
+
+.contactForm textarea {
+  border: solid 1px #787777;
+  font-family: Georgia-Light;
+  padding: 15px 10px;
+  height: 70px;
+}
+
+.submitButton {
+  border-radius: 0;
+  background-color: transparent;
+  border: solid 1px #787777;
+  padding: 15px 40px;
+  font-family: Georgia-Light;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.miniFooter {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+  font-family: Alata;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.link:visited {
+  color: #000000;
+}
+
+@media (min-width: 800px) {
+
+  .header {
+    padding: 0 50px;
+  }
+
+  .header h3 {
+    font-size: 40px;
+  }
+
+  .logo {
+    height: 83px;
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .mainContent {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+  }
+
+  .leftContainer {
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  .blurb {
+    font-size: 27px;
+  }
+
+  .rightContainer {
+    width: 40%;
+    box-sizing: border-box;
+    padding-left: 100px;
+  }
+
+  .email {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .emailAddress {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+}
