@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   console.log(router.pathname)
-  if (!router.pathname.includes("about") && !router.pathname.includes("contact")) {
+  if (!router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("gallery")) {
     return (
       <>
         <style jsx global>
