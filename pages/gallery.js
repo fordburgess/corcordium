@@ -5,13 +5,10 @@ import Logo from '../media/logo1.png';
 import Instagram from '../media/insta.svg';
 import styles from './gallery.module.css';
 
+
 function Gallery() {
 
-//   useEffect(() => {
-//
-//     fetch()
-//
-//   }, [])
+
 
   return (
     <>
