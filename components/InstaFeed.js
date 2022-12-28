@@ -9,44 +9,44 @@ const InstaFeed = () => {
   const thumbnailWidth = 480;
   const photoCount = 5;
 
-  useEffect(() => {
-    const getPosts = async () => {
-      const options = {
-        method: 'GET',
-        mode: 'no-cors',
-      };
-      const res = await fetch(
-        `https://www.instagram.com/graphql/query?query_id=17888483320059182&variables={"id":"${instaId}","first":${photoCount},"after":null}`
-      );
-
-      const { data } = await res.json();
-      const photos = data.user.edge_owner_to_timeline_media.edges.map(
-        ({ node }) => {
-          const id = { node };
-          const likes = node.edge_media_preview_like.count;
-          const caption = node.edge_media_to_caption.edges[0].node.text;
-          const thumbnail = node.thumbnail_resources.find(
-            thumbnail => thumbnail.config_width === thumbnailWidth
-          )
-          const { src, config_width: width, config_height: height } = thumbnail
-          const url = `https://www.instagram.com/p/${node.shortcode}`
-          return {
-            id,
-            caption,
-            src,
-            width,
-            height,
-            url,
-            comments,
-            likes
-          }
-        }
-      )
-      setPosts(prev => [...prev, photos]);
-    }
-
-    getPosts();
-  }, []);
+//   useEffect(() => {
+//     const getPosts = async () => {
+//       const options = {
+//         method: 'GET',
+//         mode: 'no-cors',
+//       };
+//       const res = await fetch(
+//         ``
+//       );
+//
+//       const { data } = await res.json();
+//       const photos = data.user.edge_owner_to_timeline_media.edges.map(
+//         ({ node }) => {
+//           const id = { node };
+//           const likes = node.edge_media_preview_like.count;
+//           const caption = node.edge_media_to_caption.edges[0].node.text;
+//           const thumbnail = node.thumbnail_resources.find(
+//             thumbnail => thumbnail.config_width === thumbnailWidth
+//           )
+//           const { src, config_width: width, config_height: height } = thumbnail
+//           const url = `https://www.instagram.com/p/${node.shortcode}`
+//           return {
+//             id,
+//             caption,
+//             src,
+//             width,
+//             height,
+//             url,
+//             comments,
+//             likes
+//           }
+//         }
+//       )
+//       setPosts(prev => [...prev, photos]);
+//     }
+//
+//     getPosts();
+//   }, []);
 
   return (
     <div className={styles.container}>
