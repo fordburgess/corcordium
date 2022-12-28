@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Logo from '../media/logo1.png';
 import Instagram from '../media/insta.svg';
 import styles from './gallery.module.css';
-import GDImageViewer from '../utils/GDImageViewer';
 
 function Gallery() {
 
@@ -22,7 +21,7 @@ function Gallery() {
           <h3>Portfolio</h3>
         </div>
         <div className={styles.photoContainer}>
-          <GDImageViewer data={gdPhotoOptions}/>
+
         </div>
         <div className={styles.miniFooter}>
         <Link href="/about" className={styles.link}>About</Link>
