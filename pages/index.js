@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="https://freepngdownload.com/image/thumb/heart-png-free-image-download-1.png" />
       </Head>
       <PhotoDisplay />
-      {/* <InstaFeed /> */}
+      <InstaFeed />
     </div>
   )
 }
