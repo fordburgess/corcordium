@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import * as R from 'ramda'
 // import "./GDImageViewer.css";
-
 function GDImageViewer(data) {
   const [imgIds, setImgIds] = useState([]);
 
@@ -85,17 +84,17 @@ function GDImageViewer(data) {
     return url.match(/\.(jpeg|jpg|gif|png)$/) != null;
   }
 
-  function ModalView(props) {
-    return (
-      <div>
-        <div id="modal-container" className="modal">
-          <span className="close">&times;</span>
-          <Image className="modal-content" id="curr-modal" alt="" />
-          <div id="caption" />
-        </div>
-      </div>
-    );
-  }
+  // function ModalView(props) {
+  //   return (
+  //     <div>
+  //       <div id="modal-container" className="modal">
+  //         <span className="close">&times;</span>
+  //         <Image className="modal-content" src={'hi'} id="curr-modal" alt="" style={{width: "100px"}}/>
+  //         <div id="caption" />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   function showModal(imgId) {
     const modal = document.getElementById("modal-container");
@@ -112,8 +111,8 @@ function GDImageViewer(data) {
     return (
       <>
         {!exclude && (
-          <Image
-            style={style}
+          <img
+            style={{maxWidth: "400px"}}
             className={
               (clickable ? " gd-pointer " : "") +
               (" gd-img ") +
@@ -153,7 +152,7 @@ function GDImageViewer(data) {
     <div>
       <h2>{showHeader && header}</h2>
 
-      {modal && <ModalView />}
+      {modal}
 
       {imgIds &&
         imgIds.map((item, i) => {
