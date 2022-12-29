@@ -77,6 +77,7 @@ function ImageDisplay(data) {
     )
       .then(response => response.json())
       .then(jsonResp => {
+        console.log(jsonResp)
         setImgIds(jsonResp.items);
       });
   }
@@ -108,7 +109,16 @@ function ImageDisplay(data) {
     };
   }
 
-  const RenderImages = (className, id, exclude, item ,i) => {
+  const RenderImages = (className, id, exclude, item, i) => {
+    var title = "";
+
+    if (GOOGLE_DRIVE_IMG_URL.includes("Angela")) {
+      title = "Movement";
+    } else if (GOOGLE_DRIVE_IMG_URL.includes("Kim")) {
+      title = "Restriction";
+    } else {
+      title = "Styling"
+    }
 
     return (
       <div className={styles.contentContainer}>
@@ -117,8 +127,8 @@ function ImageDisplay(data) {
           src={GOOGLE_DRIVE_IMG_URL + item.id}
         />
         <div>
-          <h1>Movement</h1>
-          <Link href="">Read More</Link>
+          <h1>{title}</h1>
+          <Link className={styles.link} href="">Read More</Link>
         </div>
       </div>
     )
