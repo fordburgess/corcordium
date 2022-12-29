@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from 'next/link';
 import styles from "./imagedisplay.module.css";
 import * as R from 'ramda'
 
@@ -107,22 +108,18 @@ function ImageDisplay(data) {
     };
   }
 
-  const renderImages = (className, id, exclude, item ,i) => {
+  const RenderImages = (className, id, exclude, item ,i) => {
 
     return (
-      <div>
-        {!exclude && (
-          <img
-            className={styles.image}
-            onClick={() => {
-              modal && showModal(GOOGLE_DRIVE_IMG_URL + item.id);
-            }}
-            src={GOOGLE_DRIVE_IMG_URL + item.id}
-            id={id ? id : null}
-            key={i}
-            alt={item.title}
-          />
-        )}
+      <div className={styles.contentContainer}>
+        <img
+          className={styles.image}
+          src={GOOGLE_DRIVE_IMG_URL + item.id}
+        />
+        <div>
+          <h1>Movement</h1>
+          <Link href="">Read More</Link>
+        </div>
       </div>
     )
 
@@ -135,12 +132,12 @@ function ImageDisplay(data) {
           href={href}
           target={target}
         >
-          {renderImages(className, id, exclude, item, i)}
+          {RenderImages(className, id, exclude, item, i)}
         </a>
       )
     }
     return (
-      renderImages(className, id, exclude, item, i)
+      RenderImages(className, id, exclude, item, i)
     )
   }
 
