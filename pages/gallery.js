@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Logo from '../media/logo1.png';
 import Instagram from '../media/insta.svg';
 import styles from './gallery.module.css';
-import GDImageViewer from '../utils/GDImageViewer';
+import ImageDisplay from '../utils/ImageDisplay';
 
 function Gallery() {
 
@@ -23,7 +23,7 @@ function Gallery() {
           "1.jpg": true
       },
       attachClass: {
-          "2.jpg": "test"
+          "Angela": "angela"
       },
       attachId: {
           "2.jpg": "test2"
@@ -39,15 +39,8 @@ function Gallery() {
           <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
           <h3>Portfolio</h3>
         </div>
-        <div className={styles.photoContainer}>
-          <GDImageViewer data={test} />
-        </div>
-        <div className={styles.miniFooter}>
-        <Link href="/about" className={styles.link}>About</Link>
-            <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
-              <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
-            </a>
-            <a href="" className={styles.link}>Share</a>
+        <div className={styles.imageContainer}>
+          <ImageDisplay data={test} />
         </div>
       </div>
     </>

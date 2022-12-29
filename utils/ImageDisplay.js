@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Image from 'next/image'
+import styles from "./imagedisplay.module.css";
 import * as R from 'ramda'
-// import "./GDImageViewer.css";
-function GDImageViewer(data) {
+
+function ImageDisplay(data) {
   const [imgIds, setImgIds] = useState([]);
 
   const [style, setStyle] = useState({});
@@ -108,16 +108,12 @@ function GDImageViewer(data) {
   }
 
   const renderImages = (className, id, exclude, item ,i) => {
+
     return (
-      <>
+      <div>
         {!exclude && (
           <img
-            style={{maxWidth: "400px"}}
-            className={
-              (clickable ? " gd-pointer " : "") +
-              (" gd-img ") +
-              (hover ? " gd-pointer gd-hover " : "") + className
-            }
+            className={styles.image}
             onClick={() => {
               modal && showModal(GOOGLE_DRIVE_IMG_URL + item.id);
             }}
@@ -127,7 +123,7 @@ function GDImageViewer(data) {
             alt={item.title}
           />
         )}
-      </>
+      </div>
     )
 
   }
@@ -149,13 +145,12 @@ function GDImageViewer(data) {
   }
 
   return (
-    <div>
-      <h2>{showHeader && header}</h2>
+    <div className={styles.imageContainer} >
 
       {modal}
 
       {imgIds &&
-        imgIds.map((item, i) => {
+        imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
           const title = R.propOr("", "title", item)
           if (checkFormat(item.title)) {
             const className = R.propOr("", title, classNames)
@@ -170,4 +165,4 @@ function GDImageViewer(data) {
   );
 }
 
-export default GDImageViewer;
+export default ImageDisplay;
