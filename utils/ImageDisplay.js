@@ -77,7 +77,6 @@ function ImageDisplay(data) {
     )
       .then(response => response.json())
       .then(jsonResp => {
-        console.log(jsonResp)
         setImgIds(jsonResp.items);
       });
   }
@@ -109,15 +108,15 @@ function ImageDisplay(data) {
     };
   }
 
-  const RenderImages = (className, id, exclude, item, i) => {
+  const RenderImages = (className, id, exclude, item, i, filename) => {
     var title = "";
-
-    if (GOOGLE_DRIVE_IMG_URL.includes("Angela")) {
+    console.log(filename)
+    if (filename.includes("Movement")) {
       title = "Movement";
-    } else if (GOOGLE_DRIVE_IMG_URL.includes("Kim")) {
-      title = "Restriction";
+    } else if (filename.includes("Innocente")) {
+      title = "Innocente";
     } else {
-      title = "Styling"
+      title = "Restriction"
     }
 
     return (
@@ -125,6 +124,7 @@ function ImageDisplay(data) {
         <img
           className={styles.image}
           src={GOOGLE_DRIVE_IMG_URL + item.id}
+          loading="eager"
         />
         <div>
           <h1>{title}</h1>
@@ -135,19 +135,19 @@ function ImageDisplay(data) {
 
   }
 
-  const renderMain = (className, id, exclude, href, target, item, i) => {
+  const renderMain = (className, id, exclude, href, target, item, i, filename) => {
     if (!R.isEmpty(href)) {
       return (
         <a
           href={href}
           target={target}
         >
-          {RenderImages(className, id, exclude, item, i)}
+          {RenderImages(className, id, exclude, item, i, filename)}
         </a>
       )
     }
     return (
-      RenderImages(className, id, exclude, item, i)
+      RenderImages(className, id, exclude, item, i, filename)
     )
   }
 
@@ -160,12 +160,13 @@ function ImageDisplay(data) {
         imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
           const title = R.propOr("", "title", item)
           if (checkFormat(item.title)) {
+            const originalName = item.title;
             const className = R.propOr("", title, classNames)
             const id = R.propOr("", title, ids)
             const exclude = R.propOr("", title, excludes);
             const href = !modal && clickable ? GOOGLE_DRIVE_IMG_URL + item.id : ""
             const target = newWindow ? "_blank" : ""
-            return(renderMain(className, id, exclude, href, target, item, i))
+            return(renderMain(className, id, exclude, href, target, item, i, originalName))
           }
         })}
     </div>
