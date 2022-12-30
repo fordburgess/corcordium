@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Image from 'next/image'
+import Link from 'next/link';
+import styles from "./imagedisplay.module.css";
 import * as R from 'ramda'
-// import "./GDImageViewer.css";
 
-function GDImageViewer(data) {
+function ImageDisplay(data) {
   const [imgIds, setImgIds] = useState([]);
 
   const [style, setStyle] = useState({});
@@ -85,17 +85,17 @@ function GDImageViewer(data) {
     return url.match(/\.(jpeg|jpg|gif|png)$/) != null;
   }
 
-  function ModalView(props) {
-    return (
-      <div>
-        <div id="modal-container" className="modal">
-          <span className="close">&times;</span>
-          <Image className="modal-content" id="curr-modal" alt="" />
-          <div id="caption" />
-        </div>
-      </div>
-    );
-  }
+  // function ModalView(props) {
+  //   return (
+  //     <div>
+  //       <div id="modal-container" className="modal">
+  //         <span className="close">&times;</span>
+  //         <Image className="modal-content" src={'hi'} id="curr-modal" alt="" style={{width: "100px"}}/>
+  //         <div id="caption" />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   function showModal(imgId) {
     const modal = document.getElementById("modal-container");
@@ -108,67 +108,69 @@ function GDImageViewer(data) {
     };
   }
 
-  const renderImages = (className, id, exclude, item ,i) => {
+  const RenderImages = (className, id, exclude, item, i, filename) => {
+    var title = "";
+    console.log(filename)
+    if (filename.includes("Movement")) {
+      title = "Movement";
+    } else if (filename.includes("Innocente")) {
+      title = "Innocente";
+    } else {
+      title = "Restriction"
+    }
+
     return (
-      <>
-        {!exclude && (
-          <Image
-            style={style}
-            className={
-              (clickable ? " gd-pointer " : "") +
-              (" gd-img ") +
-              (hover ? " gd-pointer gd-hover " : "") + className
-            }
-            onClick={() => {
-              modal && showModal(GOOGLE_DRIVE_IMG_URL + item.id);
-            }}
-            src={GOOGLE_DRIVE_IMG_URL + item.id}
-            id={id ? id : null}
-            key={i}
-            alt={item.title}
-          />
-        )}
-      </>
+      <div className={styles.contentContainer}>
+        <img
+          className={styles.image}
+          src={GOOGLE_DRIVE_IMG_URL + item.id}
+          loading="eager"
+        />
+        <div>
+          <h1>{title}</h1>
+          <Link className={styles.link} href="">Read More</Link>
+        </div>
+      </div>
     )
 
   }
 
-  const renderMain = (className, id, exclude, href, target, item, i) => {
+  const renderMain = (className, id, exclude, href, target, item, i, filename) => {
     if (!R.isEmpty(href)) {
       return (
         <a
           href={href}
           target={target}
         >
-          {renderImages(className, id, exclude, item, i)}
+          {RenderImages(className, id, exclude, item, i, filename)}
         </a>
       )
     }
     return (
-      renderImages(className, id, exclude, item, i)
+      RenderImages(className, id, exclude, item, i, filename)
     )
   }
 
   return (
-    <div>
-      <h2>{showHeader && header}</h2>
+    <div className={styles.imageContainer} >
 
-      {modal && <ModalView />}
+      {modal}
 
       {imgIds &&
-        imgIds.map((item, i) => {
+        imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
           const title = R.propOr("", "title", item)
           if (checkFormat(item.title)) {
+            const originalName = item.title;
             const className = R.propOr("", title, classNames)
             const id = R.propOr("", title, ids)
             const exclude = R.propOr("", title, excludes);
             const href = !modal && clickable ? GOOGLE_DRIVE_IMG_URL + item.id : ""
             const target = newWindow ? "_blank" : ""
-            return(renderMain(className, id, exclude, href, target, item, i))
+            return(renderMain(className, id, exclude, href, target, item, i, originalName))
           }
         })}
     </div>
   );
 }
 
-export default GDImageViewer;
+export default ImageDisplay;

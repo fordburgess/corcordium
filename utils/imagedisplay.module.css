@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../fonts/Georgia.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../fonts/SD_Georgia_Light.ttf") format("truetype");
+}
+
+.imageContainer {
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.image {
+  height: auto;
+  width: 99%;
+  margin: 1px;
+  transition: 0.15s;
+  z-index: -5;
+}
+
+.contentContainer {
+  position: relative;
+  text-align: center;
+}
+
+.contentContainer div {
+  display: none;
+  color: white;
+}
+
+.contentContainer:hover .image {
+  filter: brightness(20%);
+}
+
+.contentContainer:hover div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Georgia-Light;
+  text-align: center;
+}
+
+.link:visited {
+  color: #FFFFFF;
+}
