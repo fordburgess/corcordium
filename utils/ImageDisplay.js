@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Link from 'next/link';
+import Footer from "../components/Footer";
+import Projects from './projects.json';
 import styles from "./imagedisplay.module.css";
 import * as R from 'ramda'
 
@@ -23,6 +24,8 @@ function ImageDisplay(data) {
   const [ids, setIds] = useState(null);
 
   const [excludes, setExcludes] = useState(null);
+
+  const [activeProject, setActiveProject] = useState("all");
 
   const GOOGLE_API_KEY = data.data.gkey;
   const GOOGLE_DRIVE_URL_START =
@@ -109,8 +112,8 @@ function ImageDisplay(data) {
   }
 
   const RenderImages = (className, id, exclude, item, i, filename) => {
+
     var title = "";
-    console.log(filename)
     if (filename.includes("Movement")) {
       title = "Movement";
     } else if (filename.includes("Innocente")) {
@@ -119,20 +122,30 @@ function ImageDisplay(data) {
       title = "Restriction"
     }
 
-    return (
-      <div className={styles.contentContainer}>
-        <img
-          className={styles.image}
-          src={GOOGLE_DRIVE_IMG_URL + item.id}
-          loading="eager"
-        />
-        <div>
-          <h1>{title}</h1>
-          <Link className={styles.link} href="">Read More</Link>
+    if (activeProject == "all") {
+      console.log(title);
+      return (
+        <div className={styles.contentContainer}>
+          <img
+            className={styles.image}
+            src={GOOGLE_DRIVE_IMG_URL + item.id}
+            loading="eager"
+          />
+          <div>
+            <h1>{title}</h1>
+            <p className={styles.link} onClick={() => setActiveProject(title)}>Read More</p>
+          </div>
         </div>
-      </div>
-    )
-
+      )
+    } else {
+      return (
+        <img
+            className={styles.image}
+            src={GOOGLE_DRIVE_IMG_URL + item.id}
+            loading="eager"
+          />
+      )
+    }
   }
 
   const renderMain = (className, id, exclude, href, target, item, i, filename) => {
@@ -151,26 +164,58 @@ function ImageDisplay(data) {
     )
   }
 
-  return (
-    <div className={styles.imageContainer} >
+  if (activeProject == "all") {
+    return (
+      <>
+        <div className={styles.imageContainer} >
+          {imgIds &&
+            imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
+              const title = R.propOr("", "title", item)
+              if (checkFormat(item.title)) {
+                const originalName = item.title;
+                const className = R.propOr("", title, classNames)
+                const id = R.propOr("", title, ids)
+                const exclude = R.propOr("", title, excludes);
+                const href = !modal && clickable ? GOOGLE_DRIVE_IMG_URL + item.id : ""
+                const target = newWindow ? "_blank" : ""
+                return(renderMain(className, id, exclude, href, target, item, i, originalName))
+              }
+            })}
+        </div>
+        <Footer />
+      </>
+    );
+  } else {
+    var project = Projects.projects[activeProject];
+    console.log(project)
+    return (
+      <div className={styles.projectContainer} >
+        <div className={styles.images}>
+          {imgIds &&
+            imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
+              const title = R.propOr("", "title", item)
+              if (checkFormat(item.title) && item.title.includes(activeProject)) {
+                const originalName = item.title;
+                const className = R.propOr("", title, classNames)
+                const id = R.propOr("", title, ids)
+                const exclude = R.propOr("", title, excludes);
+                const href = !modal && clickable ? GOOGLE_DRIVE_IMG_URL + item.id : ""
+                const target = newWindow ? "_blank" : ""
+                return(renderMain(className, id, exclude, href, target, item, i, originalName))
+              }
+            })}
+        </div>
+        <div className={styles.textContainer}>
+          <h1>{activeProject}</h1>
+          <p>
+            {project.text}
+          </p>
+          <p className={styles.backButton} onClick={() => setActiveProject("all")}>Back</p>
+        </div>
+      </div>
+    )
+  }
 
-      {modal}
-
-      {imgIds &&
-        imgIds.sort(() => Math.random() - 0.5).map((item, i) => {
-          const title = R.propOr("", "title", item)
-          if (checkFormat(item.title)) {
-            const originalName = item.title;
-            const className = R.propOr("", title, classNames)
-            const id = R.propOr("", title, ids)
-            const exclude = R.propOr("", title, excludes);
-            const href = !modal && clickable ? GOOGLE_DRIVE_IMG_URL + item.id : ""
-            const target = newWindow ? "_blank" : ""
-            return(renderMain(className, id, exclude, href, target, item, i, originalName))
-          }
-        })}
-    </div>
-  );
 }
 
 export default ImageDisplay;

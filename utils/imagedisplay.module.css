@@ -10,6 +10,12 @@
     url("../fonts/SD_Georgia_Light.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+
 .imageContainer {
   line-height: 0;
   -webkit-column-count: 3;
@@ -20,6 +26,7 @@
   column-gap: 0px;
   width: 90vw;
   margin: 0 auto;
+  padding-top: 200px;
 }
 
 .image {
@@ -57,6 +64,56 @@
   text-align: center;
 }
 
+.link {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+.link:hover {
+  cursor: pointer;
+}
 .link:visited {
   color: #FFFFFF;
+}
+
+.projectContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  height: 100vh;
+}
+
+.images {
+  width: 45%;
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+  overflow-y: scroll;
+}
+
+.textContainer {
+  width: 40%;
+  height: 100vh;
+  text-align: right;
+}
+
+.textContainer h1 {
+  font-family: Alata;
+  font-size: 75px;
+}
+
+.textContainer p {
+  font-family: Georgia;
+}
+
+.backButton {
+  text-decoration: underline;
+}
+
+.backButton:hover {
+  cursor: pointer;
 }
