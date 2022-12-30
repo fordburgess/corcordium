@@ -7,23 +7,23 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   console.log(router.pathname)
-  if (router.pathname.includes("gallery")) {
-    return (
-      <>
-        <style jsx global>
-        {`
-          body {
-            margin: 0;
-            padding: 0;
-          }
-        `}
-        </style>
-        <main>{children}</main>
-        <Footer />
-      </>
-    )
-  }
-  else if (!router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("gallery")) {
+  // if (router.pathname.includes("gallery")) {
+  //   return (
+  //     <>
+  //       <style jsx global>
+  //       {`
+  //         body {
+  //           margin: 0;
+  //           padding: 0;
+  //         }
+  //       `}
+  //       </style>
+  //       <main>{children}</main>
+  //       <Footer />
+  //     </>
+  //   )
+  // }
+  if (!router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("gallery")) {
     return (
       <>
         <style jsx global>

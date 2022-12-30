@@ -1,10 +1,9 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../media/logo1.png';
-import Instagram from '../media/insta.svg';
+import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
-import ImageDisplay from '../utils/ImageDisplay';
+import ImageDisplay from '../../utils/ImageDisplay';
 
 function Gallery() {
 
@@ -39,9 +38,9 @@ function Gallery() {
           <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
           <h3>Portfolio</h3>
         </div>
-        <div className={styles.imageContainer}>
-          <ImageDisplay data={test} />
-        </div>
+          <div className={styles.imageContainer}>
+            <ImageDisplay data={test}/>
+          </div>
       </div>
     </>
   )
