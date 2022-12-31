@@ -5,7 +5,7 @@ import styles from './instafeed.module.css';
 const InstaFeed = () => {
   const [posts, setPosts] = useState([]);
 
-  // test
+
 
   return (
     <div className={styles.container}>
