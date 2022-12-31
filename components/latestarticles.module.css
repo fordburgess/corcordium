@@ -4,16 +4,27 @@
     url("../fonts/Georgia.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+
 .container {
   width: 100vw;
   display: flex;
   justify-content: center;
+  padding-top: 75px;
 }
 
 .subContainer {
   height: 500px;
   padding: 50px 0;
   width: 80%;
+
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
 }
 
 .header {

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ZenKakuGothic";
+  src: local("ZenKakuGothicAntique-Regular"),
+    url("../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+}
+
+.date {
+  font-family: ZenKakuGothic;
+}
+
+.title {
+  font-family: Alata;
+}
