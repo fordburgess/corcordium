@@ -5,13 +5,14 @@
 }
 
 .container {
-  background-color: #FFFFFF;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #000000;
   height: 10vh;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 10px 50px;
+  padding: 0px 12px;
   position: sticky;
   top: 0;
 }
@@ -44,6 +45,7 @@
 .link {
   text-decoration: none;
   font-family: Alata;
+  font-size: 13px;
 }
 
 .links {
@@ -52,7 +54,7 @@
   justify-content: space-between;
   display: flex;
   transition: 0.2s;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
@@ -69,5 +71,9 @@
     align-items: center;
     color: #FFFFFF;
     width: 100%;
+  }
+
+  .link {
+    font-size: 17px;
   }
 }

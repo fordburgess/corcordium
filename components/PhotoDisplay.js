@@ -14,11 +14,12 @@ import Kim2 from '../media/kim2.jpeg'
 
 
 const PhotoDisplay = () => {
-  const mobile = useMediaQuery('(max-width: 900px')
+  const mobile = useMediaQuery('(max-width: 800px')
   const photos = [Angela7, Kim1, Angela3, Kim2]
 
-  if (mobile) {
+  // if (mobile) {
     return (
+      <>
       <div className={styles.container}>
         <h4 className={styles.title}>
           Portfolio
@@ -35,13 +36,9 @@ const PhotoDisplay = () => {
           <Image className={styles.smallImage} src={Angela5} alt="angela5"/>
         </div>
         <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-          <Link href="/gallery" className={styles.galleryLink}>Discover More</Link>
+          <Link href="/portfolio/gallery" className={styles.galleryLink}>Discover More</Link>
         </div>
       </div>
-    )
-  }
-  else {
-    return (
       <div className={styles.desktopContainer}>
         <div className={styles.desktopHero}></div>
         <div className={styles.smallPhotoContainer}>
@@ -50,8 +47,9 @@ const PhotoDisplay = () => {
           })}
         </div>
       </div>
+    </>
     )
-  }
+  // }
 }
 
 export default PhotoDisplay

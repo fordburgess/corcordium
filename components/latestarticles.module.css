@@ -10,35 +10,39 @@
     url("../fonts/Alata-Regular.ttf") format("truetype");
 }
 
+
 .container {
+  padding-left: 20px;
   width: 100vw;
-  padding-left: 75px;
-  padding-top: 75px;
   box-sizing: border-box;
-}
-
-.subContainer {
-  padding-left: 50px;
-}
-
-.articleContainer {
-  display: flex;
-  overflow-x: scroll;
 }
 
 .header {
   font-family: Georgia;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.articleContainer {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   .container {
-    padding: 0;
+    width: 100vw;
+    padding-left: 75px;
+    padding-top: 75px;
     box-sizing: border-box;
   }
 
-  .subContainer {
-    padding: 0;
+  .articleContainer {
+    display: flex;
+    margin-left: 50px;
+  }
+
+  .header {
+    margin-bottom: 50px;
   }
 }

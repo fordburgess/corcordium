@@ -9,7 +9,9 @@ const LatestArticle = (props) => {
     <div className={styles.container}>
       <img src={props.image} alt="article photo" className={styles.image}/>
       <p className={styles.date}>{props.date}</p>
-      <h3 className={styles.title}>{props.title}</h3>
+      <div style={{width: "100%"}}>
+        <h3 className={styles.title}>{props.title}</h3>
+      </div>
     </div>
   )
 }

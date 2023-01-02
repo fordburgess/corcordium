@@ -23,10 +23,8 @@ const LatestArticles = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>Latest Articles</h2>
-      <div className={styles.subContainer}>
       <div className={styles.articleContainer}>
         {Content()}
-      </div>
       </div>
     </div>
   )

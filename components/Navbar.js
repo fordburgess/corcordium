@@ -9,7 +9,7 @@ import LogoWhite from '../media/logo2.png';
 import LogoBlack from '../media/logo.png';
 
 const Navbar = (props) => {
-  const desktop = useMediaQuery('(min-width: 900px');
+  const desktop = useMediaQuery('(min-width: 800px');
   const [lastScrollY, setLastScrollY] = useState(0);
   const [show, setShow] = useState(true);
 

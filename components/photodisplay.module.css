@@ -12,6 +12,7 @@
 .container {
   font-family: Georgia;
   width: 100vw;
+  display: block;
 }
 
 .title {
@@ -52,6 +53,7 @@
 /* desktop */
 
 .desktopHero {
+  display: none;
   height: 100vh;
   width: 100%;
   background-image: url(../media/angela6cropped.jpg);
@@ -61,11 +63,25 @@
 }
 
 .smallPhotoContainer {
-  display: flex;
-  padding: 0;
+  display: none;
 }
 
 .smallPhotos {
   height: 400px;
   margin: 0 1px;
+}
+
+@media (min-width: 800px) {
+  .desktopHero {
+    display: block;
+  }
+
+  .smallPhotoContainer {
+    display: flex;
+    padding: 0;
+  }
+
+  .container {
+    display: none;
+  }
 }

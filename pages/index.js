@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Corcordium</title>
-        <meta name="description" content="placeholder" />
+        <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="https://freepngdownload.com/image/thumb/heart-png-free-image-download-1.png" />
       </Head>
       <PhotoDisplay />
