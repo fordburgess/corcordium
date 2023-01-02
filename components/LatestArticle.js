@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 import styles from "./latestarticle.module.css"
 
 const LatestArticle = (props) => {
-
+  const router = useRouter();
+  console.log(router)
 
   return (
     <div className={styles.container}>

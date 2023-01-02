@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../../fonts/Alata-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../../fonts/Georgia.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
+}
+
+.container {
+  width: 100vw;
+}
+
+.container p {
+  font-family: ZenKakuGothic;
+}
+
+.container h3 {
+  font-family: Alata;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  font-family: Alata;
+  position: sticky;
+  top: 0;
+  background-color: #FFFFFF;
+}
+
+.header h3 {
+  font-size: 22px;
+}
+
+.logo {
+  height: 50px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.articleContainerMobile {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.articleInstanceMobile {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.articleImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.date {
+  font-family: ZenKakuGothic;
+  font-size: 20px;
+  margin: 0;
+}
+
+.title {
+  font-family: Alata;
+  font-size: 20px;
+  margin: 0;
+}
+
+.mostRecentArticles {
+  display: none;
+}
+
+.olderArticles {
+  display: none;
+}
+
+
+@media (min-width: 800px) {
+
+  .header {
+    padding: 10px 50px;
+    height: 14vh;
+    z-index: 5;
+  }
+
+  .header h2 {
+    font-size: 40px;
+  }
+
+  .logo {
+    height: 83px;
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .mostRecentArticles {
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding-top: 50px;
+  }
+
+  .twoMostRecent {
+    width: 49%;
+    transition: 0.3s;
+  }
+
+  .twoMostRecent:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+
+  .mostRecentImage {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .olderArticles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 85vw;
+    margin: 0 auto;
+  }
+
+  .olderArticleContainer {
+    width: 30%;
+    margin-right: 40px;
+    transition: 0.3s;
+  }
+
+  .olderArticleContainer:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+
+  .olderArticlesImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .articleContainerMobile {
+    display: none;
+  }
+
+
+}
