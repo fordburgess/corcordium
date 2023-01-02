@@ -1,0 +1,28 @@
+{
+  "articles" : [
+    {
+      "title" : "Let's talk catwalk: Galliano FW03",
+      "date" : "Nov 19 2022",
+      "text" : "sample",
+      "mainPhoto" : "https://64.media.tumblr.com/6be30a0078ead37033909375c1ee7e92/tumblr_mhesukQ2z61qm3zbto1_1280.jpg"
+    },
+    {
+      "title" : "Catwalk report McQueen RTW SS99: McQueen is the king of ready-to-wear",
+      "date" : "Nov 6 2022",
+      "text" : "sample",
+      "mainPhoto" : "https://images-prod.anothermag.com/1600/azure/another-prod/350/9/359956.jpg"
+    },
+    {
+      "title" : "Can fashion truly make an impactful political statement?",
+      "date" : "Oct 11 2022",
+      "text" : "sample",
+      "mainPhoto" : "https://i.dailymail.co.uk/1s/2019/02/17/16/9927516-0-image-a-45_1550422264467.jpg"
+    },
+    {
+      "title" : "The Rise of Indie Sleaze",
+      "date" : "Oct 5 2022",
+      "text" : "sample",
+      "mainPhoto" : "https://luxiders.com/wp-content/uploads/2021/03/chanel_fw21_004_Paris_1_2021.jpg"
+    }
+  ]
+}

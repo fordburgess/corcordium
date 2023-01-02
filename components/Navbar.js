@@ -9,7 +9,7 @@ import LogoWhite from '../media/logo2.png';
 import LogoBlack from '../media/logo.png';
 
 const Navbar = (props) => {
-  const desktop = useMediaQuery('(min-width: 900px');
+  const desktop = useMediaQuery('(min-width: 800px');
   const [lastScrollY, setLastScrollY] = useState(0);
   const [show, setShow] = useState(true);
 
@@ -46,7 +46,7 @@ const Navbar = (props) => {
       </div>
       <div className={styles.links} style={{visibility: show ? 'hidden' : 'visible', opacity: show ? 0 : 1}}>
         <Link href="/about" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>About</h3></Link>
-        <Link href="/portfolio/gallery" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Gallery</h3></Link>
+        <Link href="/portfolio/gallery" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Portfolio</h3></Link>
         <Link href="/" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Placeholder</h3></Link>
         <Link href="/contact" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Contact</h3></Link>
       </div>

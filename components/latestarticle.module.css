@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../fonts/Alata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ZenKakuGothic";
+  src: local("ZenKakuGothicAntique-Regular"),
+    url("../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+}
+
+.container {
+  width: 30vw;
+  margin-right: 30px;
+}
+
+.image {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+
+.date {
+  font-family: ZenKakuGothic;
+}
+
+.title {
+  font-family: Alata;
+  font-size: 12px;
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 18%;
+    margin-right: 55px;
+  }
+
+  .image {
+    height: 66%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 18.5px;
+  }
+
+}
