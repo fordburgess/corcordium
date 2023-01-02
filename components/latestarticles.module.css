@@ -12,21 +12,33 @@
 
 .container {
   width: 100vw;
-  display: flex;
-  justify-content: center;
+  padding-left: 75px;
   padding-top: 75px;
+  box-sizing: border-box;
 }
 
 .subContainer {
-  height: 500px;
-  padding: 50px 0;
-  width: 80%;
+  padding-left: 50px;
+}
 
+.articleContainer {
   display: flex;
-  justify-content: flex-start;
   overflow-x: scroll;
 }
 
 .header {
   font-family: Georgia;
+  margin-bottom: 50px;
+}
+
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .subContainer {
+    padding: 0;
+  }
 }

@@ -3,18 +3,30 @@ import styles from './latestarticles.module.css'
 import LatestArticle from './LatestArticle';
 import Articles from '../temporaryJSONfiles/temporaryArticles.json'
 
+const Content = () => {
+  const content = [];
+  for (var i = 0; i <= 3; i++) {
+    content.push(
+      <LatestArticle
+      date={Articles.articles[i].date}
+      title={Articles.articles[i].title}
+      image={Articles.articles[i].mainPhoto}
+      />
+    )
+  }
+  return content;
+}
+
 
 const LatestArticles = () => {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.header}>Latest Articles</h3>
+      <h2 className={styles.header}>Latest Articles</h2>
       <div className={styles.subContainer}>
-      {Articles.articles.map(x => {
-        return (
-            <LatestArticle title={x.title} date={x.date} key={x}/>
-          )
-      })}
+      <div className={styles.articleContainer}>
+        {Content()}
+      </div>
       </div>
     </div>
   )

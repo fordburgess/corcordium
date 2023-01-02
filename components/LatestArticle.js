@@ -7,6 +7,7 @@ const LatestArticle = (props) => {
 
   return (
     <div className={styles.container}>
+      <img src={props.image} alt="article photo" className={styles.image}/>
       <p className={styles.date}>{props.date}</p>
       <h3 className={styles.title}>{props.title}</h3>
     </div>

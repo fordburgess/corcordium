@@ -9,10 +9,25 @@
     url("../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
 }
 
+.container {
+  width: 18%;
+  margin-right: 45px;
+}
+
+.image {
+  height: 66%;
+  width: 100%;
+  object-fit: cover;
+}
 .date {
   font-family: ZenKakuGothic;
 }
-
 .title {
   font-family: Alata;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 40%;
+  }
 }
