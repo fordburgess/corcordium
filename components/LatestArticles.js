@@ -12,6 +12,7 @@ const Content = () => {
       date={Articles.articles[i].date}
       title={Articles.articles[i].title}
       image={Articles.articles[i].mainPhoto}
+      id={Articles.articles[i].id}
       />
     )
   }

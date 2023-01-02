@@ -1,6 +1,8 @@
-import React from 'react'
-import { GetStaticProps } from 'next';
+import React from 'react';
+import styles from './article.module.css';
+import Image from 'next/image';
 import Articles from '../../temporaryJSONfiles/temporaryArticles.json';
+import Logo from '../../media/logo1.png';
 
 export const getStaticPaths = async () => {
   const paths = Articles.articles.map(item => {
@@ -30,8 +32,19 @@ export const getStaticProps = async (context) => {
 const Article = ({ article }) => {
   console.log(Articles.articles)
   return (
-    <div>
-      {article.title}
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <Image src={Logo} alt="logo" className={styles.logo} />
+        <h3>Blog</h3>
+      </div>
+      <div className={styles.articleHeader}>
+        <img src={article.mainPhoto} alt="mainPhoto" className={styles.mainPhoto}/>
+        <h1 className={styles.articleTitle}>{article.title}</h1>
+        <h4 className={styles.articleSubtitle}>Leelou Reboh - {article.date}</h4>
+      </div>
+      <div className={styles.textContainer}>
+
+      </div>
     </div>
   )
 }
