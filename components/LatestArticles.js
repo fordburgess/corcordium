@@ -21,15 +21,18 @@ const Content = () => {
 
 
 const LatestArticles = () => {
+  console.log(Content());
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.header}>Latest Articles</h2>
-      <div className={styles.articleContainer}>
-        {Content()}
+    <>
+      <div className={styles.container}>
+        <h2 className={styles.header}>Latest Articles</h2>
+        <div className={styles.articleContainer}>
+          {Content()}
+        </div>
       </div>
-      <Link href="/articles/articles" className={styles.link}>See All Articles</Link>
-    </div>
+      <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link>
+    </>
   )
 }
 

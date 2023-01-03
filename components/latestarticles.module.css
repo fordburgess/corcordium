@@ -16,6 +16,7 @@
   width: 100vw;
   box-sizing: border-box;
   position: relative;
+  overflow-x: scroll;
 }
 
 .header {
@@ -30,11 +31,9 @@
 
 .link {
   color: #000000;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 800px) {
@@ -48,9 +47,11 @@
   .articleContainer {
     display: flex;
     margin-left: 50px;
+    margin-bottom: 20px;
   }
 
   .header {
     margin-bottom: 50px;
   }
+
 }
