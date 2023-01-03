@@ -1,19 +1,19 @@
 @font-face {
   font-family: "Georgia";
   src: local("Georgia"),
-    url("../fonts/Georgia.ttf") format("truetype");
+    url("../../fonts/Georgia.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Georgia-Light";
   src: local("SD_Georgia_Light"),
-    url("../fonts/SD_Georgia_Light.ttf") format("truetype");
+    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Alata";
   src: local("Alata-Regular"),
-    url("../fonts/Alata-Regular.ttf") format("truetype");
+    url("../../fonts/Alata-Regular.ttf") format("truetype");
 }
 
 .imageContainer {

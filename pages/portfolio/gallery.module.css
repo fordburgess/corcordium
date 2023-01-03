@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
+}
+
 .container {
   height: auto;
   width: 100vw;
@@ -35,6 +41,43 @@
 }
 
 
+.info {
+  display: none;
+  color: #FFFFFF;
+}
+
+.contentContainer:hover {
+  position: relative;
+}
+
+.contentContainer:hover .image {
+  filter: brightness(20%);
+}
+
+.contentContainer:hover .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Georgia-Light;
+  text-align: center;
+}
+
+.readMore {
+color: #FFFFFF;
+  text-decoration: underline;
+}
+.readMore:hover {
+  cursor: pointer;
+}
+.readMore:visited {
+  color: #FFFFFF;
+}
+
+
 @media (min-width: 800px) {
 
   .header {
@@ -52,10 +95,43 @@
     margin-top: 20px;
   }
 
+  .image {
+    height: auto;
+    width: 99%;
+    margin: 1px;
+    transition: 0.15s;
+    z-index: -5;
+  }
+
   .imageContainer {
-    width: 100vw;
+    /* line-height: 0;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 3;
+    -moz-column-gap: 0px; */
+    column-count: 3;
+    column-gap: 0px;
+    width: 90vw;
     margin: 0 auto;
+    padding-top: 200px;
+  }
+
+  .projectContainer {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .projectPhotoContainer {
+    width: 45%;
+    line-height: 0;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 3;
+    -moz-column-gap: 0px;
+    column-count: 3;
+    column-gap: 0px;
+    overflow-y: scroll;
   }
 }
