@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './latestarticles.module.css'
+import Link from 'next/link'
 import LatestArticle from './LatestArticle';
 import Articles from '../temporaryJSONfiles/temporaryArticles.json'
 
@@ -11,6 +12,7 @@ const Content = () => {
       date={Articles.articles[i].date}
       title={Articles.articles[i].title}
       image={Articles.articles[i].mainPhoto}
+      id={Articles.articles[i].id}
       />
     )
   }
@@ -26,6 +28,7 @@ const LatestArticles = () => {
       <div className={styles.articleContainer}>
         {Content()}
       </div>
+      <Link href="/articles/articles" className={styles.link}>See All Articles</Link>
     </div>
   )
 }

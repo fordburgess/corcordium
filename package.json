@@ -17,10 +17,12 @@
     "cloudinary-react": "^1.8.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
+    "html-react-parser": "^3.0.6",
     "next": "13.0.4",
     "ramda": "^0.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
     "styled-components": "^5.3.6"
   }
 }

@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Alata";
+  src: local("Alata-Regular"),
+    url("../../fonts/Alata-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+    url("../../fonts/Georgia.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia-Light";
+  src: local("SD_Georgia_Light"),
+    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ZenKakuGothic";
+  src: local("ZenKakuGothicAntique-Regular"),
+    url("../../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+}
+
+.container {
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  font-family: Alata;
+  top: 0;
+  background-color: #FFFFFF;
+}
+
+.header h3 {
+  font-size: 22px;
+}
+
+.logo {
+  height: 50px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.mainPhoto {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.articleHeader {
+  text-align: center;
+}
+.articleTitle {
+  font-family: Alata;
+  padding: 0px 30px;
+}
+
+.articleSubtitle {
+  font-family: ZenKakuGothic;
+}
+
+.textContainer {
+  padding: 20px 30px;
+  font-family: Georgia;
+}
+
+
+@media (min-width: 800px) {
+  .textContainer {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+}
