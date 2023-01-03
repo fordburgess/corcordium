@@ -11,8 +11,7 @@
 
 .container {
   font-family: Georgia;
-  width: 100vw;
-  display: block;
+  width: 100%;
 }
 
 .title {
@@ -21,7 +20,6 @@
 }
 
 .doublePhotoContainer {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
@@ -29,7 +27,6 @@
 }
 
 .singlePhotoContainer {
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 2px;

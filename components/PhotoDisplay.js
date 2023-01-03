@@ -20,7 +20,7 @@ const PhotoDisplay = () => {
   // if (mobile) {
     return (
       <>
-      <div className={styles.container}>
+      <div className={styles.container} style={{width: "100vw"}}>
         <h4 className={styles.title}>
           Portfolio
         </h4>
