@@ -19,14 +19,17 @@
 
 .container {
   width: 100vw;
+
 }
 
 .container p {
   font-family: ZenKakuGothic;
+  margin: 10px 0;
 }
 
 .container h3 {
   font-family: Alata;
+  margin: 10px 0;
 }
 
 
@@ -147,6 +150,7 @@
     width: 30%;
     margin-right: 40px;
     transition: 0.3s;
+    margin-bottom: 25px;
   }
 
   .olderArticleContainer:hover {
