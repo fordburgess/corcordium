@@ -68,3 +68,12 @@
   padding: 20px 30px;
   font-family: Georgia;
 }
+
+
+@media (min-width: 800px) {
+  .textContainer {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+}
