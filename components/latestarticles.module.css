@@ -15,7 +15,6 @@
   padding-left: 20px;
   width: 100vw;
   box-sizing: border-box;
-  position: relative;
   overflow-x: scroll;
 }
 
@@ -27,6 +26,7 @@
 .articleContainer {
   display: flex;
   overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .link {
@@ -40,14 +40,15 @@
   .container {
     width: 100vw;
     padding-left: 75px;
-    padding-top: 75px;
+    margin-top: 75px;
     box-sizing: border-box;
   }
 
   .articleContainer {
     display: flex;
     margin-left: 50px;
-    margin-bottom: 20px;
+    min-height: auto;
+    margin-bottom: 25px;
   }
 
   .header {

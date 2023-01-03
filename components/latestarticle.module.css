@@ -36,18 +36,21 @@
 
 @media (min-width: 800px) {
   .container {
-    width: 18%;
-    margin-right: 55px;
+    min-width: 19%;
+    max-width: 19%;
+    margin-right: 50px;
   }
 
   .image {
-    height: 66%;
-    width: 100%;
-    object-fit: cover;
+    height: 70%;
   }
 
   .title {
-    font-size: 18.5px;
+    font-size: 18px;
+  }
+
+  .date {
+    font-size: 15px;
   }
 
 }
