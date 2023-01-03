@@ -28,7 +28,7 @@ export default function Layout({ children }) {
       <>
         <style jsx global>
         {`
-          body {
+          html, body {
             margin: 0;
             padding: 0;
           },
