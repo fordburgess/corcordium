@@ -6,7 +6,7 @@ import Articles from '../temporaryJSONfiles/temporaryArticles.json'
 
 const Content = () => {
   const content = [];
-  for (var i = 0; i <= 3; i++) {
+  for (var i = 0; i <= 2; i++) {
     content.push(
       <LatestArticle
       date={Articles.articles[i].date}

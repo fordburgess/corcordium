@@ -57,22 +57,20 @@
 }
 .articleTitle {
   font-family: Alata;
-  /* padding: 0px 30px; */
   margin-top: 20px;
-
+  margin-bottom: 5px;
 }
 
 .articleSubtitle {
   font-family: ZenKakuGothic;
-  margin-bottom: 5px;
+  margin: 0 0 7px;
   font-size: 20px;
-  margin-top: 0
 }
 
 .articleDate {
   font-family: ZenKakuGothic;
   font-size: 15px;
-  margin: 0;
+  margin-top: 0;
 }
 
 .textContainer {
