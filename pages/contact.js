@@ -41,7 +41,7 @@ const contact = () => {
         <div className={styles.miniFooter}>
         <Link href="/about" className={styles.link}>About</Link>
             <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
-              <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
+              <Image href="" src={Instagram} alt="instagram" style={{height: 37, width: 37}}/>
             </a>
             <a href="" className={styles.link}>Share</a>
         </div>

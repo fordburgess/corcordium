@@ -54,6 +54,12 @@
   margin-top: 10px;
 }
 
+.altLogo {
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
 .articleContainerMobile {
   width: 75%;
   margin: 0 auto;
