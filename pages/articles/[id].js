@@ -66,7 +66,8 @@ const Article = ({ article }) => {
       <div className={styles.articleHeader}>
         <img src={article.mainPhoto} alt="mainPhoto" className={styles.mainPhoto}/>
         <h1 className={styles.articleTitle}>{article.title}</h1>
-        <h4 className={styles.articleSubtitle}>Leelou Reboh - {article.date}</h4>
+        <h3 className={styles.articleSubtitle}>Leelou Reboh</h3>
+        <h4 className={styles.articleDate}>{article.date}</h4>
       </div>
       <div className={styles.textContainer}>
         {text}

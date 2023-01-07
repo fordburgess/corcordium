@@ -2,16 +2,18 @@ import React from 'react'
 import Link from "next/link"
 import Image from 'next/image'
 import Logo from '../../media/logo1.png'
+import AltLogo from '../../media/AltLogo.png'
 import LatestArticle from '../../components/LatestArticle'
 import styles from './articles.module.css'
-import ArticleContent from '../../temporaryJSONfiles/temporaryArticles.json';
+import ArticleContent from '../../temporaryJSONfiles/temporaryArticles.json'
+import { useMediaQuery } from '@mui/material'
 
 const MobileContent = () => {
   const content = [];
   ArticleContent.articles.map(item => {
     var link = `/articles/${item.id}`;
     content.push(
-        <div className={styles.articleInstanceMobile}>
+        <div className={styles.articleInstanceMobile} key={item.id}>
           <Link href={link} style={{textDecoration: "none", color: "black"}}>
             <img src={item.mainPhoto} alt="headlinePhoto" className={styles.articleImage}/>
             <p className={styles.date}>{item.date}</p>
@@ -65,10 +67,19 @@ const OlderArticles = () => {
 }
 
 const Articles = () => {
+  const mobile = useMediaQuery("(max-width: 800px)")
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
+        <Link href="/">
+          {mobile ? (
+            <Image src={AltLogo} alt="logo" className={styles.altLogo} />
+          ) : (
+            <Image src={Logo} alt="logo" className={styles.logo}/>
+          )
+        }
+        </Link>
         <h2>Blog</h2>
       </div>
       <div className={styles.articleContainerMobile}>
