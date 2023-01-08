@@ -40,6 +40,10 @@
   font-family: Georgia;
 }
 
+.backLink {
+  color: #000000;
+}
+
 @media (min-width: 800px) {
   .contentContainer {
     width: 95vw;

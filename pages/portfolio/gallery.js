@@ -29,10 +29,6 @@ function Gallery({ photos }) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
-          <h3>Portfolio</h3>
-        </div>
         <div className={styles.imageContainer}>
           {test.map((item, index) => {
 
@@ -40,13 +36,15 @@ function Gallery({ photos }) {
             var name = item.title.split(/[0-9]/)[0];
             var link = `/portfolio/${projId(name)}`
             return (
-              <div key={item.title} className={styles.contentContainer}>
-                <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                <div className={styles.info}>
-                  <h1>{name}</h1>
-                  <Link href={link} className={styles.readMore}>Read More</Link>
+              // <Link href={link} key={index}>
+                <div key={item.title} className={styles.contentContainer}>
+                  <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
+                  <div className={styles.info}>
+                    <h1>{name}</h1>
+                    <Link href={link} className={styles.readMore}>Read More</Link>
+                  </div>
                 </div>
-              </div>
+              // </Link>
             )
           })}
         </div>

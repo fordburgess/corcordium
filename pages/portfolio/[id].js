@@ -48,7 +48,6 @@ export const getStaticProps = async (context) => {
   }
 }
 
-
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
 
@@ -77,7 +76,6 @@ const useMediaQuery = (width) => {
 
 const Project = ({ project }) => {
   var mobile = useMediaQuery(800);
-  console.log(project.images)
 
   return (
     <>
@@ -102,6 +100,7 @@ const Project = ({ project }) => {
         <div className={styles.info}>
           <h1>{project.title}</h1>
           <p>{project.text}</p>
+          <Link href="/portfolio/gallery" className={styles.backLink}>Back</Link>
         </div>
       </div>
     </>
