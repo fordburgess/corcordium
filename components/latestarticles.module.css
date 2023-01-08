@@ -47,7 +47,6 @@
   .articleContainer {
     display: flex;
     margin-left: 50px;
-    min-height: auto;
     margin-bottom: 25px;
   }
 
