@@ -100,6 +100,7 @@ const Project = ({ project }) => {
         <div className={styles.info}>
           <h1>{project.title}</h1>
           <p>{project.text}</p>
+          <Link href="/portfolio/gallery" className={styles.backLink}>Back</Link>
         </div>
       </div>
     </>
