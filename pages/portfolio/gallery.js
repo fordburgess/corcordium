@@ -36,13 +36,15 @@ function Gallery({ photos }) {
             var name = item.title.split(/[0-9]/)[0];
             var link = `/portfolio/${projId(name)}`
             return (
-              <div key={item.title} className={styles.contentContainer}>
-                <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                <div className={styles.info}>
-                  <h1>{name}</h1>
-                  <Link href={link} className={styles.readMore}>Read More</Link>
+              // <Link href={link} key={index}>
+                <div key={item.title} className={styles.contentContainer}>
+                  <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
+                  <div className={styles.info}>
+                    <h1>{name}</h1>
+                    <Link href={link} className={styles.readMore}>Read More</Link>
+                  </div>
                 </div>
-              </div>
+              // </Link>
             )
           })}
         </div>

@@ -66,6 +66,25 @@
   text-align: center;
 }
 
+.image {
+  height: auto;
+  width: 99%;
+  transition: 0.15s;
+  z-index: -5;
+}
+
+.imageContainer {
+  line-height: 1;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
 .readMore {
 color: #FFFFFF;
   text-decoration: underline;

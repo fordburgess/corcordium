@@ -10,10 +10,6 @@ const contact = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.header}>
-         <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
-          <h3>Contact</h3>
-        </div>
         <div className={styles.mainContent}>
           <div className={styles.leftContainer}>
             <h2 className={styles.blurb}>
