@@ -3,15 +3,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
-import Projects from './projects.json';
+import Projects from '../../temporaryJSONfiles/projects.json';
 
 function Gallery({ photos }) {
-  const [activeProject, setActiveProject] = useState("all")
-  console.log(activeProject)
   var test = [...photos[0]];
 
-    var allImages = true;
+  // temporary and will remove
+  const projId = (string) => {
+    var id = null
 
+    switch(string) {
+      case "Innocente":
+        id = 0
+        break;
+      case "Restriction":
+        id = 1
+        break;
+      case "Movement":
+        id = 2
+        break;
+    }
+    return id
+  }
 
   return (
     <>
@@ -20,45 +33,23 @@ function Gallery({ photos }) {
           <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
           <h3>Portfolio</h3>
         </div>
-        {activeProject == "all" ? (
-            <div className={styles.imageContainer}>
-              {test.map(item => {
-                if (activeProject !== "all" && !item.title.includes(activeProject)) {
-                  allImages = false;
-                }
-                let imgUrl = "http://drive.google.com/uc?export=view&id=" + item.id;
-                var name = item.title.split(/[0-9]/)[0];
-                return (
-                  <div key={item.title} className={styles.contentContainer}>
-                    <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                    <div className={styles.info}>
-                      <h1>{name}</h1>
-                      <p className={styles.readMore} onClick={() => setActiveProject(name)}>Read More</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-        ) : (
-            <div className={styles.projectContainer}>
-              <div className={styles.projectPhotoContainer}>
-                {test.map(item => {
-                  let imgUrl = "http://drive.google.com/uc?export=view&id=" + item.id;
-                  if (item.title.includes(activeProject)) {
-                    return (
-                      <div key={item.title} className={styles.contentContainer}>
-                        <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                      </div>
-                    )
-                  }
-                })}
+        <div className={styles.imageContainer}>
+          {test.map((item, index) => {
+
+            let imgUrl = "http://drive.google.com/uc?export=view&id=" + item.id;
+            var name = item.title.split(/[0-9]/)[0];
+            var link = `/portfolio/${projId(name)}`
+            return (
+              <div key={item.title} className={styles.contentContainer}>
+                <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
+                <div className={styles.info}>
+                  <h1>{name}</h1>
+                  <Link href={link} className={styles.readMore}>Read More</Link>
+                </div>
               </div>
-              <div className={styles.projectContentContainer}>
-                <h1>{activeProject}</h1>
-                {/* <h6>{project.text}</h6> */}
-              </div>
-            </div>
-          )}
+            )
+          })}
+        </div>
       </div>
     </>
   )

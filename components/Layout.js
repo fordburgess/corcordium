@@ -23,7 +23,7 @@ export default function Layout({ children }) {
   //     </>
   //   )
   // }
-  if (!router.pathname.includes("articles") && !router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("gallery")) {
+  if (!router.pathname.includes("articles") && !router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("portfolio")) {
     return (
       <>
         <style jsx global>

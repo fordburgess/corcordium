@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+.header h3 {
+  font-size: 22px;
+  font-family: Alata;
+}
+
+.images {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.photo {
+  max-height: 60vh;
+}
+
+.info {
+  text-align: left;
+  padding: 0 50px;
+}
+
+.info h1 {
+  font-family: Alata;
+  font-size: 45px;
+  margin-bottom: 0;
+}
+
+.info p {
+  font-family: Georgia;
+}
+
+@media (min-width: 800px) {
+  .contentContainer {
+    width: 90vw;
+    height: 100vw;
+    margin: 0 auto;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    font-family: Alata;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    z-index: 5;
+    padding: 10px 50px;
+    height: 15vh;
+  }
+
+  .logo {
+    height: 250px;
+    width: 250px;
+  }
+
+  .header h3 {
+    font-size: 40px;
+  }
+
+  .contentContainer {
+    display: flex;
+    width: 90vw;
+    height: 100vw;
+    margin: 0 auto;
+  }
+}
