@@ -71,17 +71,6 @@ const Articles = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Link href="/">
-          {mobile ? (
-            <Image src={AltLogo} alt="logo" className={styles.altLogo} />
-          ) : (
-            <Image src={Logo} alt="logo" className={styles.logo}/>
-          )
-        }
-        </Link>
-        <h2>Blog</h2>
-      </div>
       <div className={styles.articleContainerMobile}>
         {MobileContent()}
       </div>

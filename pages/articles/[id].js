@@ -59,10 +59,6 @@ const Article = ({ article }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Image src={Logo} alt="logo" className={styles.logo} />
-        <h3>Blog</h3>
-      </div>
       <div className={styles.articleHeader}>
         <img src={article.mainPhoto} alt="mainPhoto" className={styles.mainPhoto}/>
         <h1 className={styles.articleTitle}>{article.title}</h1>

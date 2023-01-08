@@ -29,10 +29,6 @@ function Gallery({ photos }) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
-          <h3>Portfolio</h3>
-        </div>
         <div className={styles.imageContainer}>
           {test.map((item, index) => {
 
