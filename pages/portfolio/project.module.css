@@ -42,9 +42,12 @@
 
 @media (min-width: 800px) {
   .contentContainer {
-    width: 90vw;
-    height: 100vw;
+    width: 95vw;
+    height: 82vh;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
   }
   .header {
     display: flex;
@@ -59,20 +62,37 @@
     padding: 10px 50px;
     height: 15vh;
   }
-
   .logo {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
   }
-
   .header h3 {
     font-size: 40px;
   }
-
-  .contentContainer {
-    display: flex;
-    width: 90vw;
-    height: 100vw;
+  .images {
+    display: block;
+    width: 45%;
+    column-count: 3;
+    column-gap: 0px;
     margin: 0 auto;
+  }
+
+  .photo {
+    height: auto;
+    width: 99%;
+  }
+  .info {
+    width: 40%;
+    text-align: right;
+    padding-top: 20px;
+    line-height: 1.5;
+  }
+  .info::-webkit::-webkit-scrollbar {
+    display: none;
+  }
+
+  .info h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
   }
 }
