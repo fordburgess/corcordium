@@ -17,7 +17,7 @@ export default function About() {
         <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
       </div>
       <div className={styles.subContainerRightDesktop}>
-        <h1 className={styles.header}>About</h1>
+        <h1 className={styles.heading}>About</h1>
         <div style={{textAlign: "left"}}>
           <p className={styles.content}>
             Cor Cordium (lat.) / Heart of Hearts

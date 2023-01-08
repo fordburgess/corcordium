@@ -1,69 +1,43 @@
-@font-face {
-  font-family: "Georgia";
-  src: local("Georgia"),
-    url("../fonts/Georgia.ttf") format("truetype");
-}
-@font-face {
-  font-family: "ZenKakuGothic";
-  src: local("ZenKakuGothicAntique-Regular"),
-    url("../fonts/ZenKakuGothicAntique-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Alata";
-  src: local("Alata-Regular"),
-    url("../fonts/Alata-Regular.ttf") format("truetype");
-}
+
 
 .container {
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  display: flex;
-  overflow: hidden;
+  display: block;
 }
-
-.subContainerLeftDesktop {
-  height: 100%;
-  flex-basis: 45%;
-  min-width: 45%;
-  background-image: url('../media/LeelouAbout3.jpeg');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 50px;
-}
-
 .logo {
-  height: 93px;
-  width: 280px;
+  height: 83px;
+  width: 250px;
+  margin-top: 40px;
+}
+.subContainerLeftDesktop {
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center top;
+  background-image: url('../media/LeelouAbout.jpeg');
+  display: flex;
+  justify-content: center;
 }
 
 .subContainerRightDesktop {
-  flex-basis: 55%;
-  min-width: 55%;
-  /* height: 100%; */
-  box-sizing: border-box;
-  padding: 40px 160px;
-  text-align: center;
-  overflow-y: scroll;
+  overflow: hidden;
+  padding: 0 40px;
 }
 
-.header {
+.heading {
   font-family: Alata;
-  margin-bottom: 55px;
+  font-size: 50px;
+  padding: 0 20px;
+  margin: 15px 0 0;
 }
-
 .content {
+  padding: 0 20px;
+  line-height: 1.5;
   font-family: Georgia;
-  font-size: 16px;
-  margin-bottom: 45px;
 }
 
 .miniFooter {
   width: 100%;
+  margin: 30px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,23 +53,42 @@
   color: #000000;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   .container {
-    display: block;
-    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
   }
 
   .subContainerLeftDesktop {
-    width: 100%;
-    height: 100vh;
+    height: 100%;
+    flex-basis: 45%;
+    min-width: 45%;
+    background-image: url('../media/LeelouAbout3.jpeg');
     background-size: cover;
     background-position: center;
-    background-image: url('../media/LeelouAbout.jpeg');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .subContainerRightDesktop {
-    width: 100%;
-    padding: 40px 80px;
-    overflow: hidden;
+    flex-basis: 55%;
+    min-width: 55%;
+    /* height: 100%; */
+    box-sizing: border-box;
+    padding: 40px 120px 25px;
+    text-align: center;
+    overflow-y: scroll;
   }
+
+  .heading {
+    margin-bottom: 50px;
+  }
+
+  .miniFooter {
+    margin-top: 50px;
+  }
+
 }
