@@ -1,12 +1,56 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './contact.module.css';
 import Logo from '../media/logo1.png';
 import Instagram from '../media/insta.svg'
 import Image from 'next/image';
 import Link from 'next/link'
 import styled from 'styled-components';
+import { sendContactForm } from '../lib/api';
 
-const contact = () => {
+const Contact = () => {
+  const name = useRef();
+  const email = useRef();
+  const message = useRef();
+  const refs = [name, email, message]
+
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id] : e.target.value
+    }))
+  }
+
+  const onSubmit = async (e) => {
+
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id] : e.target.value
+    }));
+
+    if (name.current.value == "" || email.current.value == "" || message.current.value == "") {
+      alert("Please fill out all of the boxes")
+    }
+    else {
+      await sendContactForm(inputs);
+
+      setTimeout(() => {
+        alert("Thank you for your message! I will get back to you soon :)")
+      }, 1000);
+
+      setInputs({
+        name: "",
+        email: "",
+        message: "",
+      })
+    }
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -26,12 +70,12 @@ const contact = () => {
             <p className={styles.emailAddress}>
               leeloureboh.<strong style={{textDecoration: "underline"}}>corcordium@gmail.com</strong>
             </p>
-            <form className={styles.contactForm}>
-              <input type="text" placeholder='Name'/>
-              <input type="text" placeholder='Email'/>
-              <textarea type="text" placeholder='Message'/>
+            <form className={styles.contactForm} >
+              <input ref={name} type="text" id="name" value={inputs.name} onChange={handleChange} placeholder='Name'/>
+              <input ref={email} type="email" id="email" value={inputs.email} onChange={handleChange} placeholder='Email'/>
+              <textarea ref={message} type="text" id="message" value={inputs.message} onChange={handleChange} placeholder='Message'/>
             </form>
-            <button className={styles.submitButton}>Send</button>
+            <button className={styles.submitButton} onClick={onSubmit}>Send</button>
           </div>
         </div>
         <div className={styles.miniFooter}>
@@ -46,4 +90,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

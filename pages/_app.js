@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { CloudinaryContext } from "cloudinary-react";
 import createEmotionCache from '../utility/createEmotionCache';
 import { makeStyles } from "@mui/styles";
-import theme from '../styles/theme.js';
 import Layout from '../components/Layout';
 
 const clientSideEmotionCache = createEmotionCache();

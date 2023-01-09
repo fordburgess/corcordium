@@ -175,6 +175,10 @@
     border-bottom: none;
   }
 
+  .error {
+    border: solid 2px red;
+  }
+
   .submitButton:hover {
     cursor: pointer;
     transform: scale(1.01);
