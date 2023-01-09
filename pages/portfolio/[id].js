@@ -31,11 +31,12 @@ export const getStaticProps = async (context) => {
   await fetch("https://www.googleapis.com/drive/v2/files?q=%27" + process.env.NEXT_PUBLIC_DIR_ID + "%27+in+parents&key=" + process.env.NEXT_PUBLIC_G_KEY)
     .then(res => res.json())
     .then(jsonRes => {
-      for (var i = 0; i < jsonRes.items.length; i++) {
-        if (jsonRes.items[i].title.includes(project.title)) {
-          photos.push(jsonRes.items[i])
-        }
-      }
+      photos = [...jsonRes.items];
+      // for (var i = 0; i < jsonRes.items.length; i++) {
+      //   if (jsonRes.items[i].title.includes(project.title)) {
+      //     photos.push(jsonRes.items[i])
+      //   }
+      // }
     })
 
   project.images = photos
