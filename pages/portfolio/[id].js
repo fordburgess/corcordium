@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './project.module.css';
-import Logo from '../../media/Logo.png';
+import Logo from '../../media/logo.png';
 import AltLogo from '../../media/AltLogo.png';
 import Projects from '../../temporaryJSONfiles/projects.json';
 import { Hidden } from '@mui/material';
