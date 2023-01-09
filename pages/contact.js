@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './contact.module.css';
 import Logo from '../media/logo1.png';
 import Instagram from '../media/insta.svg'
 import Image from 'next/image';
 import Link from 'next/link'
 import styled from 'styled-components';
+import { sendContactForm } from '../lib/api';
+import { on } from 'ramda';
 
-const contact = () => {
+const Contact = () => {
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id] : e.target.value
+    }))
+    console.log(inputs)
+  }
+
+  const onSubmit = async (e) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id] : e.target.value
+    }));
+    await sendContactForm(inputs);
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -26,12 +50,12 @@ const contact = () => {
             <p className={styles.emailAddress}>
               leeloureboh.<strong style={{textDecoration: "underline"}}>corcordium@gmail.com</strong>
             </p>
-            <form className={styles.contactForm}>
-              <input type="text" placeholder='Name'/>
-              <input type="text" placeholder='Email'/>
-              <textarea type="text" placeholder='Message'/>
+            <form className={styles.contactForm} >
+              <input type="text" id="name" value={inputs.name} onChange={handleChange} placeholder='Name'/>
+              <input type="email" id="email" value={inputs.email} onChange={handleChange} placeholder='Email'/>
+              <textarea type="text" id="message" value={inputs.message} onChange={handleChange} placeholder='Message'/>
             </form>
-            <button className={styles.submitButton}>Send</button>
+            <button className={styles.submitButton} onClick={onSubmit}>Send</button>
           </div>
         </div>
         <div className={styles.miniFooter}>
@@ -46,4 +70,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
