@@ -12,6 +12,7 @@ const Navbar = (props) => {
   const desktop = useMediaQuery('(min-width: 800px');
   const [lastScrollY, setLastScrollY] = useState(0);
   const [show, setShow] = useState(true);
+  const [whiteBG, setWhiteBG] = useState(false);
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -25,18 +26,30 @@ const Navbar = (props) => {
     }
   }
 
+  const navbarBackground = () => {
+    if (window.scrollY > 1160 && desktop) {
+      setWhiteBG(true);
+    }
+    else {
+      setWhiteBG(false);
+    }
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
+      window.addEventListener('scroll', controlNavbar)
+      window.addEventListener('scroll', navbarBackground);
 
       return () => {
-        window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener('scroll', controlNavbar)
+        window.removeEventListener('scroll', navbarBackground);
       };
     }
-  }, [lastScrollY])
+  }, [lastScrollY]);
+
 
   return (
-    <div className={styles.container} style={{justifyContent: "space-between", width: "100vw"}}>
+    <div className={styles.container} style={{justifyContent: "space-between", width: "100vw", backgroundColor: whiteBG && "rgba(0,0,0,0.2)"}}>
       <div className={styles.subcontainer} style={{visibility: show ? 'visible' : 'hidden', opacity: show ? 1 : 0}}>
         {desktop ? (
           <Image src={LogoWhite} alt="logo" style={{height: "400px", width: "400px"}}/>
