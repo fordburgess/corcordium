@@ -68,7 +68,7 @@ const Contact = () => {
               Email
             </h2>
             <p className={styles.emailAddress}>
-              leeloureboh.<strong style={{textDecoration: "underline"}}>corcordium@gmail.com</strong>
+            <strong style={{textDecoration: "underline"}}>leeloureboh.corcordium@gmail.com</strong>
             </p>
             <form className={styles.contactForm} >
               <input ref={name} type="text" id="name" value={inputs.name} onChange={handleChange} placeholder='Name'/>
