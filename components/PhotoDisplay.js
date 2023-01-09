@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import ReactPlayer from 'react-player'
 import { useMediaQuery } from '@mui/material'
 import styles from './photodisplay.module.css'
 import Angela1 from '../media/angela1.jpg'
@@ -40,7 +41,9 @@ const PhotoDisplay = () => {
         </div>
       </div>
       <div className={styles.desktopContainer}>
-        <div className={styles.desktopHero}></div>
+        <div className={styles.test}>
+          <ReactPlayer url="../media/styling-video.mp4" className={styles.video}/>
+        </div>
         <div className={styles.smallPhotoContainer}>
           {photos.map((photo, index) => {
             return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
