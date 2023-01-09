@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import { CacheProvider } from "@emotion/react";
 import { ThemeProvider } from "@mui/material";
 import { useRouter } from "next/router";
