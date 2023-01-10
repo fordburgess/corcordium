@@ -5,12 +5,11 @@ import styles from './project.module.css';
 import Logo from '../../media/logo.png';
 import AltLogo from '../../media/AltLogo.png';
 import Projects from '../../temporaryJSONfiles/projects.json';
-import { Hidden } from '@mui/material';
+import getPhotos from '../../lib/photos';
 
 export const getStaticPaths = async () => {
-  console.log(Projects)
   const paths = Projects.projects.map(project => {
-    console.log(project)
+
     return {
       params: { id: project.id.toString() }
     }
@@ -26,20 +25,16 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
   const project = Projects.projects[id];
 
-  var photos = [];
+  var photos = await getPhotos();
+  var projectPhotos = [];
 
-  await fetch("https://www.googleapis.com/drive/v2/files?q=%27" + process.env.NEXT_PUBLIC_DIR_ID + "%27+in+parents&key=" + process.env.NEXT_PUBLIC_G_KEY)
-    .then(res => res.json())
-    .then(jsonRes => {
-      for (var i = 0; i < jsonRes.items.length; i++) {
-        if (jsonRes.items[i].title.includes(project.title)) {
-          photos.push(jsonRes.items[i])
-        }
-      }
-    })
+  for (var i = 0; i < photos.length; i++) {
+    if (photos[i].title.includes(project.title)) {
+      projectPhotos.push(photos[i]);
+    }
+  }
 
-  project.images = photos
-
+  project.images = projectPhotos;
 
   return {
     props: {
