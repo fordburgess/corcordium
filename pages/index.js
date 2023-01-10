@@ -12,7 +12,7 @@ export default function Home() {
       <Head>
         <title>Corcordium</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="https://freepngdownload.com/image/thumb/heart-png-free-image-download-1.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <PhotoDisplay />
       <LatestArticles />
