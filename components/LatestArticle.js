@@ -6,7 +6,6 @@ import styles from "./latestarticle.module.css"
 
 const LatestArticle = (props) => {
   const router = useRouter();
-  console.log(props)
 
   var path = `/articles/${props.id}`
 

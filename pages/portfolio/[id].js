@@ -5,7 +5,7 @@ import styles from './project.module.css';
 import Logo from '../../media/logo.png';
 import AltLogo from '../../media/AltLogo.png';
 import Projects from '../../temporaryJSONfiles/projects.json';
-import getPhotos from '../../lib/photos';
+import { getPhotos } from '../../lib/photos';
 
 export const getStaticPaths = async () => {
   const paths = Projects.projects.map(project => {
