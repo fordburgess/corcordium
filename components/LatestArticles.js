@@ -21,7 +21,6 @@ const Content = () => {
 
 
 const LatestArticles = () => {
-  console.log(Content());
 
   return (
     <>

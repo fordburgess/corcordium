@@ -7,7 +7,6 @@ import parse, { domToReact } from 'html-react-parser';
 
 export const getStaticPaths = async () => {
   const paths = Articles.articles.map(item => {
-    console.log(item);
     return {
       params: { id: item.id.toString() }
     }
