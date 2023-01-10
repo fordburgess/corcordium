@@ -33,7 +33,6 @@ const useMediaQuery = (width) => {
 };
 
 const AltNavbar = (props) => {
-  const mobile = useMediaQuery(800)
 
   return (
     <div className={styles.header}>
