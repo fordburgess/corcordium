@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Logo from '../media/logo1.png';
 import AltLogo from '../media/AltLogo.png'
 import styles from './altnavbar.module.css';
+import { Hidden } from '@mui/material'
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -36,14 +37,12 @@ const AltNavbar = (props) => {
 
   return (
     <div className={styles.header}>
-      <Link href="/">
-          {mobile ? (
-            <Image src={AltLogo} alt="logo" className={styles.logo} />
-          ) : (
-            <Image src={Logo} alt="logo" className={styles.logo}/>
-          )
-        }
-        </Link>
+      <Hidden only={['lg', 'xl']}>
+        <Link href="/"><Image src={AltLogo} alt="logo" className={styles.logo} /></Link>
+      </Hidden>
+      <Hidden only={['sm', 'xs']}>
+        <Link href="/"><Image src={Logo} alt="logo" className={styles.logo} /></Link>
+      </Hidden>
         <h1>{props.title}</h1>
     </div>
   )
