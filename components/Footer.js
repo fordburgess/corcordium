@@ -7,6 +7,15 @@ import { style } from '@mui/system';
 
 
 export default function Footer({}) {
+  const shareData = {
+    title: "Test",
+    text: "Text test",
+    url: "https://corcordium.vercel.app/"
+  }
+
+  async function handlShare() {
+    await navigator.share(shareData);
+  }
 
   return (
     <div className={styles.container}>
@@ -18,7 +27,7 @@ export default function Footer({}) {
         <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
           <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
         </a>
-        <a href="" className={styles.link}>Share</a>
+        <p onClick={() => handlShare()} className={styles.share}>Share</p>
       </div>
     </div>
   );
