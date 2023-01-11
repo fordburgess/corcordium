@@ -32,7 +32,7 @@ const TwoMostRecent = () => {
   for (var i = 0; i <= 1; i++) {
     var link = `/articles/${material[i].id}`;
     content.push(
-      <div className={styles.twoMostRecent}>
+      <div className={styles.twoMostRecent} key={i}>
         <Link href={link} style={{textDecoration: "none", color: "black"}}>
           <img src={material[i].mainPhoto} alt="headlinePhoto" className={styles.mostRecentImage}/>
           <p className={styles.mostRecentDate}>{material[i].date}</p>
@@ -53,7 +53,7 @@ const OlderArticles = () => {
     var link = `/articles/${material[i].id}`;
 
     content.push(
-      <div className={styles.olderArticleContainer}>
+      <div className={styles.olderArticleContainer} key={i}>
         <Link href={link} style={{textDecoration: "none", color: "black"}}>
           <img src={material[i].mainPhoto} alt="headlinePhoto" className={styles.olderArticlesImage}/>
           <p className={styles.olderArticlesDate}>{material[i].date}</p>

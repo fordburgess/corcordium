@@ -10,7 +10,7 @@ export default function Footer(props) {
   const shareData = {
     title: props.title,
     text: "",
-    url: props.path
+    url: "https://corcordiu.vercel.app"
   }
 
   async function handlShare() {
