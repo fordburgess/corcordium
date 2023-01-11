@@ -42,6 +42,7 @@ export default function Layout({ children }) {
     )
   }
   else if (router.pathname.includes("articles") || router.pathname.includes("portfolio")) {
+
       return (
       <>
         <style jsx global>
