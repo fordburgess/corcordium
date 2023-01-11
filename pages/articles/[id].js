@@ -52,11 +52,11 @@ const Article = ({ article }) => {
     }
   }
 
-  var test = article.text.replaceAll("<p>", " ").replaceAll("</p>", " ");
+  // var test = article.text.replaceAll("<p>", " ").replaceAll("</p>", " ");
 
-  console.log(test);
+  // console.log(test);
 
-  var result = parse(test, options)
+  var result = parse(article.text, options)
 
 
 
