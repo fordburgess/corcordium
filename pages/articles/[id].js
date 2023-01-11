@@ -52,7 +52,11 @@ const Article = ({ article }) => {
     }
   }
 
-  var text = parse(article.text, options)
+  var test = article.text.replaceAll("<p>", " ").replaceAll("</p>", " ");
+
+  console.log(test);
+
+  var result = parse(test, options)
 
 
 
@@ -65,7 +69,7 @@ const Article = ({ article }) => {
         <h4 className={styles.articleDate}>{article.date}</h4>
       </div>
       <div className={styles.textContainer}>
-        {text}
+        {result}
       </div>
     </div>
   )

@@ -83,12 +83,16 @@
   flex-direction: column;
 }
 
-.textContainer p {
+.textContainer span {
   margin: 0;
+
+  display: inline;
 }
 
 .textContainer img {
   margin: 20px auto;
+  max-height: 250px;
+  max-width: 100%;
 
 }
 
@@ -98,5 +102,9 @@
     width: 50%;
     margin: 0 auto;
     font-size: 18px;
+  }
+
+  .textContainer img {
+    max-height: 500px;
   }
 }
