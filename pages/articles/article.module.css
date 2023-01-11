@@ -58,6 +58,7 @@
 .articleTitle {
   font-family: Alata;
   margin-top: 20px;
+  padding: 0 20px;
   margin-bottom: 5px;
 }
 
@@ -76,10 +77,23 @@
 .textContainer {
   padding: 20px 30px;
   font-family: Georgia;
+  line-height: 1.5;
+  white-space: wrap;
+  display: flex;
+  flex-direction: column;
 }
 
+.textContainer p {
+  margin: 0;
+}
+
+.textContainer img {
+  margin: 20px auto;
+
+}
 
 @media (min-width: 800px) {
+
   .textContainer {
     width: 50%;
     margin: 0 auto;
