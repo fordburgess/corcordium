@@ -54,7 +54,7 @@ export default function Layout({ children }) {
         </style>
         <AltNavbar title={altNavTitle}/>
           <main>{children}</main>
-        <Footer />
+        <Footer path={router.pathname} title={altNavTitle}/>
       </>
     )
   }
