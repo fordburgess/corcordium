@@ -6,11 +6,11 @@ import Instagram from '../media/insta.svg'
 import { style } from '@mui/system';
 
 
-export default function Footer({}) {
+export default function Footer(props) {
   const shareData = {
-    title: "Test",
-    text: "Text test",
-    url: "https://corcordium.vercel.app/"
+    title: props.title,
+    text: "",
+    url: props.path
   }
 
   async function handlShare() {
