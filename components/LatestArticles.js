@@ -9,6 +9,7 @@ const Content = () => {
   for (var i = 0; i <= 2; i++) {
     content.push(
       <LatestArticle
+      key={i}
       date={Articles.articles[i].date}
       title={Articles.articles[i].title}
       image={Articles.articles[i].mainPhoto}
@@ -29,8 +30,8 @@ const LatestArticles = () => {
         <div className={styles.articleContainer}>
           {Content()}
         </div>
-      </div>
       <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link>
+      </div>
     </>
   )
 }
