@@ -53,4 +53,18 @@ const InstaFeed = () => {
   )
 }
 
+InstaFeed.getInitialProps = async (ctx) => {
+
+
+  await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_url,thumbnail_url,timestamp,username&access_token=${process.env.NEXT_PUBLIC_INSTA_TOKEN}`)
+      .then(res => res.json())
+      .then(res => {
+        setPosts(res.data)
+        setPost1(res.data[0].media_url)
+        setPost2(res.data[1].media_url)
+        setPost3(res.data[2].media_url)
+      });
+
+}
+
 export default InstaFeed
