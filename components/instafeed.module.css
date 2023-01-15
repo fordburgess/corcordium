@@ -8,16 +8,32 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+  padding-bottom: 150px;
 }
 
 .subContainer {
-  height: 500px;
-  padding: 50px 0;
-  width: 80%;
+  height: 375px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.header {
-  font-family: Georgia;
+.subContainer h4 {
+  font-family: Georgia-Light;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.subContainer h2 {
+  font-family: Alata;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+.mobileFeed {
+  display: flex;
+  width: 100vw;
+  height: 100%;
 }
 
 .post {
@@ -25,4 +41,18 @@
 }
 .postImage {
   height: 100%;
+}
+
+.desktopFeed {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .mobileFeed {
+    display: none;
+  }
+
+  .desktopFeed {
+    display: block;
+  }
 }
