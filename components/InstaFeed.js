@@ -7,8 +7,9 @@ import styles from './instafeed.module.css';
 
 
 const InstaFeed = (props) => {
-  var posts = props.posts
+  var posts = props.posts.data
 
+  console.log(posts);
   const link = "https://instagram.com/corcordium.archive"
   //test
 
