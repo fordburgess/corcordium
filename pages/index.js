@@ -4,8 +4,9 @@ import styles from './index.module.css';
 import PhotoDisplay from '../components/PhotoDisplay';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
+import { getFeed } from '../lib/feed';
 
-export default function Home() {
+export default function Home({ feed }) {
 
   return (
     <div>
@@ -16,7 +17,22 @@ export default function Home() {
       </Head>
       <PhotoDisplay />
       <LatestArticles />
-      <InstaFeed />
+      <InstaFeed props={feed}/>
     </div>
   )
+}
+
+
+export const getStaticProps = async () => {
+  var result = await getFeed();
+
+  var feed = {
+    photos: result
+  }
+
+  return {
+    props: {
+      feed
+    }
+  }
 }
