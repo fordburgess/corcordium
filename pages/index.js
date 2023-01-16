@@ -4,7 +4,6 @@ import styles from './index.module.css';
 import PhotoDisplay from '../components/PhotoDisplay';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
-import { getFeed } from '../lib/feed';
 
 export default function Home({ feed }) {
 
