@@ -11,7 +11,6 @@ const InstaFeed = (props) => {
 
   console.log(posts);
   const link = "https://instagram.com/corcordium.archive"
-  //test
 
   return (
     <div className={styles.container}>
