@@ -6,7 +6,7 @@ import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
 import { getFeed } from '../lib/feed';
 
-export default function Home({ feed }) {
+export default function Home({ result }) {
 
   return (
     <div>
@@ -17,7 +17,7 @@ export default function Home({ feed }) {
       </Head>
       <PhotoDisplay />
       <LatestArticles />
-      <InstaFeed props={feed}/>
+      <InstaFeed posts={result}/>
     </div>
   )
 }
@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      feed
+      result
     }
   }
 }

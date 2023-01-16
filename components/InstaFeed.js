@@ -7,7 +7,7 @@ import styles from './instafeed.module.css';
 
 
 const InstaFeed = (props) => {
-  const posts = props.props.photos // no idea why this is like this but I will fix it
+  var posts = props.posts
 
   const link = "https://instagram.com/corcordium.archive"
   //test
