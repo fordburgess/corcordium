@@ -4,8 +4,9 @@ import styles from './index.module.css';
 import PhotoDisplay from '../components/PhotoDisplay';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
+import { getFeed } from '../lib/feed';
 
-export default function Home({feed}) {
+export default function Home({ feed }) {
 
   return (
     <div>
@@ -16,22 +17,22 @@ export default function Home({feed}) {
       </Head>
       <PhotoDisplay />
       <LatestArticles />
-      <InstaFeed posts={feed}/>
+      <InstaFeed props={feed}/>
     </div>
   )
 }
 
 
 export const getStaticProps = async () => {
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,thumbnail_url,timestamp,username&access_token=${process.env.NEXT_PUBLIC_INSTA_TOKEN}`;
+  var result = await getFeed();
 
-  const data = await fetch(url);
-  const feed = await data.json();
-  const result = feed.data
+  var feed = {
+    photos: result
+  }
 
   return {
     props: {
-      feed: result
+      feed
     }
   }
 }
