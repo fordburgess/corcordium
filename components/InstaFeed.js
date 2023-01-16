@@ -39,10 +39,10 @@ const InstaFeed = () => {
         <h4 className={styles.header}>For more fashion stories</h4>
         <Link href={link} style={{ color: "#000000" }}><h2 className={styles.header}>@corcordium.archive</h2></Link>
         <div className={styles.mobileFeed}>
-          <div style={{ backgroundImage: `url(${post1})`, height: "100%", width: "50%", backgroundSize: "cover"}}></div>
+          <div style={{ backgroundImage: `url(${posts[0].media_url})`, height: "100%", width: "50%", backgroundSize: "cover"}}></div>
           <div style={{ display: "flex", flexDirection: "column", width: "50%"}}>
-            <img src={post2} style={{ height: "50%", width: "100%", objectFit: "cover"}} />
-            <img src={post3} style={{ height: "50%", width: "100%", objectFit: "cover"}} />
+            <img src={posts[1].media_url} style={{ height: "50%", width: "100%", objectFit: "cover"}} />
+            <img src={posts[2].media_url} style={{ height: "50%", width: "100%", objectFit: "cover"}} />
           </div>
         </div>
         <div className={styles.desktopFeed}>
