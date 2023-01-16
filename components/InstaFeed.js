@@ -6,32 +6,12 @@ import styles from './instafeed.module.css';
 
 
 
-const InstaFeed = () => {
-  const [posts, setPosts] = useState([]);
-  const [post1, setPost1] = useState([])
-  const [post2, setPost2] = useState('');
-  const [post3, setPost3] = useState('');
+const InstaFeed = (props) => {
+  var posts = props.posts;
 
-  useEffect(() => {
+  console.log(posts)
 
-    async function fetchPosts() {
-      await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_url,thumbnail_url,timestamp,username&access_token=${process.env.NEXT_PUBLIC_INSTA_TOKEN}`)
-      .then(res => res.json())
-      .then(res => {
-        setPosts(res.data)
-        setPost1(res.data[0].media_url)
-        setPost2(res.data[1].media_url)
-        setPost3(res.data[2].media_url)
-      });
-
-    }
-    fetchPosts();
-  }, [])
-
-
-  const link = "https://www.instagram.com/corcordium.archive/"
-
-
+  const link = "https://instagram.com/corcordium.archive"
 
   return (
     <div className={styles.container}>
@@ -51,20 +31,6 @@ const InstaFeed = () => {
       </div>
     </div>
   )
-}
-
-InstaFeed.getInitialProps = async (ctx) => {
-
-
-  await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_url,thumbnail_url,timestamp,username&access_token=${process.env.NEXT_PUBLIC_INSTA_TOKEN}`)
-      .then(res => res.json())
-      .then(res => {
-        setPosts(res.data)
-        setPost1(res.data[0].media_url)
-        setPost2(res.data[1].media_url)
-        setPost3(res.data[2].media_url)
-      });
-
 }
 
 export default InstaFeed
