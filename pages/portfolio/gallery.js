@@ -30,7 +30,7 @@ function Gallery({ photos }) {
     <>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          {test.map((item, index) => {
+          {test.sort((a, b) => 0.5 - Math.random()).map((item, index) => {
 
             let imgUrl = "http://drive.google.com/uc?export=view&id=" + item.id;
             var name = item.title.split(/[0-9]/)[0];
