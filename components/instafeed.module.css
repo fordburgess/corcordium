@@ -61,7 +61,7 @@
 
   .desktopFeed {
     display: flex;
-    min-width: 75vw;
+    width: 75vw;
     margin: 0 auto;
     flex-wrap: wrap;
   }
