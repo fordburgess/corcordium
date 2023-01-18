@@ -54,8 +54,7 @@
   }
 
   .container {
-    /* height: 750px; */
-
+    margin-bottom: 50px;
     height: 700px;
   }
 

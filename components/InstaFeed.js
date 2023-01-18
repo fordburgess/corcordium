@@ -8,6 +8,7 @@ import styles from './instafeed.module.css';
 
 const InstaFeed = (props) => {
   var posts = props.posts.data
+  console.log(posts)
 
   const link = "https://instagram.com/corcordium.archive"
 
@@ -27,8 +28,10 @@ const InstaFeed = (props) => {
           {posts.map((post, index) => {
             console.log(post)
             return (
-              <div key={index} style={{width: "25%", height: "290px"}}>
-                <img src={post.media_url} style={{height: "100%", width: "100%"}}/>
+              <div style={{width: "25%", height: "290px"}} key={index}>
+                <Link href={post.permalink}>
+                  <img src={post.media_url} style={{height: "100%", width: "100%"}}/>
+                </Link>
               </div>
             )
           })}
