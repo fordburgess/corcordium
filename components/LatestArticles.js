@@ -30,8 +30,8 @@ const LatestArticles = () => {
         <div className={styles.articleContainer}>
           {Content()}
         </div>
-      <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link>
       </div>
+      <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link>
     </>
   )
 }
