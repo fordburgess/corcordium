@@ -38,11 +38,13 @@ function Gallery({ photos }) {
             return (
               // <Link href={link} key={index}>
                 <div key={item.title} className={styles.contentContainer}>
-                  <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                  <div className={styles.info}>
-                    <h1>{name}</h1>
-                    <Link href={link} className={styles.readMore}>Read More</Link>
-                  </div>
+                  <Link href={link} className={styles.mobileLink}>
+                    <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
+                    <div className={styles.info}>
+                      <h1 style={{marginBottom: "50px"}}>{name}</h1>
+                      <Link href={link} className={styles.readMore}>Read More</Link>
+                    </div>
+                  </Link>
                 </div>
               // </Link>
             )

@@ -85,18 +85,19 @@ color: #FFFFFF;
 
   .header h3 {
     font-size: 40px;
+    margin-bottom: 20px;
   }
 
-  .logo {
-    height: 83px;
-    width: 250px;
-    margin-top: 20px;
+  .info {
+    height: 30%;
   }
 
   .image {
     height: auto;
-    width: 99%;
-    margin: 1px;
+    width: 99.8%;
+    margin: 0.5px;
+    margin-right: 0.1px;
+    margin-left: 0.1px;
     transition: 0.15s;
     z-index: -5;
   }
@@ -121,27 +122,6 @@ color: #FFFFFF;
   }
 
   .imageContainer {
-    /* line-height: 0;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 0px;
-    -moz-column-count: 3;
-    -moz-column-gap: 0px; */
-    column-count: 3;
-    column-gap: 0px;
-    width: 90vw;
-    margin: 0 auto;
-    padding-top: 200px;
-  }
-
-  .projectContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-    margin: 0 auto;
-  }
-
-  .projectPhotoContainer {
-    width: 45%;
     line-height: 0;
     -webkit-column-count: 3;
     -webkit-column-gap: 0px;
@@ -149,6 +129,9 @@ color: #FFFFFF;
     -moz-column-gap: 0px;
     column-count: 3;
     column-gap: 0px;
-    overflow-y: scroll;
+    width: 90vw;
+    margin: 0 auto;
+    padding-top: 200px;
   }
+
 }

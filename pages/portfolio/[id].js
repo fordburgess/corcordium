@@ -4,8 +4,10 @@ import Image from 'next/image';
 import styles from './project.module.css';
 import Logo from '../../media/logo.png';
 import AltLogo from '../../media/AltLogo.png';
+import Instagram from '../../media/insta.svg'
 import Projects from '../../temporaryJSONfiles/projects.json';
 import { getPhotos } from '../../lib/photos';
+import { Hidden } from '@mui/material'
 
 export const getStaticPaths = async () => {
   const paths = Projects.projects.map(project => {
@@ -75,11 +77,12 @@ const Project = ({ project }) => {
   return (
     <>
       <div className={styles.header}>
-        {mobile ? (
+        <Hidden only={['lg', 'xl']}>
           <Link href="/"><Image src={AltLogo} alt="logo" className={styles.logo}/></Link>
-        ) : (
+        </Hidden>
+        <Hidden only={['sm', 'xs']}>
           <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
-        )}
+        </Hidden>
           <div className={styles.test}></div>
         <h3>Portfolio</h3>
       </div>
@@ -96,6 +99,13 @@ const Project = ({ project }) => {
           <h1>{project.title}</h1>
           <p>{project.text}</p>
           <Link href="/portfolio/gallery" className={styles.backLink}>Back</Link>
+          <div className={styles.miniFooter}>
+            <Link href="/contact" className={styles.link}>Contact</Link>
+            <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
+              <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
+            </a>
+            <a href="" className={styles.link}>Share</a>
+          </div>
         </div>
       </div>
     </>

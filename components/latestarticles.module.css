@@ -16,7 +16,6 @@
   width: 100vw;
   box-sizing: border-box;
   overflow-x: scroll;
-  margin-bottom: 50px;
 }
 
 .header {
@@ -35,6 +34,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 800px) {
@@ -48,7 +48,6 @@
   .articleContainer {
     display: flex;
     margin-left: 50px;
-    margin-bottom: 25px;
   }
 
   .header {
