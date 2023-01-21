@@ -72,10 +72,11 @@
   font-family: ZenKakuGothic;
   font-size: 15px;
   margin-top: 0;
+  margin-bottom: -5px;
 }
 
 .textContainer {
-  padding: 20px 30px;
+  padding: 10px 30px 20px;
   font-family: Georgia;
   line-height: 1.5;
   white-space: wrap;
