@@ -5,6 +5,7 @@ import Logo from '../media/logo1.png';
 import AltLogo from '../media/AltLogo.png'
 import styles from './altnavbar.module.css';
 import { Hidden } from '@mui/material'
+import cx from 'classnames';
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -33,6 +34,16 @@ const useMediaQuery = (width) => {
 };
 
 const AltNavbar = (props) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    if (open) {
+      setOpen(false)
+    } else {
+      setOpen(true);
+    }
+    console.log(open);
+  }
 
   return (
     <div className={styles.header}>
@@ -43,6 +54,14 @@ const AltNavbar = (props) => {
         <Link href="/"><Image src={Logo} alt="logo" className={styles.logo} /></Link>
       </Hidden>
         <h1>{props.title}</h1>
+      {/* <Hidden> */}
+        <div className={cx(styles.navIcon, open && styles.open)} onClick={() => handleClick()}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      {/* </Hidden> */}
     </div>
   )
 }
