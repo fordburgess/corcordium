@@ -101,7 +101,7 @@
 
 .menu.open {
   display: flex;
-  position: sticky;
+  position: fixed;
   z-index: 5;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
@@ -142,7 +142,7 @@
     top: 16vh;
   }
 
-  .link {
+  .link.open {
     font-size: 15px;
   }
 
