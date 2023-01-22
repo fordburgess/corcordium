@@ -30,7 +30,7 @@ function Gallery({ photos }) {
     <>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          {test.sort((a, b) => 0.5 - Math.random()).map((item, index) => {
+          {test.map((item, index) => {
 
             let imgUrl = "http://drive.google.com/uc?export=view&id=" + item.id;
             var name = item.title.split(/[0-9]/)[0];
@@ -63,7 +63,7 @@ Gallery.getInitialProps = async (ctx) => {
 
   await fetch(URL_START + process.env.NEXT_PUBLIC_DIR_ID + URL_END + process.env.NEXT_PUBLIC_G_KEY)
     .then(res => res.json())
-    .then(jsonRes => imgIds.push(jsonRes.items));
+    .then(jsonRes => imgIds.push(jsonRes.items.sort((a, b) => 0.5 - Math.random())));
 
   return {
     photos: imgIds,

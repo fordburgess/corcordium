@@ -58,10 +58,10 @@ const Navbar = (props) => {
         )}
       </div>
       <div className={styles.links} style={{visibility: show ? 'hidden' : 'visible', opacity: show ? 0 : 1}}>
-        <Link href="/about" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>About</h3></Link>
-        <Link href="/portfolio/gallery" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Portfolio</h3></Link>
-        <Link href="/articles/articles" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Articles</h3></Link>
-        <Link href="/contact" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>Contact</h3></Link>
+        <Link href="/about" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>ABOUT</h3></Link>
+        <Link href="/portfolio/gallery" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>GALLERY</h3></Link>
+        <Link href="/articles/articles" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>ARTICLES</h3></Link>
+        <Link href="/contact" style={{color: desktop ? "#FFFFFF" : "#000000"}} className={styles.link}><h3>CONTACT</h3></Link>
       </div>
     </div>
   );

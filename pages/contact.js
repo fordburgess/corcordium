@@ -28,10 +28,12 @@ const Contact = () => {
 
   const onSubmit = async (e) => {
 
-    setInputs((prev) => ({
-      ...prev,
-      [e.target.id] : e.target.value
-    }));
+    setTimeout(() => {
+      setInputs((prev) => ({
+        ...prev,
+        [e.target.id] : e.target.value
+      }));
+    }, 250);
 
     if (name.current.value == "" || email.current.value == "" || message.current.value == "") {
       alert("Please fill out all of the boxes")
@@ -41,7 +43,7 @@ const Contact = () => {
 
       setTimeout(() => {
         alert("Thank you for your message! I will get back to you soon :)")
-      }, 1000);
+      }, 250);
 
       setInputs({
         name: "",
