@@ -42,7 +42,7 @@ const AltNavbar = (props) => {
     setOpen(false)
   }, [router.asPath])
 
-  const routes = ['/about', '/contact', '/articles/articles', 'portfoio/gallery']
+  const routes = ['/about', '/contact', '/articles/articles', '/portfolio/gallery']
 
   const handleClick = () => {
     setOpen(prev => !prev)
