@@ -42,6 +42,8 @@ const AltNavbar = (props) => {
     setOpen(false)
   }, [router.asPath])
 
+  const routes = ['/about', '/contact', '/articles/articles', 'portfoio/gallery']
+
   const handleClick = () => {
     setOpen(prev => !prev)
   }
@@ -64,10 +66,16 @@ const AltNavbar = (props) => {
           </div>
       </div>
       <div className={cx(styles.menu, open && styles.open)}>
-        <Link href="/about" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>About</h3></Link>
-        <Link href="/portfolio/gallery" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>Portfolio</h3></Link>
-        <Link href="/articles/articles" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>Articles</h3></Link>
-        <Link href="/contact" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>Contact</h3></Link>
+        <Link href="/" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>HOME</h3></Link>
+        {routes.map((route, index) => {
+          var title = route.split("/")[1].toUpperCase();
+
+          if (!router.pathname.includes(route)) {
+            return (
+              <Link key={index} href={route} style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>{title}</h3></Link>
+            )
+          }
+        })}
       </div>
     </>
   )

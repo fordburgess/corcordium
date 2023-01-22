@@ -33,6 +33,10 @@
   transition: .25s ease-in-out;
 }
 
+.navIcon:hover {
+  cursor: pointer;
+}
+
 .navIcon div {
   display: block;
   position: absolute;
@@ -118,7 +122,7 @@
   display: block;
   text-decoration: none;
   font-family: Alata;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 @media (min-width: 800px) {
@@ -130,14 +134,21 @@
     justify-content: center;
   }
 
+  .navIcon {
+    margin-left: 550px;
+  }
+
   .menu.open {
     top: 16vh;
+  }
+
+  .link {
+    font-size: 15px;
   }
 
   .header h1 {
     font-size: 40px;
     margin-left: 400px;
-    margin-right: 550px;
   }
 
   .logo {
