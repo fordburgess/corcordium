@@ -131,11 +131,7 @@
     padding-left: 10px;
     height: 14vh;
     z-index: 5;
-    justify-content: center;
-  }
-
-  .navIcon {
-    margin-left: 550px;
+    justify-content: space-between;
   }
 
   .menu.open {
@@ -148,7 +144,9 @@
 
   .header h1 {
     font-size: 40px;
-    margin-left: 400px;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
   }
 
   .logo {
