@@ -37,6 +37,7 @@ const useMediaQuery = (width) => {
 const AltNavbar = (props) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  var title = props.title == 'Gallery' ? 'Portfolio' : props.title
 
   useEffect(() => {
     setOpen(false)
@@ -45,6 +46,7 @@ const AltNavbar = (props) => {
   const routes = ['/about', '/contact', '/articles/articles', '/portfolio/gallery']
 
   const handleClick = () => {
+    console.log(props.title)
     setOpen(prev => !prev)
   }
 
@@ -57,7 +59,7 @@ const AltNavbar = (props) => {
         <Hidden only={['sm', 'xs']}>
           <Link href="/"><Image src={Logo} alt="logo" className={styles.logo} /></Link>
         </Hidden>
-          <h1>{props.title}</h1>
+          <h1>{title}</h1>
           <div className={cx(styles.navIcon, open && styles.open)} onClick={() => handleClick()}>
             <div></div>
             <div></div>

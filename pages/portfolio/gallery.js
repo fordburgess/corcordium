@@ -8,6 +8,7 @@ import Projects from '../../temporaryJSONfiles/projects.json';
 function Gallery({ photos }) {
   var test = [...photos[0]];
 
+  console.log(test);
   // temporary and will remove
   const projId = (string) => {
     var id = null
@@ -36,17 +37,15 @@ function Gallery({ photos }) {
             var name = item.title.split(/[0-9]/)[0];
             var link = `/portfolio/${projId(name)}`
             return (
-              // <Link href={link} key={index}>
-                <div key={item.title} className={styles.contentContainer}>
-                  <Link href={link} className={styles.mobileLink}>
-                    <img src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
-                    <div className={styles.info}>
-                      <h1 style={{marginBottom: "50px"}}>{name}</h1>
-                      <Link href={link} className={styles.readMore}>Read More</Link>
-                    </div>
-                  </Link>
-                </div>
-              // </Link>
+              <div key={item.title} className={styles.contentContainer}>
+                <Link href={link} className={styles.mobileLink}>
+                  <Image width={99} height={100} src={imgUrl} alt="portfolio" key={item.id} className={styles.image}/>
+                  <div className={styles.info}>
+                    <h1 style={{marginBottom: "50px"}}>{name}</h1>
+                    <Link href={link} className={styles.readMore}>Read More</Link>
+                  </div>
+                </Link>
+              </div>
             )
           })}
         </div>
@@ -63,7 +62,7 @@ Gallery.getInitialProps = async (ctx) => {
 
   await fetch(URL_START + process.env.NEXT_PUBLIC_DIR_ID + URL_END + process.env.NEXT_PUBLIC_G_KEY)
     .then(res => res.json())
-    .then(jsonRes => imgIds.push(jsonRes.items.sort((a, b) => 0.5 - Math.random())));
+    .then(jsonRes => imgIds.push(jsonRes.items));
 
   return {
     photos: imgIds,

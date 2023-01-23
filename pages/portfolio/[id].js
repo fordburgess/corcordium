@@ -91,7 +91,7 @@ const Project = ({ project }) => {
           {project.images.map(photo => {
             var url = "http://drive.google.com/uc?export=view&id=" + photo.id;
             return (
-              <img src={url} key={photo.title} className={styles.photo}/>
+              <Image height={100} width={99.8} src={url} key={photo.title} className={styles.photo}/>
             )
           })}
         </div>
