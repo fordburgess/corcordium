@@ -3,4 +3,16 @@ const nextConfig = {
   reactStrictMode: false,
 }
 
-module.exports = nextConfig
+module.exports = {
+  // images: {
+  //   domains: ['drive.google.com']
+  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  }
+}
