@@ -54,7 +54,6 @@ const Article = ({ article }) => {
 
   // var test = article.text.replaceAll("<p>", " ").replaceAll("</p>", " ");
 
-  // console.log(test);
 
   var result = parse(article.text, options)
 

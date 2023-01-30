@@ -5,11 +5,11 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['drive.google.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: "http"
-    //   }
-    // ]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**"
+      }
+    ]
   },
 }

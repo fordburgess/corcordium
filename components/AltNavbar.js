@@ -46,7 +46,6 @@ const AltNavbar = (props) => {
   const routes = ['/about', '/contact', '/articles/articles', '/portfolio/gallery']
 
   const handleClick = () => {
-    console.log(props.title)
     setOpen(prev => !prev)
   }
 
