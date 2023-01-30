@@ -1,5 +1,6 @@
 import { flexbox } from '@mui/system';
 import Link from 'next/link'
+import Image from "next/image"
 import React, { useState, useEffect } from 'react';
 
 import styles from './instafeed.module.css';
@@ -8,7 +9,6 @@ import styles from './instafeed.module.css';
 
 const InstaFeed = (props) => {
   var posts = props.posts.data
-  console.log(posts)
 
   const link = "https://instagram.com/corcordium.archive"
 
@@ -30,7 +30,7 @@ const InstaFeed = (props) => {
             return (
               <div style={{width: "25%", height: "290px"}} key={index}>
                 <Link href={post.permalink}>
-                  <img src={post.media_url} style={{height: "100%", width: "100%"}}/>
+                  <Image width={100} height={100} src={post.media_url} style={{height: "100%", width: "100%"}}/>
                 </Link>
               </div>
             )
