@@ -24,7 +24,7 @@ function Gallery({ photos }) {
         id = 2
         break;
     }
-    return id
+    return id;
   }
 
   return (
@@ -33,7 +33,7 @@ function Gallery({ photos }) {
         <div className={styles.imageContainer}>
           {photos.map((item, index) => {
             var testUrl = "https:" + item.fields.file.url
-            console.log(item.fields.file.url)
+            console.log(item.fields)
             return (
             //   <div key={item.title} className={styles.contentContainer}>
             //     <Link href={link} className={styles.mobileLink}>
