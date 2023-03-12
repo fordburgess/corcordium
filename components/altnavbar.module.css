@@ -125,7 +125,7 @@
   font-size: 12px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .header {
     padding: 10px 50px;
     padding-left: 10px;
