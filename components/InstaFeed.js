@@ -12,13 +12,13 @@ const InstaFeed = (props) => {
   const link = "https://instagram.com/corcordium.archive"
 
   var postImages = [];
-  for (var i = 0; i < 8; i++) {
-    postImages.push(<div style={{width: "25%", height: "290px"}}>
-    <Link href={posts[i].permalink}>
-      <Image width={100} height={100} src={posts[i].media_url} style={{height: "100%", width: "100%", objectFit: "cover"}}/>
-    </Link>
-  </div>)
-  }
+  // for (var i = 0; i < 8; i++) {
+  //   postImages.push(<div style={{width: "25%", height: "290px"}}>
+  //   <Link href={posts[i].permalink}>
+  //     <Image width={100} height={100} src={posts[i].media_url} style={{height: "100%", width: "100%", objectFit: "cover"}}/>
+  //   </Link>
+  // </div>)
+  // }
 
   return (
     <div className={styles.container}>
