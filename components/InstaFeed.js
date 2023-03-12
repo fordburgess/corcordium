@@ -9,8 +9,16 @@ import styles from './instafeed.module.css';
 
 const InstaFeed = (props) => {
   var posts = props.posts.data
-
   const link = "https://instagram.com/corcordium.archive"
+
+  var postImages = [];
+  for (var i = 0; i < 8; i++) {
+    postImages.push(<div style={{width: "25%", height: "290px"}}>
+    <Link href={posts[i].permalink}>
+      <Image width={100} height={100} src={posts[i].media_url} style={{height: "100%", width: "100%"}}/>
+    </Link>
+  </div>)
+  }
 
   return (
     <div className={styles.container}>
@@ -25,16 +33,7 @@ const InstaFeed = (props) => {
           </div>
         </div>
         <div className={styles.desktopFeed}>
-          {posts.map((post, index) => {
-            console.log(post)
-            return (
-              <div style={{width: "25%", height: "290px"}} key={index}>
-                <Link href={post.permalink}>
-                  <Image width={100} height={100} src={post.media_url} style={{height: "100%", width: "100%"}}/>
-                </Link>
-              </div>
-            )
-          })}
+          {postImages}
         </div>
       </div>
     </div>
