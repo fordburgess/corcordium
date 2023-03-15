@@ -32,18 +32,22 @@ function Gallery({ photos }) {
       <div className={styles.container}>
         <div className={styles.imageContainer}>
           {photos.map((item, index) => {
-            var testUrl = "https:" + item.fields.file.url
-            console.log(item.fields)
+            var title = item.fields.title.split("-")[0];
+            var photoUrl = "https:" + item.fields.file.url
+            var projectLink = `${projId(title)}`;
+
+            console.log(item.fields.title)
+
             return (
-            //   <div key={item.title} className={styles.contentContainer}>
-            //     <Link href={link} className={styles.mobileLink}>
-                  <Image width={99} height={100} src={testUrl} alt="portfolio" key={index} className={styles.image}/>
-            //       <div className={styles.info}>
-            //         <h1 style={{marginBottom: "50px"}}>{name}</h1>
-            //         <Link href={link} className={styles.readMore}>Read More</Link>
-            //       </div>
-            //     </Link>
-            //   </div>
+              <div key={item.title} className={styles.contentContainer}>
+                {/* <Link className={styles.mobileLink}> */}
+                  <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
+                  <div className={styles.info}>
+                    <h1 style={{marginBottom: "50px"}}>{title}</h1>
+                    <Link href={projectLink} className={styles.readMore}>Read More</Link>
+                  </div>
+                {/* </Link> */}
+              </div>
             )
           })}
         </div>
@@ -54,17 +58,7 @@ function Gallery({ photos }) {
 
 Gallery.getInitialProps = async (ctx) => {
   var data = [];
-//
-//   const URL_START = "https://www.googleapis.com/drive/v2/files?q=%27";
-//   const URL_END = "%27+in+parents&key=";
-//
-//   await fetch(URL_START + process.env.NEXT_PUBLIC_DIR_ID + URL_END + process.env.NEXT_PUBLIC_G_KEY)
-//     .then(res => res.json())
-//     .then(jsonRes => imgIds.push(jsonRes.items));
-//
-//   return {
-//     photos: imgIds,
-//   }
+
   const client = contentful.createClient({
     space: "8nj05hr9nsqo",
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
@@ -79,7 +73,7 @@ Gallery.getInitialProps = async (ctx) => {
   // .then(() => console.log(data))
 
   return {
-    photos: data
+    photos: data.sort((a, b) => 0.5 - Math.random())
   }
 }
 

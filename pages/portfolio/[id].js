@@ -87,9 +87,9 @@ const Project = ({ project }) => {
         <h3>Portfolio</h3>
       </div>
       <div className={styles.contentContainer}>
-        <div className={styles.images}>
+        {/* <div className={styles.images}>
           {project.images.map(photo => {
-            var url = "http://drive.google.com/uc?export=view&id=" + photo.id;
+            // var url = "http://drive.google.com/uc?export=view&id=" + photo.id;
             return (
               <Image
                 height={100}
@@ -101,7 +101,7 @@ const Project = ({ project }) => {
               />
             )
           })}
-        </div>
+        </div> */}
         <div className={styles.info}>
           <h1>{project.title}</h1>
           <p>{project.text}</p>
