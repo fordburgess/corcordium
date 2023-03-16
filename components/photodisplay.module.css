@@ -45,7 +45,6 @@
 
 .galleryLink {
   color: #000000;
-
 }
 
 /* desktop */
@@ -82,6 +81,7 @@
     height: 50vh;
     width: 100vw;
     overflow: hidden;
+    margin-bottom: 15px;
   }
 
   .container {

@@ -46,6 +46,9 @@ const PhotoDisplay = () => {
             return <Image src={photo} key={index} alt={index} className={styles.smallPhotos}/>
           })}
         </div>
+        <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+          <Link href="/portfolio/gallery" className={styles.galleryLink}><p>See more</p></Link>
+        </div>
       </div>
     </>
     )
