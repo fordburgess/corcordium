@@ -6,7 +6,7 @@ import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
 
 export default function Home({ feed }) {
-
+  console.log(feed);
   return (
     <div>
       <Head>
