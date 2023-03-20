@@ -31,7 +31,7 @@ const TwoMostRecent = (articles) => {
 
   articles.forEach(article => {
       // var link = `/articles/${article.id}`;
-      console.log(article)
+
       content.push(
         <div className={styles.twoMostRecent}>
           <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
@@ -53,11 +53,9 @@ const OlderArticles = (articles) => {
 
     content.push(
       <div className={styles.olderArticleContainer}>
-
-          <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.olderArticlesImage}/>
-          <p className={styles.olderArticlesDate}>{article.date}</p>
-          <h3 className={styles.olderArticlesTitle}>{article.title}</h3>
-
+        <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.olderArticlesImage}/>
+        <p className={styles.olderArticlesDate}>{article.date}</p>
+        <h3 className={styles.olderArticlesTitle}>{article.title}</h3>
       </div>
     )
   })
@@ -67,7 +65,7 @@ const OlderArticles = (articles) => {
 
 const Articles = ({ articles }) => {
   const mobile = useMediaQuery("(max-width: 800px)")
-  console.log(articles)
+  var older = articles.slice(2);
 
   return (
     <div className={styles.container}>
@@ -77,9 +75,9 @@ const Articles = ({ articles }) => {
       <div className={styles.mostRecentArticles}>
         {TwoMostRecent([articles[0], articles[1]])}
       </div>
-      {/* <div className={styles.olderArticles}>
-        {OlderArticles(articles.splice(0, 2))}
-      </div> */}
+      <div className={styles.olderArticles}>
+        {OlderArticles(older)}
+      </div>
     </div>
   )
 }
