@@ -36,17 +36,17 @@ function Gallery({ photos }) {
             var photoUrl = "https:" + item.fields.file.url
             var projectLink = `${projId(title)}`;
 
-            console.log(item.fields.title)
+            console.log(item.fields)
 
             return (
               <div key={item.title} className={styles.contentContainer}>
-                {/* <Link className={styles.mobileLink}> */}
+                <Link href={projectLink} className={styles.mobileLink}>
                   <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
                   <div className={styles.info}>
                     <h1 style={{marginBottom: "50px"}}>{title}</h1>
                     <Link href={projectLink} className={styles.readMore}>Read More</Link>
                   </div>
-                {/* </Link> */}
+                </Link>
               </div>
             )
           })}
