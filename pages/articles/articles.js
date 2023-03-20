@@ -7,6 +7,7 @@ import LatestArticle from '../../components/LatestArticle'
 import styles from './articles.module.css'
 import ArticleContent from '../../temporaryJSONfiles/temporaryArticles.json'
 import { useMediaQuery } from '@mui/material'
+var contentful = require("contentful")
 
 const MobileContent = () => {
   const content = [];
@@ -25,22 +26,26 @@ const MobileContent = () => {
   return content;
 }
 
-const TwoMostRecent = () => {
+const TwoMostRecent = (articles) => {
   const material = ArticleContent.articles;
   const content = [];
 
-  for (var i = 0; i <= 1; i++) {
-    var link = `/articles/${material[i].id}`;
-    content.push(
-      <div className={styles.twoMostRecent} key={i}>
-        <Link href={link} style={{textDecoration: "none", color: "black"}}>
-          <img src={material[i].mainPhoto} alt="headlinePhoto" className={styles.mostRecentImage}/>
-          <p className={styles.mostRecentDate}>{material[i].date}</p>
-          <h3 className={styles.mostRecentTitle}>{material[i].title}</h3>
-        </Link>
-      </div>
-    )
-  }
+
+
+  articles.forEach(article => {
+      var link = `/articles/${article.id}`;
+      console.log(article.titlePhoto)
+
+      content.push(
+        <div className={styles.twoMostRecent}>
+          <Link href={link} style={{textDecoration: "none", color: "black"}}>
+            <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
+            {/* <p className={styles.mostRecentDate}>{material[i].date}</p>
+            <h3 className={styles.mostRecentTitle}>{material[i].title}</h3> */}
+          </Link>
+        </div>
+      )
+    })
 
   return content;
 }
@@ -66,22 +71,43 @@ const OlderArticles = () => {
   return content;
 }
 
-const Articles = () => {
+const Articles = ({ articles }) => {
   const mobile = useMediaQuery("(max-width: 800px)")
 
   return (
     <div className={styles.container}>
-      <div className={styles.articleContainerMobile}>
+      {/* <div className={styles.articleContainerMobile}>
         {MobileContent()}
-      </div>
+      </div> */}
       <div className={styles.mostRecentArticles}>
-        {TwoMostRecent()}
+        {TwoMostRecent([articles[0], articles[1]])}
       </div>
-      <div className={styles.olderArticles}>
+      {/* <div className={styles.olderArticles}>
         {OlderArticles()}
-      </div>
+      </div> */}
     </div>
   )
+}
+
+Articles.getInitialProps = async (ctx) => {
+  var data = [];
+
+  const client = contentful.createClient({
+    space: "8nj05hr9nsqo",
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+  })
+
+  await client.getEntries()
+  .then(function(res) {
+    res.items.forEach(item => {
+      data.push(item.fields)
+    })
+  })
+  // .then(() => console.log(data))
+
+  return {
+    articles: data
+  }
 }
 
 export default Articles
