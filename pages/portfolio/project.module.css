@@ -19,10 +19,12 @@
 .images {
   display: flex;
   overflow-x: scroll;
+  height: 30vh;
 }
 
 .photo {
-  max-height: 60vh;
+  height: 100%;
+  width: auto;
 }
 
 .info {
@@ -127,7 +129,8 @@
   .info {
     width: 40%;
     text-align: right;
-    padding-top: 20px;
+    padding-bottom: 20px;
+
     line-height: 1.5;
   }
   .info::-webkit::-webkit-scrollbar {

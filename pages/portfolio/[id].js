@@ -8,6 +8,7 @@ import Instagram from '../../media/insta.svg'
 import Projects from '../../temporaryJSONfiles/projects.json';
 import { getPhotos } from '../../lib/photos';
 import { Hidden } from '@mui/material'
+var contentful = require("contentful")
 
 export const getStaticPaths = async () => {
   const paths = Projects.projects.map(project => {
@@ -26,17 +27,21 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const project = Projects.projects[id];
+  project.images = [];
 
-  var photos = await getPhotos();
-  var projectPhotos = [];
+  const client = contentful.createClient({
+    space: "8nj05hr9nsqo",
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+  })
 
-  for (var i = 0; i < photos.length; i++) {
-    if (photos[i].title.includes(project.title)) {
-      projectPhotos.push(photos[i]);
-    }
-  }
-
-  project.images = projectPhotos;
+  await client.getAssets()
+  .then(function(res) {
+    res.items.forEach(item => {
+      if (item.fields.title.includes(project.title)) {
+        project.images.push(item.fields);
+      }
+    })
+  })
 
   return {
     props: {
@@ -73,6 +78,7 @@ const useMediaQuery = (width) => {
 
 const Project = ({ project }) => {
   var mobile = useMediaQuery(800);
+  console.log(project.images)
 
   return (
     <>
@@ -87,12 +93,13 @@ const Project = ({ project }) => {
         <h3>Portfolio</h3>
       </div>
       <div className={styles.contentContainer}>
-        {/* <div className={styles.images}>
+        <div className={styles.images}>
           {project.images.map(photo => {
-            // var url = "http://drive.google.com/uc?export=view&id=" + photo.id;
+            var url = "https:" + photo.file.url
+
             return (
               <Image
-                height={100}
+                height={1000}
                 width={99.8}
                 src={url}
                 key={photo.title}
@@ -101,7 +108,7 @@ const Project = ({ project }) => {
               />
             )
           })}
-        </div> */}
+        </div>
         <div className={styles.info}>
           <h1>{project.title}</h1>
           <p>{project.text}</p>
