@@ -37,7 +37,7 @@ const useMediaQuery = (width) => {
 const AltNavbar = (props) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  var title = props.title == 'Gallery' ? 'Portfolio' : props.title
+  var title = props.title;
 
   useEffect(() => {
     setOpen(false)
@@ -69,8 +69,8 @@ const AltNavbar = (props) => {
       <div className={cx(styles.menu, open && styles.open)}>
         <Link href="/" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>HOME</h3></Link>
         {routes.map((route, index) => {
-          var title = route.split("/")[1].toUpperCase();
-
+          var title = route.includes("gallery") ? "GALLERY" : route.split("/")[1].toUpperCase();
+          console.log(title);
           if (!router.pathname.includes(route)) {
             return (
               <Link key={index} href={route} style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>{title}</h3></Link>
