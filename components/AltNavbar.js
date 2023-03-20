@@ -70,7 +70,6 @@ const AltNavbar = (props) => {
         <Link href="/" style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>HOME</h3></Link>
         {routes.map((route, index) => {
           var title = route.includes("gallery") ? "GALLERY" : route.split("/")[1].toUpperCase();
-          console.log(title);
           if (!router.pathname.includes(route)) {
             return (
               <Link key={index} href={route} style={{color: "#000000"}} className={cx(styles.link, open && styles.open)}><h3>{title}</h3></Link>

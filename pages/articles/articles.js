@@ -27,22 +27,16 @@ const MobileContent = () => {
 }
 
 const TwoMostRecent = (articles) => {
-  const material = ArticleContent.articles;
   const content = [];
 
-
-
   articles.forEach(article => {
-      var link = `/articles/${article.id}`;
-      console.log(article.titlePhoto)
-
+      // var link = `/articles/${article.id}`;
+      console.log(article)
       content.push(
         <div className={styles.twoMostRecent}>
-          <Link href={link} style={{textDecoration: "none", color: "black"}}>
-            <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
-            {/* <p className={styles.mostRecentDate}>{material[i].date}</p>
-            <h3 className={styles.mostRecentTitle}>{material[i].title}</h3> */}
-          </Link>
+          <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
+          <p className={styles.mostRecentDate}>{article.date}</p>
+          <h3 className={styles.mostRecentTitle}>{article.title}</h3>
         </div>
       )
     })
@@ -50,29 +44,30 @@ const TwoMostRecent = (articles) => {
   return content;
 }
 
-const OlderArticles = () => {
+const OlderArticles = (articles) => {
   const material = ArticleContent.articles;
   const content = [];
 
-  for (var i = 2; i < material.length; i++) {
-    var link = `/articles/${material[i].id}`;
+  articles.forEach(article => {
+    // var link = `/articles/${article.id}`;
 
     content.push(
-      <div className={styles.olderArticleContainer} key={i}>
-        <Link href={link} style={{textDecoration: "none", color: "black"}}>
-          <img src={material[i].mainPhoto} alt="headlinePhoto" className={styles.olderArticlesImage}/>
-          <p className={styles.olderArticlesDate}>{material[i].date}</p>
-          <h3 className={styles.olderArticlesTitle}>{material[i].title}</h3>
-        </Link>
+      <div className={styles.olderArticleContainer}>
+
+          <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.olderArticlesImage}/>
+          <p className={styles.olderArticlesDate}>{article.date}</p>
+          <h3 className={styles.olderArticlesTitle}>{article.title}</h3>
+
       </div>
     )
-  }
+  })
 
   return content;
 }
 
 const Articles = ({ articles }) => {
   const mobile = useMediaQuery("(max-width: 800px)")
+  console.log(articles)
 
   return (
     <div className={styles.container}>
@@ -83,7 +78,7 @@ const Articles = ({ articles }) => {
         {TwoMostRecent([articles[0], articles[1]])}
       </div>
       {/* <div className={styles.olderArticles}>
-        {OlderArticles()}
+        {OlderArticles(articles.splice(0, 2))}
       </div> */}
     </div>
   )
