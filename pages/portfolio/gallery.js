@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
@@ -67,7 +67,9 @@ Gallery.getInitialProps = async (ctx) => {
   await client.getAssets()
   .then(function(res) {
     res.items.forEach(item => {
-      data.push(item)
+      if (item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
+        data.push(item)
+      }
     })
   })
   // .then(() => console.log(data))

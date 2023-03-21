@@ -4,11 +4,29 @@ import Image from 'next/image';
 import Articles from '../../temporaryJSONfiles/temporaryArticles.json';
 import Logo from '../../media/logo1.png';
 import parse, { domToReact } from 'html-react-parser';
+import { getArticles } from '../../lib/getArticles.js';
+var contentful = require("contentful")
+var articles = await getArticles();
+
 
 export const getStaticPaths = async () => {
-  const paths = Articles.articles.map(item => {
+//   const client = contentful.createClient({
+//     space: "8nj05hr9nsqo",
+//     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+//   })
+//
+//   const data = [];
+//
+//   await client.getEntries()
+//   .then(function(res) {
+//     res.items.forEach(item => {
+//       data.push(item.fields)
+//     })
+//   })
+
+  const paths = articles.map(item => {
     return {
-      params: { id: item.id.toString() }
+      params: { id: item.titlePhoto.sys.id.toString() }
     }
   })
 
@@ -20,8 +38,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const article = Articles.articles[id];
 
+  var article = {};
+
+  for (var i = 0; i < articles.length; i++) {
+    if (articles[i].titlePhoto.sys.id.toString() == id) {
+      article = articles[i];
+    }
+  }
 
   return {
     props: {
@@ -37,38 +61,28 @@ const Article = ({ article }) => {
       if (!attribs) {
         return;
       }
-
-//       if (attribs.id === 'main') {
-//         return <h1 style={{ fontSize: 42 }}>{domToReact(children, options)}</h1>;
-//       }
-//
-//       if (attribs.class === 'prettify') {
-//         return (
-//           <span style={{ color: 'hotpink' }}>
-//             {domToReact(children, options)}
-//           </span>
-//         );
-//       }
     }
   }
 
-  // var test = article.text.replaceAll("<p>", " ").replaceAll("</p>", " ");
+  var string = "";
 
-
-  var result = parse(article.text, options)
-
-
+  for (var i = 0; i < article.content.content.length; i++) {
+    // string += article.content.content[i].content[0].value;
+    if (article.content.content[i].nodeType == "paragraph") {
+      string += article.content.content[i].content[0].value;
+    }
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.articleHeader}>
-        <img src={article.mainPhoto} alt="mainPhoto" className={styles.mainPhoto}/>
+        <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>
         <h1 className={styles.articleTitle}>{article.title}</h1>
         <h3 className={styles.articleSubtitle}>Leelou Reboh</h3>
         <h4 className={styles.articleDate}>{article.date}</h4>
       </div>
       <div className={styles.textContainer}>
-        {result}
+        {string}
       </div>
     </div>
   )
