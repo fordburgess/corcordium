@@ -8,6 +8,7 @@ import Instagram from '../../media/insta.svg'
 import Projects from '../../temporaryJSONfiles/projects.json';
 import { getPhotos } from '../../lib/photos';
 import { Hidden } from '@mui/material'
+import cx from 'classnames';
 var contentful = require("contentful")
 
 export const getStaticPaths = async () => {
@@ -78,7 +79,7 @@ const useMediaQuery = (width) => {
 
 const Project = ({ project }) => {
   var mobile = useMediaQuery(800);
-  console.log(project.images)
+  var poop = mobile ? 'imagesMobile' : 'imagesDesktop';
 
   return (
     <>
@@ -100,7 +101,7 @@ const Project = ({ project }) => {
             return (
               <Image
                 height={1000}
-                width={99.8}
+                width={1000}
                 src={url}
                 key={photo.title}
                 className={styles.photo}
