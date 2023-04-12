@@ -5,6 +5,7 @@ import Logo from '../../media/logo1.png'
 import AltLogo from '../../media/AltLogo.png'
 import LatestArticle from '../../components/LatestArticle'
 import styles from './articles.module.css'
+import dateFormat, { masks } from "dateformat";
 import { useMediaQuery } from '@mui/material'
 var contentful = require("contentful")
 
@@ -17,7 +18,7 @@ const MobileContent = (articles) => {
         <div className={styles.articleInstanceMobile} >
           <Link href={link} style={{textDecoration: "none", color: "black"}}>
             <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.articleImage}/>
-            <p className={styles.date}>{article.date}</p>
+            <p className={styles.date}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
             <h3 className={styles.title}>{article.title}</h3>
           </Link>
         </div>
@@ -36,7 +37,7 @@ const TwoMostRecent = (articles) => {
         <div className={styles.twoMostRecent}>
           <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
             <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
-            <p className={styles.mostRecentDate}>{article.date}</p>
+            <p className={styles.mostRecentDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
             <h3 className={styles.mostRecentTitle}>{article.title}</h3>
           </Link>
         </div>
@@ -56,7 +57,7 @@ const OlderArticles = (articles) => {
       <div className={styles.olderArticleContainer}>
         <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
           <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.olderArticlesImage}/>
-          <p className={styles.olderArticlesDate}>{article.date}</p>
+          <p className={styles.olderArticlesDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
           <h3 className={styles.olderArticlesTitle}>{article.title}</h3>
         </Link>
       </div>
