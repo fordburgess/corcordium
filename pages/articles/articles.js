@@ -5,7 +5,6 @@ import Logo from '../../media/logo1.png'
 import AltLogo from '../../media/AltLogo.png'
 import LatestArticle from '../../components/LatestArticle'
 import styles from './articles.module.css'
-import ArticleContent from '../../temporaryJSONfiles/temporaryArticles.json'
 import { useMediaQuery } from '@mui/material'
 var contentful = require("contentful")
 
@@ -13,6 +12,7 @@ const MobileContent = (articles) => {
   const content = [];
   articles.map(article => {
     var link = `/articles/${article.titlePhoto.sys.id}`;
+
     content.push(
         <div className={styles.articleInstanceMobile} >
           <Link href={link} style={{textDecoration: "none", color: "black"}}>
@@ -38,16 +38,15 @@ const TwoMostRecent = (articles) => {
             <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
             <p className={styles.mostRecentDate}>{article.date}</p>
             <h3 className={styles.mostRecentTitle}>{article.title}</h3>
-        </Link>
-          </div>
+          </Link>
+        </div>
       )
-    })
+  })
 
   return content;
 }
 
 const OlderArticles = (articles) => {
-  const material = ArticleContent.articles;
   const content = [];
 
   articles.forEach(article => {
@@ -98,6 +97,7 @@ Articles.getInitialProps = async (ctx) => {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
+      console.log(item)
       data.push(item.fields)
     })
   })
