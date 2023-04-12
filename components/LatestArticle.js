@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import styles from "./latestarticle.module.css"
+import dateFormat, { masks } from "dateformat";
 
 const LatestArticle = (props) => {
   const router = useRouter();
@@ -13,7 +14,7 @@ const LatestArticle = (props) => {
     <div className={styles.container}>
       <Link href={path} className={styles.link}>
         <img src={props.image} alt="article photo" className={styles.image}/>
-        <p className={styles.date}>{props.date}</p>
+        <p className={styles.date}>{dateFormat(Date.parse(props.date), "dd/mm/yyyy")}</p>
         <div style={{width: "100%"}}>
           <h3 className={styles.title}>{props.title}</h3>
         </div>

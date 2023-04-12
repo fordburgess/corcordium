@@ -4,31 +4,32 @@ import Link from 'next/link'
 import LatestArticle from './LatestArticle';
 import Articles from '../temporaryJSONfiles/temporaryArticles.json'
 
-const Content = () => {
+const Content = (articles) => {
   const content = [];
-  for (var i = 0; i <= 2; i++) {
+
+  for (var i = 0; i < 4; i++) {
     content.push(
       <LatestArticle
-      key={i}
-      date={Articles.articles[i].date}
-      title={Articles.articles[i].title}
-      image={Articles.articles[i].mainPhoto}
-      id={Articles.articles[i].id}
+      date={articles[i].date}
+      title={articles[i].title}
+      id={articles[i].titlePhoto.sys.id}
+      image={articles[i].titlePhoto.fields.file.url}
       />
     )
   }
+
   return content;
 }
 
 
-const LatestArticles = () => {
-
+const LatestArticles = ({ articles }) => {
+  console.log(articles)
   return (
     <>
       <div className={styles.container}>
         <h2 className={styles.header}>Latest Articles</h2>
         <div className={styles.articleContainer}>
-          {Content()}
+          {Content(articles)}
         </div>
       </div>
       <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link>
