@@ -8,6 +8,7 @@ import Instagram from '../../media/insta.svg'
 import { getPhotos } from '../../lib/photos';
 import { Hidden } from '@mui/material'
 import cx from 'classnames';
+import Projects from '../../temporaryJSONfiles/projects.json'
 var contentful = require("contentful")
 
 export const getStaticPaths = async () => {
