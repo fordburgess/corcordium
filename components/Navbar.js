@@ -49,7 +49,7 @@ const Navbar = (props) => {
 
 
   return (
-    <div className={styles.container} style={{justifyContent: "space-between", width: "100vw", backgroundColor: whiteBG && "rgba(0,0,0,0.2)"}}>
+    <div className={styles.container} style={{justifyContent: "space-between", width: "100vw", backgroundColor: whiteBG && "rgba(0,0,0,0.4)"}}>
       <div className={styles.subcontainer} style={{visibility: show ? 'visible' : 'hidden', opacity: show ? 1 : 0}}>
         {desktop ? (
           <Image src={LogoWhite} alt="logo" style={{height: "400px", width: "400px"}}/>

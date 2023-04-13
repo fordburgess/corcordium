@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './latestarticles.module.css'
 import Link from 'next/link'
 import LatestArticle from './LatestArticle';
-import Articles from '../temporaryJSONfiles/temporaryArticles.json'
 
 const Content = (articles) => {
   const content = [];
