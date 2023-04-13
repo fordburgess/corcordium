@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './article.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getArticles } from '../../lib/getArticles.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
@@ -75,8 +76,9 @@ const Article = ({ article }) => {
   console.log(article)
   return (
     <div className={styles.container}>
+      <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>
+      <Link href="/articles/articles"><button className={styles.backButton}>Back</button></Link>
       <div className={styles.articleHeader}>
-        <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>
         <h1 className={styles.articleTitle}>{article.title}</h1>
         <h3 className={styles.articleSubtitle}>Leelou Reboh</h3>
         <h4 className={styles.articleDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</h4>
