@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
-import Projects from '../../temporaryJSONfiles/projects.json';
 import { images } from '../../next.config';
 var contentful = require("contentful")
 

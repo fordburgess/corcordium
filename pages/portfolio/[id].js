@@ -5,7 +5,6 @@ import styles from './project.module.css';
 import Logo from '../../media/logo.png';
 import AltLogo from '../../media/AltLogo.png';
 import Instagram from '../../media/insta.svg'
-import Projects from '../../temporaryJSONfiles/projects.json';
 import { getPhotos } from '../../lib/photos';
 import { Hidden } from '@mui/material'
 import cx from 'classnames';
