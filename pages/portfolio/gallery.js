@@ -35,10 +35,8 @@ function Gallery({ photos }) {
             var photoUrl = "https:" + item.fields.file.url
             var projectLink = `${projId(title)}`;
 
-            console.log(item.fields)
-
             return (
-              <div key={item.title} className={styles.contentContainer}>
+              <div key={index} className={styles.contentContainer}>
                 <Link href={projectLink} className={styles.mobileLink}>
                   <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
                   <div className={styles.info}>
@@ -74,8 +72,10 @@ Gallery.getInitialProps = async (ctx) => {
   // .then(() => console.log(data))
 
   return {
-    photos: data.sort((a, b) => 0.5 - Math.random())
+    photos: data
   }
+
+  // data.sort((a, b) => 0.5 - Math.random())
 }
 
 
