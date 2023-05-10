@@ -102,7 +102,7 @@
 }
 
 .backButton {
-  display: none; 
+  display: none;
 }
 
 @media (min-width: 800px) {
@@ -129,6 +129,7 @@
     top: 20vh;
     left: 25px;
     z-index: 999;
+    display: block;
   }
 
   .backButton:hover {
