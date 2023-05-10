@@ -77,7 +77,7 @@ const Article = ({ article }) => {
   return (
     <div className={styles.container}>
       <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>
-      <Link href="/articles/articles"><button className={styles.backButton}>Back</button></Link>
+      <Link href="/articles/articles" style={{ textDecoration: "none" }}><button className={styles.backButton}>Back</button></Link>
       <div className={styles.articleHeader}>
         <h1 className={styles.articleTitle}>{article.title}</h1>
         <h3 className={styles.articleSubtitle}>Leelou Reboh</h3>
