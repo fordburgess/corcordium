@@ -29,6 +29,7 @@ export default function Footer(props) {
         </a>
         <p onClick={() => handlShare()} className={styles.share}>Share</p>
       </div>
+      <p className={styles.watermark}>@2023 Ford Burgess</p>
     </div>
   );
 }
