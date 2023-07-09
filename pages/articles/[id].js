@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getArticles } from '../../lib/getArticles.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import dateFormat, { masks } from "dateformat";
 var contentful = require("contentful")
 var articles = await getArticles();
@@ -65,10 +65,14 @@ const options = {
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
           alt={node.data.target.fields.description}
+          // style={{objectFit: "cover", objectPosition: "center"}}
         />
       );
     }
-  }
+  },
+  renderMark:  {
+    [MARKS.BOLD]: (text) => <p style={{fontWeight: "700", fontSize: "1.2rem"}}>{text}</p>
+  },
 }
 
 const Article = ({ article }) => {

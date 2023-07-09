@@ -11,7 +11,6 @@ const InstaFeed = (props) => {
   var posts = props.posts
   const link = "https://instagram.com/corcordium.archive"
 
-  console.log(props.posts)
   var postImages = [];
 
   for (var i = 0; i < 8; i++) {

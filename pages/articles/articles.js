@@ -15,7 +15,7 @@ const MobileContent = (articles) => {
     var link = `/articles/${article.titlePhoto.sys.id}`;
 
     content.push(
-        <div className={styles.articleInstanceMobile} >
+        <div className={styles.articleInstanceMobile} key={link}>
           <Link href={link} style={{textDecoration: "none", color: "black"}}>
             <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.articleImage}/>
             <p className={styles.date}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
@@ -34,7 +34,7 @@ const TwoMostRecent = (articles) => {
       var link = `/articles/${article.titlePhoto.sys.id}`;
 
       content.push(
-        <div className={styles.twoMostRecent}>
+        <div className={styles.twoMostRecent} key={link}>
           <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
             <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
             <p className={styles.mostRecentDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
@@ -54,7 +54,7 @@ const OlderArticles = (articles) => {
     var link = `/articles/${article.titlePhoto.sys.id}`;
 
     content.push(
-      <div className={styles.olderArticleContainer}>
+      <div className={styles.olderArticleContainer} key={link}>
         <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
           <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.olderArticlesImage}/>
           <p className={styles.olderArticlesDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
@@ -70,6 +70,7 @@ const OlderArticles = (articles) => {
 const Articles = ({ articles }) => {
   const mobile = useMediaQuery("(max-width: 800px)")
   var older = articles.slice(2);
+
   console.log(articles)
 
   return (
@@ -107,7 +108,6 @@ Articles.getInitialProps = async (ctx) => {
   })
 
   data.sort((a, b) => b.date - a.date)
-  console.log(data)
 
   return {
     articles: data
