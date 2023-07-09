@@ -82,16 +82,18 @@
 
 .textContainer {
   padding: 10px 30px 20px;
-  font-family: Georgia;
   line-height: 1.5;
   white-space: wrap;
   display: flex;
   flex-direction: column;
 }
 
+.textContainer p {
+  font-size: 1.2rem;
+}
+
 .textContainer span {
   margin: 0;
-
   display: inline;
 }
 

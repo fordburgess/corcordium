@@ -73,9 +73,9 @@ const Contact = () => {
             <strong style={{textDecoration: "underline"}}>leeloureboh.corcordium@gmail.com</strong>
             </p>
             <form className={styles.contactForm} >
-              <input ref={name} type="text" id="name" value={inputs.name} onChange={handleChange} placeholder='Name'/>
-              <input ref={email} type="email" id="email" value={inputs.email} onChange={handleChange} placeholder='Email'/>
-              <textarea ref={message} type="text" id="message" value={inputs.message} onChange={handleChange} placeholder='Message'/>
+              <input ref={name} style={{ backgroundColor: "rgb(255, 254, 245)"}} type="text" id="name" value={inputs.name} onChange={handleChange} placeholder='Name'/>
+              <input ref={email} style={{ backgroundColor: "rgb(255, 254, 245)"}} type="email" id="email" value={inputs.email} onChange={handleChange} placeholder='Email'/>
+              <textarea ref={message} style={{ backgroundColor: "rgb(255, 254, 245)"}} type="text" id="message" value={inputs.message} onChange={handleChange} placeholder='Message'/>
             </form>
             <button className={styles.submitButton} onClick={onSubmit}>Send</button>
           </div>
