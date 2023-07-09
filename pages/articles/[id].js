@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
-      data.push(item.fields)
+      data.push(item.fields);
     })
   })
 
