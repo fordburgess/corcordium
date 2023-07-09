@@ -1,14 +1,13 @@
 @font-face {
   font-family: "Georgia";
-  src: local("Georgia"),
-    url("../fonts/Georgia.ttf") format("truetype");
+  src: local("Georgia"), url("../fonts/Georgia.ttf") format("truetype");
 }
 
 .container {
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding-bottom: 150px;
+  padding-bottom: 750px;
   box-sizing: border-box;
 }
 
@@ -46,6 +45,15 @@
 
 .desktopFeed {
   display: none;
+}
+
+.header {
+  font-size: 2rem;
+}
+
+.instaHeader {
+  font-size: 1.3rem;
+  font-weight: 100;
 }
 
 @media (min-width: 800px) {

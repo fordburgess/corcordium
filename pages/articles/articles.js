@@ -98,10 +98,16 @@ Articles.getInitialProps = async (ctx) => {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
-      data.push(item.fields)
+      data.push(item.fields);
     })
   })
-  // .then(() => console.log(data))
+
+  data.map(item => {
+    item.date = new Date(item.date);
+  })
+
+  data.sort((a, b) => b.date - a.date)
+  console.log(data)
 
   return {
     articles: data

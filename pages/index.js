@@ -35,7 +35,8 @@ export const getStaticProps = async () => {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
-      latestArticles.push(item.fields)
+      latestArticles.push(item.fields);
+      latestArticles.reverse();
     })
   })
 
