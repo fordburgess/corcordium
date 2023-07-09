@@ -44,3 +44,11 @@
 .share:hover {
   cursor: pointer;
 }
+
+@media (min-width: 800px) {
+  .watermark {
+    position: absolute;
+    right: 12px;
+    padding-top: 50px;
+  }
+}
