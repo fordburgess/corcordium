@@ -7,6 +7,7 @@ import createEmotionCache from '../utility/createEmotionCache';
 import { makeStyles } from "@mui/styles";
 import Layout from '../components/Layout';
 import { Analytics } from '@vercel/analytics/react';
+import "./global.css"
 
 const clientSideEmotionCache = createEmotionCache();
 

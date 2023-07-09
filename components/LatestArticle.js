@@ -15,7 +15,7 @@ const LatestArticle = (props) => {
       <Link href={path} className={styles.link}>
         <img src={props.image} alt="article photo" className={styles.image}/>
         <p className={styles.date}>{dateFormat(Date.parse(props.date), "dd/mm/yyyy")}</p>
-        <div style={{width: "100%"}}>
+        <div style={{width: "100%", marginTop: "-10px"}}>
           <h3 className={styles.title}>{props.title}</h3>
         </div>
       </Link>

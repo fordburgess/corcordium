@@ -39,6 +39,7 @@
     min-width: 19%;
     max-width: 19%;
     margin-right: 50px;
+    margin-bottom: 20px;
   }
 
   .image {
@@ -52,5 +53,4 @@
   .date {
     font-size: 15px;
   }
-
 }

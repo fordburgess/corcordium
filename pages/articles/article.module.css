@@ -6,8 +6,7 @@
 
 @font-face {
   font-family: "Georgia";
-  src: local("Georgia"),
-    url("../../fonts/Georgia.ttf") format("truetype");
+  src: local("Georgia"), url("../../fonts/Georgia.ttf") format("truetype");
 }
 
 @font-face {
@@ -33,7 +32,7 @@
   padding: 0 25px;
   font-family: Alata;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .header h3 {
@@ -55,8 +54,10 @@
 
 .articleHeader {
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: -60px;
+  margin-bottom: 30px;
+  margin-top: -40px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .articleTitle {
@@ -98,7 +99,6 @@
   margin: 20px auto;
   max-height: 250px;
   max-width: 100%;
-
 }
 
 .backButton {
@@ -106,7 +106,6 @@
 }
 
 @media (min-width: 800px) {
-
   .textContainer {
     width: 50%;
     margin: 0 auto;
@@ -120,7 +119,7 @@
   .backButton {
     padding: 8px 30px;
     color: #000000;
-    background-color: #FFFFFF;
+    background-color: rgb(255, 254, 245);
     border: solid 2px #000000;
     transition: 0.1s ease-in;
     text-decoration: none;
@@ -133,7 +132,7 @@
   }
 
   .backButton:hover {
-    color: #FFFFFF;
+    color: rgb(255, 254, 245);
     background-color: #000000;
     cursor: pointer;
   }
