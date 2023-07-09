@@ -73,7 +73,6 @@ const options = {
 
 const Article = ({ article }) => {
 
-  console.log(article)
   return (
     <div className={styles.container}>
       <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>

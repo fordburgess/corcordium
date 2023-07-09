@@ -9,6 +9,7 @@ const Content = (articles) => {
   for (var i = 0; i < 4; i++) {
     content.push(
       <LatestArticle
+      key={articles[i].titlePhoto.sys.id}
       date={articles[i].date}
       title={articles[i].title}
       id={articles[i].titlePhoto.sys.id}
@@ -22,7 +23,7 @@ const Content = (articles) => {
 
 
 const LatestArticles = ({ articles }) => {
-  console.log(articles)
+
   return (
     <>
       <div className={styles.container}>

@@ -98,7 +98,6 @@ Articles.getInitialProps = async (ctx) => {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
-      console.log(item)
       data.push(item.fields)
     })
   })
