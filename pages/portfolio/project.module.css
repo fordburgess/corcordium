@@ -29,7 +29,7 @@
 .info {
   text-align: left;
   padding: 0 50px;
-  position: relative
+  position: relative;
 }
 
 .info h1 {
@@ -52,6 +52,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
+  background-color: #ffffff;
 }
 
 .link {
@@ -83,7 +85,7 @@
     font-family: Alata;
     position: sticky;
     top: 0;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     z-index: 5;
     padding: 10px 50px;
     height: 15vh;
@@ -128,7 +130,7 @@
   .info {
     width: 40%;
     text-align: right;
-    padding-top: 20px;
+    padding-top: 0px;
     line-height: 1.5;
   }
   .info::-webkit::-webkit-scrollbar {
@@ -138,5 +140,7 @@
   .info h1 {
     font-size: 70px;
     margin-bottom: 20px;
+    margin-top: 0;
+    overflow-y: auto;
   }
 }

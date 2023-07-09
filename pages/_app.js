@@ -6,6 +6,7 @@ import { CloudinaryContext } from "cloudinary-react";
 import createEmotionCache from '../utility/createEmotionCache';
 import { makeStyles } from "@mui/styles";
 import Layout from '../components/Layout';
+import { Analytics } from '@vercel/analytics/react';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -17,6 +18,7 @@ function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
       <CacheProvider value={emotionCache}>
         <Layout>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </CacheProvider>
     </CloudinaryContext>
