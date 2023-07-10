@@ -24,7 +24,7 @@ export default function Footer(props) {
         <Link href="/contact" className={styles.link}>Contact</Link>
       </div>
       <div className={styles.bottom}>
-        <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
+        <a href="https://www.instagram.com/corcordiumarchive/" className={styles.link}>
           <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
         </a>
         <p onClick={() => handlShare()} className={styles.share}>Share</p>

@@ -39,7 +39,7 @@ export default function About() {
           </p>
           <div className={styles.miniFooter}>
             <Link href="/contact" className={styles.link}>Contact</Link>
-            <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
+            <a href="https://www.instagram.com/corcordiumarchive/" className={styles.link}>
               <Image src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
             </a>
             <a href="" className={styles.link}>Share</a>
