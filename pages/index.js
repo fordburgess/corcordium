@@ -40,7 +40,6 @@ export const getStaticProps = async () => {
     })
   })
 
-
   await client.getAssets()
   .then((res) => {
     res.items.forEach(item => {
