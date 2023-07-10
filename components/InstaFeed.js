@@ -9,7 +9,7 @@ import Instagram from "../media/insta.svg"
 
 const InstaFeed = (props) => {
   var posts = props.posts
-  const link = "https://instagram.com/corcordium.archive"
+  const link = "https://instagram.com/corcordiumarchive"
 
   var postImages = [];
 
