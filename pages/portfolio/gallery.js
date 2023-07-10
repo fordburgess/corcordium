@@ -30,23 +30,26 @@ function Gallery({ photos }) {
     <>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          {photos.map((item, index) => {
-            var title = item.fields.title.split("-")[0];
-            var photoUrl = "https:" + item.fields.file.url
-            var projectLink = `${projId(title)}`;
-
-            return (
-              <div key={index} className={styles.contentContainer}>
-                <Link href={projectLink} className={styles.mobileLink}>
-                  <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
-                  <div className={styles.info}>
-                    <h1 style={{marginBottom: "50px"}}>{title}</h1>
-                    <Link href={projectLink} className={styles.readMore}>Read More</Link>
-                  </div>
-                </Link>
-              </div>
-            )
-          })}
+          {photos.length ? (
+            photos.map((item, index) => {
+              var title = item.fields.title.split("-")[0];
+              var photoUrl = "https:" + item.fields.file.url
+              var projectLink = `${projId(title)}`;
+              return (
+                <div key={index} className={styles.contentContainer}>
+                  <Link href={projectLink} className={styles.mobileLink}>
+                    <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
+                    <div className={styles.info}>
+                      <h1 style={{marginBottom: "50px"}}>{title}</h1>
+                      <Link href={projectLink} className={styles.readMore}>Read More</Link>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })
+          ) : (
+            <h1>Loading</h1>
+          )}
         </div>
       </div>
     </>

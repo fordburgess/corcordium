@@ -45,8 +45,13 @@
   cursor: pointer;
 }
 
+.watermark {
+  display: none;
+}
+
 @media (min-width: 800px) {
   .watermark {
+    display: block;
     position: absolute;
     right: 12px;
     padding-top: 50px;
