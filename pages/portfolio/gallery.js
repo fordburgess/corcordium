@@ -7,13 +7,11 @@ import { images } from '../../next.config';
 var contentful = require("contentful")
 
 function Gallery({ photos }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (photos.length >= 20) {
-      setLoading(false);
-    }
-  }, [photos]);
+  // setTimeout(() => {
+  //   setLoading(false)
+  // }, 2000);
 
 
   const projId = (string) => {
