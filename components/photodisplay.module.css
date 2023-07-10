@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Georgia";
-  src: local("Georgia"),
-    url("../fonts/Georgia.ttf") format("truetype");
+  src: local("Georgia"), url("../fonts/Georgia.ttf") format("truetype");
 }
 @font-face {
   font-family: "Alata";
@@ -41,10 +40,17 @@
 
 .largeImage {
   height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .galleryLink {
   color: #000000;
+}
+
+.galleryLink2 {
+  display: none;
 }
 
 /* desktop */
@@ -63,7 +69,6 @@
   display: none;
 }
 
-
 @media (min-width: 800px) {
   .desktopHero {
     display: block;
@@ -73,6 +78,13 @@
     /* height: 400px; */
     height: 100%;
     margin: 0 1px;
+  }
+
+  .galleryLink2 {
+    display: block;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-top: 40px;
   }
 
   .smallPhotoContainer {

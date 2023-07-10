@@ -47,7 +47,7 @@ const PhotoDisplay = () => {
           })}
         </div>
         <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-          <Link href="/portfolio/gallery" className={styles.galleryLink}><p>See more</p></Link>
+          <Link href="/portfolio/gallery" className={styles.galleryLink2}>Discover more</Link>
         </div>
       </div>
     </>

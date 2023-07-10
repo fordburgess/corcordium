@@ -23,6 +23,11 @@ const Content = (articles) => {
 
 
 const LatestArticles = ({ articles }) => {
+  articles.map(item => {
+    item.date = new Date(item.date);
+  })
+
+  articles.sort((a, b) => b.date - a.date)
 
   return (
     <>
