@@ -116,7 +116,7 @@ const Project = ({ project }) => {
           <Link href="/portfolio/gallery" className={styles.backLink}>Back</Link>
           <div className={styles.miniFooter}>
             <Link href="/contact" className={styles.link}>Contact</Link>
-            <a href="https://www.instagram.com/corcordium.archive/" className={styles.link}>
+            <a href="https://www.instagram.com/corcordiumarchive/" className={styles.link}>
               <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
             </a>
             <a href="" className={styles.link}>Share</a>
