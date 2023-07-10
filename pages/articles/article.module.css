@@ -134,7 +134,7 @@
     text-decoration: none;
     position: -webkit-sticky;
     position: sticky;
-    top: 20vh;
+    top: 25vh;
     left: 25px;
     z-index: 999;
     display: block;

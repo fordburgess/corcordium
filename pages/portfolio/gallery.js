@@ -7,8 +7,15 @@ import { images } from '../../next.config';
 var contentful = require("contentful")
 
 function Gallery({ photos }) {
+  const [loading, setLoading] = useState(true);
 
-  // temporary and will remove
+  useEffect(() => {
+    if (photos.length >= 20) {
+      setLoading(false);
+    }
+  }, [photos]);
+
+
   const projId = (string) => {
     var id = null
 
@@ -30,7 +37,7 @@ function Gallery({ photos }) {
     <>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          {photos.length ? (
+          {!loading ? (
             photos.map((item, index) => {
               var title = item.fields.title.split("-")[0];
               var photoUrl = "https:" + item.fields.file.url
