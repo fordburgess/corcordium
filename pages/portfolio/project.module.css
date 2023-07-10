@@ -49,6 +49,7 @@
 .miniFooter {
   height: 7vh;
   margin: 10px 0;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
