@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "SD Georgia Light";
+  src: url("https://www.fontsaddict.com/fontface/sd-georgia-light.ttf");
+}
+
+@keyframes growAnimation {
+  from {
+    height: 0px; /* Initial height */
+  }
+  to {
+    height: 300px; /* Final height */
+  }
+}
+
+.container {
+  padding-top: 90px;
+  height: 175vh;
+  background-color: rgb(255, 254, 245);
+  font-family: "SD Georgia Light";
+  color: rgb(0, 0, 0);
+}
+
+.topSubContainer {
+  padding: 30px 50px;
+  margin-bottom: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.svg {
+  width: 3px;
+  height: 0px;
+  animation: growAnimation 1s ease forwards;
+}
+
+.svg.grow {
+  height: 300px;
+}
+
+.title {
+  margin: 0;
+  font-size: 10rem;
+  font-weight: 50;
+  color: #000000;
+  opacity: 0;
+}
+
+.title.fadeInLeft {
+  opacity: 100;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: translateX(40px);
+}
+
+.topSubContainerRight {
+  padding-left: 20px;
+  opacity: 0;
+}
+
+.topSubContainerRight.fadeInRight {
+  transition-delay: 0.5s;
+  opacity: 100;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: translateX(-40px);
+}
+
+.topSubContainerRight h1 {
+  font-size: 5rem;
+  font-weight: 50;
+  margin: 0;
+}
+
+.photoPlayer {
+  width: 75%;
+  /* height: 50vh; */
+  background-color: #000000;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.photoPlayer.fadeInBottom {
+  transition-delay: 1s;
+  opacity: 100;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: translateY(-40px);
+}
