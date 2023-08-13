@@ -5,10 +5,10 @@
 
 @keyframes growAnimation {
   from {
-    height: 0px; /* Initial height */
+    height: 0px;
   }
   to {
-    height: 300px; /* Final height */
+    height: 300px;
   }
 }
 
@@ -26,6 +26,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: sticky;
+  top: 90px;
+}
+
+.dummyContainer {
+  padding: 30px 50px;
+  margin-bottom: 500px;
 }
 
 .svg {
@@ -70,9 +77,14 @@
   margin: 0;
 }
 
+.topSubContainerRight p {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: Alata;
+}
+
 .photoPlayer {
-  width: 75%;
-  /* height: 50vh; */
+  width: 90%;
   background-color: #000000;
   margin: 0 auto;
   opacity: 0;
