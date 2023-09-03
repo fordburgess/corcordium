@@ -12,27 +12,61 @@
   }
 }
 
+@keyframes horizontalGrow {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 300px;
+  }
+}
+
 .container {
-  padding-top: 90px;
+  padding-top: 0px;
   height: 200vh;
   background-color: rgb(255, 254, 245);
   font-family: "SD Georgia Light";
   color: rgb(0, 0, 0);
 }
 
-.topSubContainer {
-  padding: 30px 50px;
-  margin-bottom: 90px;
+.mobileTop {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
+  font-family: Georgia;
   position: sticky;
-  top: 90px;
+  top: 0px;
+  z-index: 20000;
 }
 
-.dummyContainer {
-  padding: 30px 50px;
-  margin-bottom: 500px;
+.mobileTop h2 {
+  font-size: 1.5rem;
+}
+
+.navLinks {
+  padding: 8px 12px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topSubContainerMobile {
+  padding: 10px 50px;
+  margin-bottom: 50px;
+  top: 90px;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Georgia;
+}
+
+.topSubContainerDesktop {
+  display: none;
 }
 
 .svg {
@@ -41,8 +75,29 @@
   animation: growAnimation 1s ease forwards;
 }
 
+.mobileLogo {
+  opacity: 0;
+  height: 250px;
+  width: 250px;
+}
+
+.mobileLogo.fade {
+  opacity: 100;
+  transition: opacity 1.5s ease;
+}
+
 .svg.grow {
   height: 300px;
+}
+
+.mobileSvg {
+  height: 2px;
+  width: 0px;
+  animation: horizontalGrow 1s ease forwards;
+}
+
+.mobileSVG.grow {
+  width: 300px;
 }
 
 .title {
@@ -83,29 +138,98 @@
   font-family: Alata;
 }
 
-.photoPlayer {
+.photoPlayerMobile {
+  display: block;
   width: 90%;
-  background-color: #000000;
-  height: 90vh;
+  height: 60vh;
   margin: 0 auto;
   opacity: 0;
   position: sticky;
-  top: 85px;
+  top: 110px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
 }
 
-.photoPlayer img {
+.photoPlayerMobile img {
   object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
 }
 
-.photoPlayer.fadeInBottom {
+.hiddenImage {
+  display: none;
+}
+
+.photoPlayerMobile.fadeInBottom {
   transition-delay: 1s;
   opacity: 100;
   transition: opacity 1.5s ease, transform 1.5s ease;
   transform: translateY(-40px);
 }
 
-.photoPlayer.sticky {
-  position: sticky;
-  background-color: red;
-  top: 100px;
+.photoPlayerDesktop {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .photoPlayerMobile {
+    display: none;
+  }
+
+  .photoPlayerDesktop {
+    display: block;
+    width: 90%;
+    background-color: #000000;
+    height: 90vh;
+    margin: 0 auto;
+    opacity: 0;
+    position: sticky;
+    top: 85px;
+  }
+
+  .photoPlayerDesktop img {
+    object-fit: cover;
+  }
+
+  .photoPlayerDesktop.fadeInBottom {
+    transition-delay: 1s;
+    opacity: 100;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    transform: translateY(-40px);
+  }
+
+  .photoPlayerDesktop.sticky {
+    position: sticky;
+    background-color: red;
+    top: 100px;
+  }
+
+  .container {
+    padding-top: 90px;
+  }
+
+  .mobileTop {
+    display: none;
+  }
+
+  .topSubContainerMobile {
+    display: none;
+  }
+
+  .topSubContainerDesktop {
+    padding: 30px 50px;
+    margin-bottom: 90px;
+    top: 90px;
+    position: sticky;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Georgia;
+  }
+
+  .dummyContainer {
+    padding: 30px 50px;
+    margin-bottom: 500px;
+  }
 }
