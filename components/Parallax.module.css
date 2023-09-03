@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: "SD Georgia Light";
   src: url("https://www.fontsaddict.com/fontface/sd-georgia-light.ttf");
-}
+} */
 
 @keyframes growAnimation {
   from {
@@ -14,7 +14,7 @@
 
 .container {
   padding-top: 90px;
-  height: 175vh;
+  height: 200vh;
   background-color: rgb(255, 254, 245);
   font-family: "SD Georgia Light";
   color: rgb(0, 0, 0);
@@ -86,8 +86,15 @@
 .photoPlayer {
   width: 90%;
   background-color: #000000;
+  height: 90vh;
   margin: 0 auto;
   opacity: 0;
+  position: sticky;
+  top: 85px;
+}
+
+.photoPlayer img {
+  object-fit: cover;
 }
 
 .photoPlayer.fadeInBottom {
@@ -95,4 +102,10 @@
   opacity: 100;
   transition: opacity 1.5s ease, transform 1.5s ease;
   transform: translateY(-40px);
+}
+
+.photoPlayer.sticky {
+  position: sticky;
+  background-color: red;
+  top: 100px;
 }
