@@ -19,6 +19,7 @@ const Parallax = () => {
   const [fadeInRight, setFadeInRight] = useState(false);
   const [fadeInBottom, setFadeInBottom] = useState(false);
   const refPhotoPlayer = useRef(null);
+  const [currentImage, setCurrentImage] = useState("")
   const images = [
     "media/angela6.jpg", "media/kim1.jpeg", "media/angela5.jpg", "media/angela1.jpg", "media/kim2.jpeg",
     "media/angela4.jpg", "media/angela2.jpg", "media/angela3.jpg"
@@ -37,14 +38,32 @@ const Parallax = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (refPhotoPlayer.current) {
-        refPhotoPlayer.current.style.backgroundImage = `url(${images[5]})`
+        // refPhotoPlayer.current.style.backgroundImage = `url(${images[0]})`
         const rect = refPhotoPlayer.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
         if (rect.top <= windowHeight * .75 && rect.bottom > 0) {
-          var index = images.indexOf(refPhotoPlayer.current.style.backgroundImage)
+          var bgElement = refPhotoPlayer.current.style.backgroundImage
+          const startIndex = bgElement.indexOf('"');
+          const endIndex = bgElement.lastIndexOf('"');
+          const url = bgElement.substring(startIndex + 1, endIndex);
+          var index = images.indexOf(url)
           console.log(index)
-          console.log(refPhotoPlayer.current.style.backgroundImage.split("""))
+
+          if (rect.top <= windowHeight * 0.75 && rect.bottom > 0) {
+            // const currentIndex = images.indexOf(backgroundImage);
+            // if (currentIndex === -1 || currentIndex === images.length - 1) {
+            //   setBackgroundImage(images[0]);
+            // } else {
+            //   setBackgroundImage(images[currentIndex + 1]);
+            // }
+            if (index == images.length - 1 || index == -1) {
+              refPhotoPlayer.current.style.backgroundImage = `url(${images[0]})`
+            }
+            else {
+              refPhotoPlayer.current.style.backgroundImage = `url(${images[index + 1]})`
+            }
+          }
         }
       }
     }
