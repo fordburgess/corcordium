@@ -9,7 +9,7 @@ import cx from 'classnames'
 // import angela3 from "media/angela3.jpg"
 // import angela4 from "media/angela4.jpg"
 // import angela5 from "media/angela5.jpg"
-// import angela6 from "media/angela6.jpg"
+import angela6 from "../media/angela6.jpg"
 // import kim1 from "media/kim1.jpeg"
 // import kim2 from "media/kim2.jpeg"
 
@@ -109,9 +109,9 @@ const Parallax = () => {
         <div ref={refPhotoPlayer}  className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
           {/* <Image src={angela6} style={{ height: "100%", width: "100%" }} alt="photo"/> */}
         </div>
-        {/* <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
+        <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
           <Image src={angela6} style={{ height: "100%", width: "100%" }} alt="angela"/>
-        </div> */}
+        </div>
       </div>
     </>
   )
