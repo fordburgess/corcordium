@@ -160,18 +160,19 @@
 
 .galleryLink {
   position: absolute;
-  top: -20px;
-  left: 5px;
+  top: -10px;
+  left: 10px;
   color: rgb(255, 254, 245);
-  z-index: 2;
+  z-index: 20;
   font-family: Georgia;
+  transition: top 0.3s ease, left 0.3s ease;
 }
 
 .galleryLink.centered {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
   font-size: 1.4rem;
 }
 
@@ -184,6 +185,20 @@
   opacity: 100;
   transition: opacity 1.5s ease, transform 1.5s ease;
   transform: translateY(-40px);
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #000000a2;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.overlay.endScroll {
+  opacity: 1;
 }
 
 .photoPlayerDesktop {
