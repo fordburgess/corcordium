@@ -11,8 +11,8 @@ const Parallax = () => {
   const [fadeInRight, setFadeInRight] = useState(false);
   const [fadeInBottom, setFadeInBottom] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [scalingFactorX, setScalingFactorX] = useState(1);
-  const [scalingFactorY, setScalingFactorY] = useState(1);
+  const [scalingFactorX, setScalingFactorX] = useState(90);
+  const [scalingFactorY, setScalingFactorY] = useState(60);
   var photoPlayer = useRef();
   var mobilePhotoRefs = {
     kim1ref: useRef(),
@@ -27,10 +27,10 @@ const Parallax = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    const maxScalingFactorX = 1.1066;
-    const maxScalingFactorY = 1.5;
-    const horizontalFactor = Math.min(1 + position * 0.0005, maxScalingFactorX);
-    const verticalFactor = Math.min(1 + position * 0.005, maxScalingFactorY);
+    const maxScalingFactorX = 100;
+    const maxScalingFactorY = 100;
+    const horizontalFactor = Math.min(90 + position * 0.25, maxScalingFactorX);
+    const verticalFactor = Math.min(60 + position * 0.1, maxScalingFactorY);
     setScalingFactorX(horizontalFactor);
     setScalingFactorY(verticalFactor)
     setScrollPosition(position);
@@ -103,7 +103,8 @@ const Parallax = () => {
   }, [])
 
   const photoPlayerStyle = {
-    transform: `scale(${scalingFactorX}, ${scalingFactorY})`,
+    // transform: `scale(${scalingFactorX}, ${scalingFactorY})`,
+    width: `${scalingFactorX}vw`, height: `${scalingFactorY}vh`,
   };
 
   return (
