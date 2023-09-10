@@ -29,12 +29,12 @@ const Parallax = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    const maxScalingFactorX = 98;
-    const maxScalingFactorY = 98;
-    const horizontalFactor = Math.min(90 + position * 0.25, maxScalingFactorX);
-    const verticalFactor = Math.min(60 + position * 0.1, maxScalingFactorY);
-    setScalingFactorX(horizontalFactor);
-    setScalingFactorY(verticalFactor)
+    // const maxScalingFactorX = 98;
+    // const maxScalingFactorY = 98;
+    // const horizontalFactor = Math.min(90 + position * 0.25, maxScalingFactorX);
+    // const verticalFactor = Math.min(60 + position * 0.1, maxScalingFactorY);
+    // setScalingFactorX(horizontalFactor);
+    // setScalingFactorY(verticalFactor)
     setScrollPosition(position);
   }
 
@@ -116,10 +116,10 @@ const Parallax = () => {
     }, 1000);
   }, [])
 
-  const photoPlayerStyle = {
-    // transform: `scale(${scalingFactorX}, ${scalingFactorY})`,
-    width: `${scalingFactorX}vw`, height: `${scalingFactorY}vh`,
-  };
+  // const photoPlayerStyle = {
+  //   // transform: `scale(${scalingFactorX}, ${scalingFactorY})`,
+  //   width: `${scalingFactorX}vw`, height: `${scalingFactorY}vh`,
+  // };
 
   return (
     <>
@@ -151,7 +151,7 @@ const Parallax = () => {
             <p>Fashion Literature</p>
           </div>
         </div>
-        <div ref={photoPlayer} style={photoPlayerStyle} className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
+        <div ref={photoPlayer} className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
           <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 535 && style.centered)}><h3>See All</h3></Link>
           <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
           <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
