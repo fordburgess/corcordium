@@ -11,6 +11,9 @@ const Parallax = () => {
   const [fadeInRight, setFadeInRight] = useState(false);
   const [fadeInBottom, setFadeInBottom] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [scalingFactorX, setScalingFactorX] = useState(1);
+  const [scalingFactorY, setScalingFactorY] = useState(1);
+  var photoPlayer = useRef();
   var mobilePhotoRefs = {
     kim1ref: useRef(),
     angela6ref: useRef(),
@@ -24,7 +27,13 @@ const Parallax = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    setScrollPosition(position)
+    const maxScalingFactorX = 1.1066;
+    const maxScalingFactorY = 1.5;
+    const horizontalFactor = Math.min(1 + position * 0.0005, maxScalingFactorX);
+    const verticalFactor = Math.min(1 + position * 0.005, maxScalingFactorY);
+    setScalingFactorX(horizontalFactor);
+    setScalingFactorY(verticalFactor)
+    setScrollPosition(position);
   }
 
   useEffect(() => {
@@ -37,7 +46,7 @@ const Parallax = () => {
   }, [])
 
   useEffect(() => {
-
+    console.log(scalingFactorY)
     if (scrollPosition < 100) {
       mobilePhotoRefs.nora3ref.current.style.zIndex = 1;
       mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
@@ -45,6 +54,7 @@ const Parallax = () => {
       mobilePhotoRefs.nora1ref.current.style.zIndex = 0;
       mobilePhotoRefs.angela5ref.current.style.zIndex = 0;
       mobilePhotoRefs.angela6ref.current.style.zIndex = 0;
+      mobilePhotoRefs.angela2ref.current.style.zIndex = 0;
     }
     if (scrollPosition >= 100 && scrollPosition <= 200) {
       mobilePhotoRefs.angela6ref.current.style.zIndex = 1;
@@ -92,6 +102,10 @@ const Parallax = () => {
     }, 1000);
   }, [])
 
+  const photoPlayerStyle = {
+    transform: `scale(${scalingFactorX}, ${scalingFactorY})`,
+  };
+
   return (
     <>
       <div className={style.mobileTop}>
@@ -122,7 +136,7 @@ const Parallax = () => {
             <p>Fashion Literature</p>
           </div>
         </div>
-        <div className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
+        <div ref={photoPlayer} style={photoPlayerStyle} className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
           <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 415 && style.centered)}><h3>See All</h3></Link>
           <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
           <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
