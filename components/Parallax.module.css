@@ -23,8 +23,8 @@
 
 .container {
   padding-top: 0px;
-  padding-bottom: 50px;
-  height: 150vh;
+  padding-bottom: 30px;
+  height: 200vh;
   background-color: rgb(255, 254, 245);
   font-family: "SD Georgia Light";
   color: rgb(0, 0, 0);
@@ -146,7 +146,7 @@
   margin: 0 auto;
   opacity: 0;
   position: sticky;
-  top: 110px;
+  top: 45px;
   background-size: cover;
   background-position: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,

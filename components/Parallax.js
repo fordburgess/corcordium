@@ -27,8 +27,8 @@ const Parallax = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    const maxScalingFactorX = 100;
-    const maxScalingFactorY = 100;
+    const maxScalingFactorX = 98;
+    const maxScalingFactorY = 98;
     const horizontalFactor = Math.min(90 + position * 0.25, maxScalingFactorX);
     const verticalFactor = Math.min(60 + position * 0.1, maxScalingFactorY);
     setScalingFactorX(horizontalFactor);
