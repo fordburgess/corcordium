@@ -46,6 +46,7 @@ const Parallax = () => {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
