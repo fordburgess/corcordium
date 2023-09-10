@@ -22,7 +22,8 @@ const Parallax = () => {
     kim2ref: useRef(),
     nora2ref: useRef(),
     nora3ref: useRef(),
-    angela2ref: useRef()
+    angela2ref: useRef(),
+    angela3ref: useRef(),
   }
 
   const handleScroll = () => {
@@ -55,6 +56,7 @@ const Parallax = () => {
       mobilePhotoRefs.angela5ref.current.style.zIndex = 0;
       mobilePhotoRefs.angela6ref.current.style.zIndex = 0;
       mobilePhotoRefs.angela2ref.current.style.zIndex = 0;
+      mobilePhotoRefs.angela3ref.current.style.zIndex = 0;
     }
     if (scrollPosition >= 100 && scrollPosition <= 200) {
       mobilePhotoRefs.angela6ref.current.style.zIndex = 1;
@@ -81,14 +83,19 @@ const Parallax = () => {
       mobilePhotoRefs.nora1ref.current.style.zIndex = 0;
       mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
     }
-    if (scrollPosition > 400 && scrollPosition <= 415) {
+    if (scrollPosition > 400 && scrollPosition <= 420) {
       mobilePhotoRefs.kim1ref.current.style.zIndex = 1;
       mobilePhotoRefs.angela5ref.current.style.zIndex = 0;
       mobilePhotoRefs.angela2ref.current.style.zIndex = 0;
     }
-    if (scrollPosition > 415) {
+    if (scrollPosition > 420 && scrollPosition <= 435) {
       mobilePhotoRefs.angela2ref.current.style.zIndex = 1;
       mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
+      mobilePhotoRefs.angela3ref.current.style.zIndex = 0;
+    }
+    if (scrollPosition > 435) {
+      mobilePhotoRefs.angela3ref.current.style.zIndex = 1;
+      mobilePhotoRefs.angela2ref.current.style.zIndex = 0;
     }
   }, [scrollPosition])
 
@@ -138,7 +145,7 @@ const Parallax = () => {
           </div>
         </div>
         <div ref={photoPlayer} style={photoPlayerStyle} className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
-          <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 415 && style.centered)}><h3>See All</h3></Link>
+          <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 445 && style.centered)}><h3>See All</h3></Link>
           <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
           <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
           <img src="media/angela5-min.jpg" ref={mobilePhotoRefs.angela5ref} alt="photo" />
@@ -147,7 +154,8 @@ const Parallax = () => {
           <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" />
           <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" />
           <img src="media/angela2.jpg" ref={mobilePhotoRefs.angela2ref} alt="photo" />
-          <div className={cx(style.overlay, scrollPosition >= 415 && style.endScroll)}></div>
+          <img src="media/angela3.jpg" ref={mobilePhotoRefs.angela3ref} alt="photo" />
+          <div className={cx(style.overlay, scrollPosition >= 445 && style.endScroll)}></div>
         </div>
         <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
           {/* <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
