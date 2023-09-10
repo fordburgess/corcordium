@@ -4,26 +4,57 @@ import Link from 'next/link'
 import style from "./Parallax.module.css"
 import AltLogo from "../media/AltLogo.png"
 import cx from 'classnames'
-// import angela1 from "media/angela1.jpg"
-// import angela2 from "media/angela2.jpg"
-// import angela3 from "media/angela3.jpg"
-// import angela4 from "media/angela4.jpg"
-// import angela5 from "media/angela5.jpg"
-import angela6 from "../media/angela6.jpg"
-// import kim1 from "media/kim1.jpeg"
-// import kim2 from "media/kim2.jpeg"
 
 const Parallax = () => {
   const [stickyPhoto, setStickyPhoto] = useState(false)
   const [fadeInLeft, setFadeInLeft] = useState(false);
   const [fadeInRight, setFadeInRight] = useState(false);
   const [fadeInBottom, setFadeInBottom] = useState(false);
-  const refPhotoPlayer = useRef(null);
-  const [currentImage, setCurrentImage] = useState("")
-  const images = [
-    "media/angela6.jpg", "media/kim1.jpeg", "media/angela5.jpg", "media/angela1.jpg", "media/kim2.jpeg",
-    "media/angela4.jpg", "media/angela2.jpg", "media/angela3.jpg"
-  ]
+  const [scrollPosition, setScrollPosition] = useState(0);
+  var mobilePhotoRefs = {
+    kim1ref: useRef(),
+    angela6ref: useRef(),
+    angela5ref: useRef(),
+    nora1ref: useRef(),
+    kim2ref: useRef(),
+    nora2ref: useRef(),
+    nora3ref: useRef(),
+  }
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [])
+
+  useEffect(() => {
+
+    if (scrollPosition < 150) {
+      mobilePhotoRefs.nora3ref.current.style.zIndex = 1;
+      mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
+      mobilePhotoRefs.kim2ref.current.style.zIndex = 0;
+      mobilePhotoRefs.nora1ref.current.style.zIndex = 0;
+      mobilePhotoRefs.angela5ref.current.style.zIndex = 0;
+      mobilePhotoRefs.angela6ref.current.style.zIndex = 0;
+    }
+    if (scrollPosition > 150 && scrollPosition <= 250) {
+      mobilePhotoRefs.angela6ref.current.style.zIndex = 1;
+      mobilePhotoRefs.nora3ref.current.style.zIndex = 0;
+      mobilePhotoRefs.kim2ref.current.style.zIndex = 0;
+    }
+    if (scrollPosition > 250) {
+      mobilePhotoRefs.kim2ref.current.style.zIndex = 1;
+      mobilePhotoRefs.angela6ref.current.style.zIndex = 0;
+    }
+  }, [scrollPosition])
 
   useEffect(() => {
     setFadeInLeft(true);
@@ -33,47 +64,6 @@ const Parallax = () => {
     setTimeout(() => {
       setFadeInBottom(true);
     }, 1000);
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (refPhotoPlayer.current) {
-        // refPhotoPlayer.current.style.backgroundImage = `url(${images[0]})`
-        const rect = refPhotoPlayer.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        if (rect.top <= windowHeight * .75 && rect.bottom > 0) {
-          var bgElement = refPhotoPlayer.current.style.backgroundImage
-          const startIndex = bgElement.indexOf('"');
-          const endIndex = bgElement.lastIndexOf('"');
-          const url = bgElement.substring(startIndex + 1, endIndex);
-          var index = images.indexOf(url)
-          console.log(index)
-
-          if (rect.top <= windowHeight * 0.75 && rect.bottom > 0) {
-            // const currentIndex = images.indexOf(backgroundImage);
-            // if (currentIndex === -1 || currentIndex === images.length - 1) {
-            //   setBackgroundImage(images[0]);
-            // } else {
-            //   setBackgroundImage(images[currentIndex + 1]);
-            // }
-            if (index == images.length - 1 || index == -1) {
-              refPhotoPlayer.current.style.backgroundImage = `url(${images[0]})`
-            }
-            else {
-              refPhotoPlayer.current.style.backgroundImage = `url(${images[index + 1]})`
-            }
-          }
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, [])
 
   return (
@@ -106,11 +96,19 @@ const Parallax = () => {
             <p>Fashion Literature</p>
           </div>
         </div>
-        <div ref={refPhotoPlayer}  className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
-          {/* <Image src={angela6} style={{ height: "100%", width: "100%" }} alt="photo"/> */}
+        <div className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
+          <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
+          <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
+          <img src="media/angela5-min.jpg" ref={mobilePhotoRefs.angela5ref} alt="photo" />
+          <img src="media/nora1-min.jpg" ref={mobilePhotoRefs.nora1ref} alt="photo" />
+          <img src="media/kim2.jpeg" ref={mobilePhotoRefs.kim2ref} alt="photo" />
+          <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" />
+          <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" />
         </div>
         <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
-          <Image src={angela6} style={{ height: "100%", width: "100%" }} alt="angela"/>
+          {/* <img src="media/kim1.jpeg" ref={photoRefs.kim1ref} alt="photo"/>
+          <img src="media/angela6.jpg" ref={photoRefs.angela6ref} alt="photo" />
+          <img src="media/angela5-min.jpg" ref={photoRefs.angela5ref} alt="photo"  /> */}
         </div>
       </div>
     </>

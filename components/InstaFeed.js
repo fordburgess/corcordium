@@ -15,7 +15,7 @@ const InstaFeed = (props) => {
 
   for (var i = 0; i < 8; i++) {
     postImages.push(
-      <div style={{width: "25%", height: "290px"}}>
+      <div style={{width: "25%", height: "290px"}} key={i}>
         <Link href={props.posts[i].description}>
           <img width={100} height={100} src={props.posts[i].file.url} style={{height: "100%", width: "100%", objectFit: "cover", objectPosition: "top center"}}/>
         </Link>
