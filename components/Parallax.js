@@ -122,7 +122,7 @@ const Parallax = () => {
             <p>Fashion Literature</p>
           </div>
         </div>
-        <div className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
+        <div className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
           <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 415 && style.centered)}><h3>See All</h3></Link>
           <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
           <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
@@ -132,11 +132,17 @@ const Parallax = () => {
           <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" />
           <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" />
           <img src="media/angela2.jpg" ref={mobilePhotoRefs.angela2ref} alt="photo" />
+          <div className={cx(style.overlay, scrollPosition >= 415 && style.endScroll)}></div>
         </div>
         <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
-          {/* <img src="media/kim1.jpeg" ref={photoRefs.kim1ref} alt="photo"/>
-          <img src="media/angela6.jpg" ref={photoRefs.angela6ref} alt="photo" />
-          <img src="media/angela5-min.jpg" ref={photoRefs.angela5ref} alt="photo"  /> */}
+          {/* <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
+          <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
+          <img src="media/angela5-min.jpg" ref={mobilePhotoRefs.angela5ref} alt="photo" />
+          <img src="media/nora1-min.jpg" ref={mobilePhotoRefs.nora1ref} alt="photo" />
+          <img src="media/kim2.jpeg" ref={mobilePhotoRefs.kim2ref} alt="photo" />
+          <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" />
+          <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" />
+          <img src="media/angela2.jpg" ref={mobilePhotoRefs.angela2ref} alt="photo" /> */}
         </div>
       </div>
     </>
