@@ -32,7 +32,7 @@ const LatestArticles = ({ articles }) => {
   return (
     <>
       <div className={styles.container}>
-        <h2 className={styles.header}>Latest Articles</h2>
+        <h1 className={styles.header}>Latest Articles</h1>
         <div className={styles.articleContainer}>
           {Content(articles)}
         </div>

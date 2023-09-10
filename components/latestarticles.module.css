@@ -38,18 +38,23 @@
 @media (min-width: 800px) {
   .container {
     width: 100vw;
-    padding-left: 75px;
+    /* padding-left: 75px; */
     margin-top: 75px;
     box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  .articleContainer {
-    display: flex;
-    margin-left: 50px;
+    padding: 0;
   }
 
   .header {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+
+  .articleContainer {
+    width: 100vw;
+    display: flex;
+    padding: 0 50px 0 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
