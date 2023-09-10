@@ -93,7 +93,7 @@ const Parallax = () => {
     if (scrollPosition > 480 && scrollPosition <= 510) {
       mobilePhotoRefs.angela2ref.current.style.zIndex = 1;
       mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
-      mobilePhotoRefs.angela3ref.current.style.zIndex = 0;
+      mobilePhotoRefs.nora4ref.current.style.zIndex = 0;
     }
     if (scrollPosition > 510 && scrollPosition <= 535) {
       mobilePhotoRefs.nora4ref.current.style.zIndex = 1;
