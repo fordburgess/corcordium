@@ -4,6 +4,7 @@ import Link from 'next/link'
 import style from "./Parallax.module.css"
 import AltLogo from "../media/AltLogo.png"
 import cx from 'classnames'
+import { debounce } from 'lodash'
 
 const Parallax = () => {
   const [stickyPhoto, setStickyPhoto] = useState(false)
@@ -45,13 +46,15 @@ const Parallax = () => {
     setScrollPosition(position);
   }
 
+  const debouncedHandleScroll = debounce(handleScroll, 10)
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', debouncedHandleScroll);
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedHandleScroll);
     };
   }, [])
 

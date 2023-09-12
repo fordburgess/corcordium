@@ -24,6 +24,7 @@
     "eslint-config-next": "13.0.4",
     "html-react-parser": "^3.0.6",
     "intersection-observer": "^0.12.2",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "next": "13.0.4",
     "nodemailer": "^6.8.0",
