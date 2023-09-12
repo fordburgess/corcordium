@@ -206,30 +206,30 @@ const Parallax = () => {
         </div>
         <div ref={photoPlayer} className={cx(style.photoPlayerMobile, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky, scrollPosition >= 415 && style.endScroll)}>
           <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 535 && style.centered)}><h3>See All</h3></Link>
-          <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo"/>
-          <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" />
-          <img src="media/angela5-min.jpg" ref={mobilePhotoRefs.angela5ref} alt="photo" />
-          <img src="media/nora1-min.jpg" ref={mobilePhotoRefs.nora1ref} alt="photo" />
-          <img src="media/kim2.jpeg" ref={mobilePhotoRefs.kim2ref} alt="photo" />
-          <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" />
-          <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" />
-          <img src="media/angela2.jpg" ref={mobilePhotoRefs.angela2ref} alt="photo" />
-          <img src="media/angela3.jpg" ref={mobilePhotoRefs.angela3ref} alt="photo" />
-          <img src="media/nora4.jpg" ref={mobilePhotoRefs.nora4ref} alt="photo" />
+          <img src="media/kim1.jpeg" ref={mobilePhotoRefs.kim1ref} alt="photo" loading="lazy"/>
+          <img src="media/angela6.jpg" ref={mobilePhotoRefs.angela6ref} alt="photo" loading="lazy"/>
+          <img src="media/angela5-min.jpg" ref={mobilePhotoRefs.angela5ref} alt="photo" loading="lazy"/>
+          <img src="media/nora1-min.jpg" ref={mobilePhotoRefs.nora1ref} alt="photo" loading="lazy"/>
+          <img src="media/kim2.jpeg" ref={mobilePhotoRefs.kim2ref} alt="photo" loading="lazy"/>
+          <img src="media/nora2-min.jpg" ref={mobilePhotoRefs.nora2ref} alt="photo" loading="lazy"/>
+          <img src="media/nora3-min.jpg" ref={mobilePhotoRefs.nora3ref} alt="photo" loading="lazy"/>
+          <img src="media/angela2.jpg" ref={mobilePhotoRefs.angela2ref} alt="photo" loading="lazy"/>
+          <img src="media/angela3.jpg" ref={mobilePhotoRefs.angela3ref} alt="photo" loading="lazy"/>
+          <img src="media/nora4.jpg" ref={mobilePhotoRefs.nora4ref} alt="photo" loading="lazy"/>
           <div className={cx(style.overlay, scrollPosition >= 535 && style.endScroll)}></div>
         </div>
         <div className={cx(style.photoPlayerDesktop, fadeInBottom && style.fadeInBottom, stickyPhoto && style.sticky)}>
           <Link href="/portfolio/gallery" className={cx(style.galleryLink, scrollPosition >= 535 && style.centered)}><h3>See All</h3></Link>
-          <img src="media/kim1.jpeg" ref={desktopPhotoRefs.kim1ref} alt="photo"/>
-          <img src="media/angela6.jpg" ref={desktopPhotoRefs.angela6ref} alt="photo" />
-          <img src="media/angela5-min.jpg" ref={desktopPhotoRefs.angela5ref} alt="photo" />
-          <img src="media/nora1-min.jpg" ref={desktopPhotoRefs.nora1ref} alt="photo" />
-          <img src="media/kim2.jpeg" ref={desktopPhotoRefs.kim2ref} alt="photo" />
-          <img src="media/nora2-min.jpg" ref={desktopPhotoRefs.nora2ref} alt="photo" />
-          <img src="media/nora3-min.jpg" ref={desktopPhotoRefs.nora3ref} alt="photo" />
-          <img src="media/angela2.jpg" ref={desktopPhotoRefs.angela2ref} alt="photo" />
-          <img src="media/angela3.jpg" ref={desktopPhotoRefs.angela3ref} alt="photo" />
-          <img src="media/nora4.jpg" ref={desktopPhotoRefs.nora4ref} alt="photo" />
+          <img src="media/kim1.jpeg" ref={desktopPhotoRefs.kim1ref} alt="photo" loading="lazy"/>
+          <img src="media/angela6.jpg" ref={desktopPhotoRefs.angela6ref} alt="photo" loading="lazy"/>
+          <img src="media/angela5-min.jpg" ref={desktopPhotoRefs.angela5ref} alt="photo" loading="lazy"/>
+          <img src="media/nora1-min.jpg" ref={desktopPhotoRefs.nora1ref} alt="photo" loading="lazy"/>
+          <img src="media/kim2.jpeg" ref={desktopPhotoRefs.kim2ref} alt="photo" loading="lazy"/>
+          <img src="media/nora2-min.jpg" ref={desktopPhotoRefs.nora2ref} alt="photo" loading="lazy"/>
+          <img src="media/nora3-min.jpg" ref={desktopPhotoRefs.nora3ref} alt="photo" loading="lazy"/>
+          <img src="media/angela2.jpg" ref={desktopPhotoRefs.angela2ref} alt="photo" loading="lazy"/>
+          <img src="media/angela3.jpg" ref={desktopPhotoRefs.angela3ref} alt="photo" loading="lazy"/>
+          <img src="media/nora4.jpg" ref={desktopPhotoRefs.nora4ref} alt="photo" loading="lazy"/>
           <div className={cx(style.overlay, scrollPosition >= 535 && style.endScroll)}></div>
         </div>
       </div>
