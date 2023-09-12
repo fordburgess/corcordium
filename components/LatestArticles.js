@@ -9,6 +9,7 @@ const Content = (articles) => {
   for (var i = 0; i < 4; i++) {
     content.push(
       <LatestArticle
+      blurb={articles[i].content.content[0].content[0].value}
       key={articles[i].titlePhoto.sys.id}
       date={articles[i].date}
       title={articles[i].title}

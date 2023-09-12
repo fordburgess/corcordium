@@ -12,6 +12,8 @@ const LatestArticle = (props) => {
   const imageRef = useRef(null)
 
   var path = `/articles/${props.id}`
+  var blurb = props.blurb.split(" ").slice(0, 25).join(" ")
+  console.log(blurb)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +47,7 @@ const LatestArticle = (props) => {
             <p className={styles.date}>{dateFormat(Date.parse(props.date), "dd/mm/yyyy")}</p>
           </div>
           <p className={styles.blurb}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            {blurb}...
           </p>
         </div>
       </Link>

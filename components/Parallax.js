@@ -59,7 +59,6 @@ const Parallax = () => {
   }, [])
 
   useEffect(() => {
-    console.log(scalingFactorY)
     if (scrollPosition < 100) {
       mobilePhotoRefs.nora3ref.current.style.zIndex = 1;
       mobilePhotoRefs.kim1ref.current.style.zIndex = 0;
