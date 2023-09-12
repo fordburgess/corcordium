@@ -5,8 +5,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './instafeed.module.css';
 import Instagram from "../media/insta.svg"
 
-
-
 const InstaFeed = (props) => {
   var posts = props.posts
   const link = "https://instagram.com/corcordiumarchive"

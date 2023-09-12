@@ -5,13 +5,14 @@ import { useRouter } from 'next/router';
 import styles from "./latestarticle.module.css"
 import dateFormat, { masks } from "dateformat";
 import cx from "classnames"
-import { style } from '@mui/system';
+import { Hidden } from '@mui/material';
 
 const LatestArticle = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const imageRef = useRef(null)
 
   var path = `/articles/${props.id}`
+  var blurb = props.blurb.split(" ").slice(0, 20).join(" ")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +37,7 @@ const LatestArticle = (props) => {
   }, [])
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id={props.index}>
       <Link href={path} className={styles.link}>
         <img src={props.image} alt="article photo" className={cx(styles.image, isVisible && styles.visible)} ref={imageRef} />
         <div className={cx(styles.textContainer, isVisible && styles.visible)}>
@@ -44,10 +45,11 @@ const LatestArticle = (props) => {
             <h3 className={styles.title}>{props.title}</h3>
             <p className={styles.date}>{dateFormat(Date.parse(props.date), "dd/mm/yyyy")}</p>
           </div>
-          <p className={styles.blurb}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </p>
+          <Hidden mdDown>
+            <p className={styles.blurb}>
+              {blurb}...
+            </p>
+          </Hidden>
         </div>
       </Link>
     </div>
