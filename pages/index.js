@@ -25,7 +25,7 @@ export default function Home({ feed, latestArticles }) {
 }
 
 
-export const getStaticProps = async () => {
+export async function getServerSideProps() {
   var latestArticles = [];
   const feed = [];
 
