@@ -17,7 +17,7 @@
   font-family: Alata;
   position: sticky;
   top: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   z-index: 5;
 }
 .header h3 {
@@ -42,18 +42,18 @@
 
 .info {
   display: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .image {
-  height: auto;
-  width: 99%;
+  /* height: 300px;
+  width: 99%; */
   transition: 0.15s;
   z-index: -5;
 }
 
 .imageContainer {
-  line-height: 1;
+  /* line-height: 1;
   -webkit-column-count: 3;
   -webkit-column-gap: 0px;
   -moz-column-count: 3;
@@ -61,23 +61,24 @@
   column-count: 3;
   column-gap: 0px;
   width: 90vw;
-  margin: 0 auto;
+  margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .readMore {
-color: #FFFFFF;
+  color: #ffffff;
   text-decoration: underline;
 }
 .readMore:hover {
   cursor: pointer;
 }
 .readMore:visited {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-
 @media (min-width: 800px) {
-
   .header {
     padding: 10px 50px;
     height: 15vh;
@@ -93,11 +94,11 @@ color: #FFFFFF;
   }
 
   .image {
-    height: auto;
-    width: 99.8%;
-    margin: 0.5px;
+    /* height: 300px;
+    width: 300px; */
+    /* margin: 0.5px;
     margin-right: 0.1px;
-    margin-left: 0.1px;
+    margin-left: 0.1px; */
     transition: 0.15s;
     z-index: -5;
   }
@@ -122,7 +123,7 @@ color: #FFFFFF;
   }
 
   .imageContainer {
-    line-height: 0;
+    /* line-height: 0;
     -webkit-column-count: 3;
     -webkit-column-gap: 0px;
     -moz-column-count: 3;
@@ -131,7 +132,8 @@ color: #FFFFFF;
     column-gap: 0px;
     width: 90vw;
     margin: 0 auto;
-    padding-top: 200px;
+    padding-top: 200px; */
+    width: 50%;
+    margin: 0 auto;
   }
-
 }

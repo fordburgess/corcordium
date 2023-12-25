@@ -13,7 +13,6 @@ function Gallery({ photos }) {
   //   setLoading(false)
   // }, 2000);
 
-
   const projId = (string) => {
     var id = null
 
@@ -40,14 +39,17 @@ function Gallery({ photos }) {
               var title = item.fields.title.split("-")[0];
               var photoUrl = "https:" + item.fields.file.url
               var projectLink = `${projId(title)}`;
+              var height = item.fields.file.details.image.height / 20;
+              var width = item.fields.file.details.image.width / 20;
+
               return (
                 <div key={index} className={styles.contentContainer}>
                   <Link href={projectLink} className={styles.mobileLink}>
-                    <Image width={1000} height={100} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
-                    <div className={styles.info}>
+                    <Image width={width} height={height} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
+                    {/* <div className={styles.info}>
                       <h1 style={{marginBottom: "50px"}}>{title}</h1>
                       <Link href={projectLink} className={styles.readMore}>Read More</Link>
-                    </div>
+                    </div> */}
                   </Link>
                 </div>
               )
