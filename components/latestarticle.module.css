@@ -9,6 +9,12 @@
   src: local("Inter-Bold"), url("../fonts/Inter-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Inter-Regular";
+  src: local("Inter-Regular"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+}
+
 .container {
   min-width: 100vw;
   box-sizing: border-box;
@@ -35,7 +41,7 @@
 }
 
 .blurb {
-  font-family: Roboto-Light;
+  font-family: "Inter-Regular";
 }
 
 .link {
@@ -45,8 +51,8 @@
 
 @media (min-width: 800px) {
   .container {
-    min-width: 30%;
-    max-width: 30%;
+    min-width: 32%;
+    max-width: 32%;
     transition: 0.2s;
   }
 
@@ -55,19 +61,14 @@
   }
 
   .image {
-    height: 250px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    margin: 0 0 10px 0;
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-  }
-
-  .image.visible {
-    opacity: 100;
-    /* transform: translateY(-40px); */
-    margin: 0 0 12px 0;
   }
 
   .textContainer {
@@ -85,18 +86,18 @@
 
   .title {
     font-family: "Inter-Bold";
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     margin: 0 0 10px 0;
   }
 
   .date {
     font-family: "Inter-Bold";
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin: 0 0 10px 0;
   }
 
   .blurb {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0;
   }
 }
