@@ -45,18 +45,7 @@ const LatestArticle = (props) => {
         <img src={props.image} alt="article photo" className={cx(styles.image, isVisible && styles.visible)} ref={imageRef} />
         <h1 className={styles.title}>{props.title}</h1>
         <h2 className={styles.date}>{monthYear}</h2>
-        <p className={styles.blurb}>{blurb}...</p>
-        {/* <div className={cx(styles.textContainer, isVisible && styles.visible)}>
-          <div className={styles.titleContainer}>
-            <h3 className={styles.title}>{props.title}</h3>
-            <p className={styles.date}>{dateFormat(Date.parse(props.date), "dd/mm/yyyy")}</p>
-          </div>
-          <Hidden mdDown>
-            <p className={styles.blurb}>
-              {blurb}...
-            </p>
-          </Hidden>
-        </div> */}
+        <p className={styles.blurb}>{blurb}</p>
       </Link>
     </div>
   )
