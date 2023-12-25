@@ -114,37 +114,42 @@ const FloatingPics = () => {
     },
     {
       name: 'portrait1.jpg',
-      height: 300,
-      width: 200,
+      height: 325,
+      width: 240,
       x: CANVAS_WIDTH / 15,
-      y: 200,
+      y: 350,
     },
     {
       name: 'movement3.jpg',
       height: 300,
       width: 225,
       x: CANVAS_WIDTH / 16,
-      y: 400
+      y: 20
     },
     {
       name: 'movement5.jpg',
-      height: 350,
-      width: 450,
+      height: 300,
+      width: 425,
       x: CANVAS_WIDTH / 17,
-      y: 100
+      y: 325
     }
   ]
 
   const [imagesState, setImagesState] = useState([]);
   const interval = CANVAS_WIDTH / images.length + 50;
   let imagesRef = useRef(
-    images.map((image, i) => ({
-      ...image,
-      x: i * interval,
-      noiseSeedX: Math.floor(Math.random() * 64000),
-      noiseSeedY: Math.floor(Math.random() * 64000),
-      xWithNoise: image.x,
-    }))
+    images.map((image, i) => {
+
+      var extraBuffer = i >= 13 ? 100 : 0;
+
+      return {
+        ...image,
+        x: i * interval + extraBuffer,
+        noiseSeedX: Math.floor(Math.random() * 64000),
+        noiseSeedY: Math.floor(Math.random() * 64000),
+        xWithNoise: image.x,
+      }
+    })
   )
 
   useEffect(() => {
@@ -213,6 +218,7 @@ const FloatingPics = () => {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.header}>photography</h1>
       <div>
       {
         images.map((image, index) => {
@@ -238,7 +244,6 @@ const FloatingPics = () => {
           })
         }
       </div>
-
     </div>
   )
 }

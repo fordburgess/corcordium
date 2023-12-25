@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"),
+    url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
 @keyframes movingImage {
   0% {
     transform: translateX(120vw);
@@ -8,11 +14,14 @@
 }
 
 .container {
-  height: 90vh;
+  height: 50vh;
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-color: antiquewhite;
+}
+
+.header {
+  font-family: "Roboto-Light";
 }
 
 /* .container::after,
@@ -56,4 +65,15 @@
 
 .floatingImage:hover {
   /* transform: scale(1.01); */
+}
+
+@media (min-width: 900px) {
+  .container {
+    height: 100vh;
+  }
+
+  .header {
+    margin-left: 50px;
+    font-size: 2.25rem;
+  }
 }
