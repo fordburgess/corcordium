@@ -158,7 +158,6 @@ const FloatingPics = () => {
 
       const newImages = images.map((image, i) => {
         var extraBuffer = i >= 13 ? 100 : 0
-        console.log(extraBuffer)
 
         return { ...image, x: i * interval + extraBuffer }
       })

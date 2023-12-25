@@ -1,19 +1,7 @@
-@font-face {
-  font-family: "Georgia";
-  src: local("Georgia"), url("../fonts/Georgia.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Alata";
-  src: local("Alata-Regular"),
-    url("../fonts/Alata-Regular.ttf") format("truetype");
-}
-
 .container {
   /* padding-left: 20px; */
   width: 100vw;
   box-sizing: border-box;
-  text-align: center;
   overflow-y: visible;
   overflow-x: hidden;
   position: relative;
@@ -21,8 +9,7 @@
 }
 
 .header {
-  font-family: Georgia;
-  margin-bottom: 30px;
+  font-family: Roboto-Light;
 }
 
 .articleContainer {
@@ -36,7 +23,7 @@
   color: #000000;
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 50px;
 }
 
@@ -53,23 +40,21 @@
   .container {
     width: 100vw;
     /* padding-left: 75px; */
-    margin-top: 75px;
     box-sizing: border-box;
     padding: 0;
-    text-align: left;
+    /* text-align: left; */
   }
 
   .header {
-    margin-bottom: 70px;
-    text-align: center;
+    padding-left: 50px;
+    font-size: 2.25rem;
   }
 
   .articleContainer {
     width: 100vw;
+    /* padding: 0 50px; */
+    padding: 0 50px;
     display: flex;
-    padding: 0 50px 0 65px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
