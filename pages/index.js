@@ -18,8 +18,8 @@ export default function Home({ feed, latestArticles }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Parallax /> */}
-      <LatestArticles articles={latestArticles}/>
       <FloatingPics />
+      <LatestArticles articles={latestArticles}/>
       {/* <PhotoDisplay /> */}
       <InstaFeed posts={feed}/>
     </div>
