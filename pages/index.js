@@ -18,9 +18,9 @@ export default function Home({ feed, latestArticles }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Parallax /> */}
+      <LatestArticles articles={latestArticles}/>
       <FloatingPics />
       {/* <PhotoDisplay /> */}
-      <LatestArticles articles={latestArticles}/>
       <InstaFeed posts={feed}/>
     </div>
   )
