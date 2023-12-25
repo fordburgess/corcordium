@@ -19,8 +19,8 @@ export default function Home({ feed, latestArticles }) {
       </Head>
       {/* <Parallax /> */}
       <FloatingPics />
-      {/* <PhotoDisplay /> */}
       <LatestArticles articles={latestArticles}/>
+      {/* <PhotoDisplay /> */}
       <InstaFeed posts={feed}/>
     </div>
   )
