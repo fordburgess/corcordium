@@ -53,24 +53,12 @@ const LatestArticles = ({ articles }) => {
   };
 
   return (
-    <>
-      <div className={styles.container}>
-        <Hidden mdDown>
-          <h1 className={styles.header}>latest articles</h1>
-        </Hidden>
-        {/* <Hidden mdUp>
-          <h1 className={styles.header}>LATEST</h1>
-        </Hidden>
-        <Hidden mdUp>
-          <a href="#" onClick={(e) => clickHandler(e, currentArticle - 1)}><ChevronLeft className={styles.chevron} style={{ left: '-5', color: currentArticle == 0 ? "#D0D0D0" : "#000000" }} /></a>
-          <a href="#" onClick={(e) => clickHandler(e, currentArticle + 1)}><ChevronRight className={styles.chevron} style={{ right: '-5', color: currentArticle == 3 ? "#D0D0D0" : "#000000" }} /></a>
-        </Hidden> */}
-        <div className={styles.articleContainer}>
-          {Content(articles)}
-        </div>
+    <div className={styles.container}>
+      <h1 className={styles.header}>latest articles</h1>
+      <div className={styles.articleContainer}>
+        {Content(articles)}
       </div>
-      {/* <Link href="/articles/articles" className={styles.link}><p>See All Articles</p></Link> */}
-    </>
+    </div>
   )
 }
 

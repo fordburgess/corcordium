@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"),
+    url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.videoContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.videoContainer video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+.greeting {
+  font-family: Roboto-Light;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+}
+
+.rightSection {
+  display: none;
+}
+
+.mobileText {
+  display: block;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 254, 245);
+}
+
+.textContainer {
+  position: absolute;
+  width: 65%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  color: rgb(255, 254, 245);
+}
+
+.logo {
+  height: 175px;
+  width: 175px;
+  /* position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%); */
+  z-index: 1000;
+}
+
+.greeting {
+  font-family: "Roboto-Light";
+  font-size: 2.5rem;
+  margin: 0;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: traslateX(-50%); */
+}
+
+.downArrowMobile {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+  }
+
+  .videoContainer {
+    width: 50%;
+    height: 100%;
+  }
+
+  .logo {
+    height: 125px;
+    width: 125px;
+    margin-left: -40px;
+  }
+
+  .greeting {
+    font-family: "Roboto-Light";
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  .rightSection {
+    display: block;
+    height: 100%;
+    width: 50%;
+    position: relative;
+  }
+
+  .textContainer {
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+  }
+
+  .linksContainer {
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 66%;
+    justify-content: space-between;
+  }
+
+  .linksContainer p {
+    font-family: "Roboto-Light";
+    font-size: 1.5rem;
+  }
+
+  .mobileText {
+    display: none;
+  }
+
+  .downArrowDesktop {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+  }
+
+  .downArrowMobile {
+    display: none;
+  }
+}
