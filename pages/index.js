@@ -27,7 +27,10 @@ const index = () => {
         </div>
       </div>
       <div className={styles.rightSection}>
-        <TextContainer logo="logo-small.png"/>
+        <div className={styles.desktopGreeting}>
+          <Image className={styles.logoDesktop} src="/media/logo-small.png" height={150} width={150}/>
+          <h1 className={styles.greetingHeader}>hi! welcome to<br /> corcordium!</h1>
+        </div>
         <Image src="/media/down-arrow.png" alt="arrow" height={150} width={150} className={styles.downArrowDesktop}/>
         <div className={styles.linksContainer}>
           <p>fashion</p>
