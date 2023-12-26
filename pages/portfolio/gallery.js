@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
 import { images } from '../../next.config';
-import GalleryPart1 from './galleryPart1';
 import cx from 'classnames'
 var contentful = require("contentful")
 
