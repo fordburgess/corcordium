@@ -9,7 +9,6 @@ export default function Layout({ children }) {
   var arr = router.pathname.split("/")
   var altNavTitle = router.pathname.includes("articles/[id]") ? "Articles" : arr[arr.length - 1].charAt(0).toUpperCase() + arr[arr.length - 1].slice(1);
 
-
   if (router.pathname.includes("about") || router.pathname.includes("portfolio/[id]")) {
     return (
       <>
@@ -73,40 +72,8 @@ export default function Layout({ children }) {
         </style>
         {/* <Navbar /> */}
           <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </>
     )
   }
-  // if (!router.pathname.includes("articles") && !router.pathname.includes("about") && !router.pathname.includes("contact") && !router.pathname.includes("portfolio")) {
-  //   return (
-  //     <>
-  //       <style jsx global>
-  //       {`
-  //         html, body {
-  //           margin: 0;
-  //           padding: 0;
-  //         },
-  //       `}
-  //       </style>
-  //       <Navbar />
-  //         <main>{children}</main>
-  //       <Footer />
-  //     </>
-  //   )
-  // }
-  // else {
-  //   return (
-  //     <>
-  //       <style jsx global>
-  //       {`
-  //         body {
-  //           margin: 0;
-  //           padding: 0;
-  //         }
-  //       `}
-  //       </style>
-  //       <main>{children}</main>
-  //     </>
-  //   )
-  // }
 }
