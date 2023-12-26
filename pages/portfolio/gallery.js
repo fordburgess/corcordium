@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
 import { images } from '../../next.config';
+import GalleryPart1 from './galleryPart1';
+import cx from 'classnames'
 var contentful = require("contentful")
 
 function Gallery({ photos }) {
@@ -34,24 +36,18 @@ function Gallery({ photos }) {
     <>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
+          {/* <GalleryPart1 photos={photos.slice(15, 30)} /> */}
           {!loading ? (
             photos.map((item, index) => {
               var title = item.fields.title.split("-")[0];
               var photoUrl = "https:" + item.fields.file.url
               var projectLink = `${projId(title)}`;
-              var height = item.fields.file.details.image.height / 20;
-              var width = item.fields.file.details.image.width / 20;
+              var height = item.fields.file.details.image.height;
+              var width = item.fields.file.details.image.width;
 
               return (
-                <div key={index} className={styles.contentContainer}>
-                  <Link href={projectLink} className={styles.mobileLink}>
-                    <Image width={width} height={height} src={photoUrl} alt="portfolio" key={index} className={styles.image}/>
-                    {/* <div className={styles.info}>
-                      <h1 style={{marginBottom: "50px"}}>{title}</h1>
-                      <Link href={projectLink} className={styles.readMore}>Read More</Link>
-                    </div> */}
-                  </Link>
-                </div>
+                  // <Link key={photoUrl} href={projectLink} className={styles.mobileLink}>
+                    <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, width > height ? styles.horizontal : styles.vertical)}/>
               )
             })
           ) : (
@@ -74,7 +70,7 @@ Gallery.getInitialProps = async (ctx) => {
   await client.getAssets()
   .then(function(res) {
     res.items.forEach(item => {
-      if (item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
+      if (item.fields.title.includes("nora") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
         data.push(item)
       }
     })

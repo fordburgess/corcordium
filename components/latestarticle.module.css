@@ -17,6 +17,7 @@
 
 .container {
   min-width: 100vw;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -54,6 +55,7 @@
     min-width: 32%;
     max-width: 32%;
     transition: 0.2s;
+    height: auto;
   }
 
   .container:hover {
