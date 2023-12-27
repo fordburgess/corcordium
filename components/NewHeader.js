@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from "./NewHeader.module.css"
 import { useRouter } from 'next/router';
 import cx from 'classnames'
+import { Drawer } from '@mui/material';
 
 const NewHeader = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,7 @@ const NewHeader = () => {
         )
       }
       <div
-        className={cx(styles.navIcon, open && styles.open, router.pathname !== "/home" && styles.desktopVisible)}
+        className={cx(styles.navIcon, router.pathname !== "/home" && styles.desktopVisible)}
         onClick={() => setOpen(true)}
       >
         <div></div>
@@ -39,6 +40,30 @@ const NewHeader = () => {
         <div></div>
         <div></div>
       </div>
+      <Drawer
+        anchor={'right'}
+        open={open}
+        className={styles.drawer}
+        onClose={() => setOpen(false)}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'rgb(255, 254, 245)',
+            width: '25vw',
+          }
+        }}
+      >
+        <div className={styles.drawerContainer}>
+          <Image onClick={() => setOpen(false)} className={styles.xIcon} src="/media/x-icon.svg" height={45} width={45} alt="x-icon"/>
+          <div style={{ display: 'flex', flexDirection: 'column'}}>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">home</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/articles">writing</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">projects</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">CV</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/contact">contact</Link>
+          </div>
+        </div>
+      </Drawer>
     </div>
   )
 }
