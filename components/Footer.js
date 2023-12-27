@@ -19,17 +19,8 @@ export default function Footer(props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.top}>
-        <Link href="/about" className={styles.link}>About</Link>
-        <Link href="/contact" className={styles.link}>Contact</Link>
-      </div>
-      <div className={styles.bottom}>
-        <a href="https://www.instagram.com/corcordiumarchive/" className={styles.link}>
-          <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
-        </a>
-        <p onClick={() => handlShare()} className={styles.share}>Share</p>
-      </div>
-      <p className={styles.watermark}>@2023 Ford Burgess</p>
+      <p className={styles.watermark} style={{ margin: 0}}>@2024 Ford Burgess</p>
+      <p style={{ margin: 0 }}>LinkedIn: <Link style={{ color: "#000000" }} href="linkedin.com/in/ford-burgess">linkedin.com/in/ford-burgess</Link></p>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.container {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(255, 254, 245);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto-Light;
+  width: 33%;
+  font-size: 1.5rem;
+  padding-left: 65px;
+}

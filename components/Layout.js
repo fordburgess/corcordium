@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import AltNavbar from './AltNavbar';
+import HomepageHeader from './HomepageHeader';
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -56,6 +57,24 @@ export default function Layout({ children }) {
           <main>{children}</main>
         <Footer path={router.pathname} title={altNavTitle}/>
       </>
+    )
+  }
+  else if (router.pathname.includes("home")) {
+    return (
+      <>
+        <style jsx global>
+        {`
+          html, body {
+            margin: 0;
+            padding: 0;
+          },
+        `}
+        </style>
+        <HomepageHeader />
+          <main style={{ paddingTop: "12vh" }}>{children}</main>
+        <Footer />
+      </>
+
     )
   }
   else
