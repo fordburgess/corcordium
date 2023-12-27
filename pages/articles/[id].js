@@ -76,7 +76,6 @@ const options = {
 }
 
 const Article = ({ article }) => {
-  console.log(article);
 
   return (
     <div className={styles.container}>

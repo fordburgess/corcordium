@@ -31,8 +31,6 @@ function Gallery({ photos }) {
     return id;
   }
 
-  // console.log(photos)
-
   return (
     <>
       <div className={styles.container}>

@@ -43,12 +43,28 @@
   font-family: Roboto-Light;
   font-style: italic;
   font-size: 3.75rem;
-  margin-bottom: 75px;
+  margin-bottom: 25px;
+}
+
+.htmlText {
+  font-family: Roboto-Light;
 }
 
 .projectText {
   font-family: Roboto-Light;
   font-size: 1rem;
+}
+
+.previewedPhoto.active {
+  border: solid 5px rgb(0, 0, 0);
+}
+
+.previewedPhoto:hover {
+  cursor: pointer;
+}
+
+.chevron:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 800px) {
@@ -80,18 +96,19 @@
   .photoPreview {
     display: flex;
     align-items: center;
-    height: 120px;
     position: absolute;
     bottom: 15%;
     transform: translateY(-15%);
     width: 100%;
     margin-right: -30px;
+    height: auto;
   }
 
   .photoCarousel {
     width: 90%;
     overflow-x: hidden;
     display: flex;
+    align-items: center;
   }
 
   .miniFooter {
