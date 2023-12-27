@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from "./floatingpics.module.css";
 import Image from 'next/image';
+import Link from 'next/link'
 import { Noise } from 'noisejs';
 
 const FloatingPics = () => {
@@ -221,23 +222,33 @@ const FloatingPics = () => {
       <div>
       {
         images.map((image, index) => {
+          var projectNumber;
+          var title = image.name.split(/(\d+)/)[0].toLocaleLowerCase();
+
+          if (title.includes("innocente")) projectNumber = 0;
+          else if (title.includes("restriction")) projectNumber = 1;
+          else if (title.includes("movement")) projectNumber = 2;
+          else if (title.includes("banshee")) projectNumber = 3;
+
           return (
-            <Image
-            key={image.name}
-            className={styles.floatingImage}
-            id={`image-${index}`}
-            alt='image'
-            src={`/media/${image.name}`}
-            width={image.width}
-            height={image.height}
-            style={{
-              // backgroundImage: `url(/media/${image.name})`,
-              // height: `${image.height}`,
-              // width: `${image.width}`,
-              // animationDuration: `${image.speed}`,
-              // top: `${image.top}`
-            }}
-            />
+            <Link key={index} href={`/portfolio/${projectNumber}`}>
+              <Image
+              key={image.name}
+              className={styles.floatingImage}
+              id={`image-${index}`}
+              alt='image'
+              src={`/media/${image.name}`}
+              width={image.width}
+              height={image.height}
+              style={{
+                // backgroundImage: `url(/media/${image.name})`,
+                // height: `${image.height}`,
+                // width: `${image.width}`,
+                // animationDuration: `${image.speed}`,
+                // top: `${image.top}`
+              }}
+              />
+            </Link>
             // </div>
             )
           })
