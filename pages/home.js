@@ -4,6 +4,7 @@ import HomepageHeader from '../components/HomepageHeader';
 import FloatingPics from '../components/FloatingPics';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
+import ZineDisplay from '../components/ZineDisplay';
 var contentful = require("contentful")
 
 export default function Home({ feed, latestArticles }) {
@@ -18,6 +19,7 @@ export default function Home({ feed, latestArticles }) {
       {/* <HomepageHeader /> */}
       <LatestArticles articles={latestArticles}/>
       <FloatingPics />
+      <ZineDisplay />
       {/* <InstaFeed posts={feed}/> */}
     </div>
   )

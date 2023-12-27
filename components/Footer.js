@@ -20,7 +20,7 @@ export default function Footer(props) {
   return (
     <div className={styles.container}>
       <p className={styles.watermark} style={{ margin: 0}}>@2024 Ford Burgess</p>
-      <p style={{ margin: 0 }}>LinkedIn: <Link style={{ color: "#000000" }} href="linkedin.com/in/ford-burgess">linkedin.com/in/ford-burgess</Link></p>
+      <p style={{ margin: 0 }}>LinkedIn: <Link target="_blank" style={{ color: "#000000" }} href="https://www.linkedin.com/in/ford-burgess/">linkedin.com/in/ford-burgess</Link></p>
     </div>
   );
 }
