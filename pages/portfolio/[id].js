@@ -100,16 +100,6 @@ const Project = ({ project }) => {
 
   return (
     <>
-      <div className={styles.header}>
-        <Hidden only={['lg', 'xl']}>
-          <Link href="/"><Image src={AltLogo} alt="logo" className={styles.logo}/></Link>
-        </Hidden>
-        <Hidden only={['sm', 'xs']}>
-          <Link href="/"><Image src={Logo} alt="logo" className={styles.logo}/></Link>
-        </Hidden>
-          <div className={styles.test}></div>
-        <h3>Portfolio</h3>
-      </div>
       <div className={styles.wrapper}>
         <div className={styles.leftContainer}>
           <Image

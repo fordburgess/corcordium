@@ -2,83 +2,33 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import AltNavbar from './AltNavbar';
-import HomepageHeader from './HomepageHeader';
+import NewHeader from './NewHeader';
 
 export default function Layout({ children }) {
   const router = useRouter();
   var arr = router.pathname.split("/")
   var altNavTitle = router.pathname.includes("articles/[id]") ? "Articles" : arr[arr.length - 1].charAt(0).toUpperCase() + arr[arr.length - 1].slice(1);
 
-  if (router.pathname.includes("about") || router.pathname.includes("portfolio/[id]")) {
-    return (
-      <>
-      <style jsx global>
-      {`
-        html, body {
-          margin: 0;
-          padding: 0;
-        },
-      `}
-      </style>
-      <main>{children}</main>
-    </>
-    )
-  }
-  else if (router.pathname.includes("contact")) {
-    return (
-      <>
-      <style jsx global>
-      {`
-        html, body {
-          margin: 0;
-          padding: 0;
-        },
-      `}
-      </style>
-      <AltNavbar title={altNavTitle}/>
-        <main>{children}</main>
-    </>
-    )
-  }
-  else if (router.pathname.includes("articles") || router.pathname.includes("portfolio")) {
-
+  if (router.pathname !== "/") {
     return (
       <>
         <style jsx global>
-        {`
+        {
+        `
           html, body {
             margin: 0;
-            padding: 0;
+            padding: 9vh 0 0 0;
           },
-        `}
+        `
+        }
         </style>
-        <AltNavbar title={altNavTitle}/>
+        <NewHeader />
           <main>{children}</main>
-        <Footer path={router.pathname} title={altNavTitle}/>
-      </>
+        {/* <Footer /> */}
+    </>
     )
   }
-  else if (router.pathname.includes("home")) {
-    return (
-      <>
-        <style jsx global>
-        {`
-          html, body {
-            margin: 0;
-            padding: 0;
-          },
-        `}
-        </style>
-        <HomepageHeader />
-          <main style={{ paddingTop: "12vh" }}>{children}</main>
-        <Footer />
-      </>
-
-    )
-  }
-  else
-  {
+  else {
     return (
       <>
         <style jsx global>

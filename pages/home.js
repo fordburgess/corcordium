@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image'
-import HomepageHeader from '../components/HomepageHeader';
 import FloatingPics from '../components/FloatingPics';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
