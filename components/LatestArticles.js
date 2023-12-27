@@ -36,11 +36,8 @@ const LatestArticles = ({ articles }) => {
 
   articles = articles.sort((a, b) => b.date - a.date).slice(0, 3)
 
-  console.log(articles)
-
   const clickHandler = (e, index) => {
     e.preventDefault();
-    console.log(index);
 
     if (index <= 3 && index >= 0) {
       setCurrentArticle(index);

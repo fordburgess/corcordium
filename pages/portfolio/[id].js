@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './project.module.css';
@@ -15,7 +15,9 @@ export const getStaticPaths = async () => {
   const paths = Projects.projects.map(project => {
 
     return {
-      params: { id: project.id.toString() }
+      params: {
+        id: project.id.toString(),
+      }
     }
   })
 
@@ -36,13 +38,13 @@ export const getStaticProps = async (context) => {
   })
 
   await client.getAssets()
-  .then(function(res) {
-    res.items.forEach(item => {
-      if (item.fields.title.includes(project.title)) {
-        project.images.push(item.fields);
-      }
+    .then(function(res) {
+      res.items.forEach(item => {
+        if (item.fields.title.toLocaleLowerCase().includes(project.title.toLocaleLowerCase())) {
+          project.images.push(item.fields);
+        }
+      })
     })
-  })
 
   return {
     props: {
@@ -79,6 +81,22 @@ const useMediaQuery = (width) => {
 
 const Project = ({ project }) => {
   const [currIndex, setCurrIndex] = useState(0);
+  const photoCarouselRef = useRef(null);
+
+  const changePhoto = (action) => {
+    if (action == 'dec' && currIndex !== 0) setCurrIndex(prev => prev - 1);
+    if (action == 'inc' && currIndex !== project.images.length - 1) setCurrIndex(prev => prev + 1)
+  }
+
+  useEffect(() => {
+    // Scroll the carousel to make the active photo visible
+    if (photoCarouselRef.current) {
+      const activePhoto = photoCarouselRef.current.querySelector(`#photo-${currIndex}`);
+      if (activePhoto) {
+        photoCarouselRef.current.scrollLeft = activePhoto.offsetLeft - (photoCarouselRef.current.offsetWidth / 2) + (activePhoto.offsetWidth / 2);
+      }
+    }
+  }, [currIndex]);
 
   return (
     <>
@@ -105,28 +123,30 @@ const Project = ({ project }) => {
         <div className={styles.rightContainer}>
           <div style={{ width: '75%'}}>
             <h1 className={styles.projectTitle}>{project.title.toLocaleLowerCase()}</h1>
-            <p className={styles.projectText}>{project.text}</p>
+            <div className={styles.htmlText} dangerouslySetInnerHTML={{ __html: project.text }}/>
           </div>
           <div className={styles.photoPreview}>
-            <Image src={'/media/chevron-left.png'} height={50} width={50} alt="chevron-left"/>
-            <div className={styles.photoCarousel}>
+            <Image onClick={() => changePhoto('dec')} className={styles.chevron} src={'/media/chevron-left.png'} height={50} width={50} alt="chevron-left"/>
+            <div ref={photoCarouselRef} className={styles.photoCarousel}>
               {
                 project.images.map((photo, index) => {
                   return (
                     <Image
-                      className={styles.previewedPhoto}
+                      id={`photo-${index}`}
+                      onClick={() => setCurrIndex(index)}
+                      className={cx(styles.previewedPhoto, index == currIndex && styles.active)}
                       key={index}
                       src={`https:${photo.file.url}`}
                       height={120}
                       width={photo.file.details.image.width / 40}
                       alt="photo"
-                      style={{ marginRight: '5px' }}
+                      style={{ marginRight: '10px' }}
                     />
                   )
                 })
               }
             </div>
-            <Image src={'/media/chevron-right.png'} height={50} width={50} alt="chevron-right"/>
+            <Image onClick={() => changePhoto('inc')} className={styles.chevron} src={'/media/chevron-right.png'} height={50} width={50} alt="chevron-right"/>
           </div>
         </div>
       </div>

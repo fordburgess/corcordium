@@ -1,8 +1,5 @@
 import React from 'react'
 import Link from "next/link"
-import Image from 'next/image'
-import Logo from '../../media/logo1.png'
-import AltLogo from '../../media/AltLogo.png'
 import LatestArticle from '../../components/LatestArticle'
 import styles from './articles.module.css'
 import dateFormat, { masks } from "dateformat";
@@ -15,13 +12,13 @@ const MobileContent = (articles) => {
     var link = `/articles/${article.titlePhoto.sys.id}`;
 
     content.push(
-        <div className={styles.articleInstanceMobile} key={link}>
-          <Link href={link} style={{textDecoration: "none", color: "black"}}>
-            <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.articleImage}/>
-            <p className={styles.date}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
-            <h3 className={styles.title}>{article.title}</h3>
-          </Link>
-        </div>
+      <div className={styles.articleInstanceMobile} key={link}>
+        <Link href={link} style={{textDecoration: "none", color: "black"}}>
+          <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.articleImage}/>
+          <p className={styles.date}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
+          <h3 className={styles.title}>{article.title}</h3>
+        </Link>
+      </div>
     )
   })
   return content;
@@ -29,19 +26,19 @@ const MobileContent = (articles) => {
 
 const TwoMostRecent = (articles) => {
   const content = [];
-
   articles.forEach(article => {
-      var link = `/articles/${article.titlePhoto.sys.id}`;
 
-      content.push(
-        <div className={styles.twoMostRecent} key={link}>
-          <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
-            <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
-            <p className={styles.mostRecentDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
-            <h3 className={styles.mostRecentTitle}>{article.title}</h3>
-          </Link>
-        </div>
-      )
+    var link = `/articles/${article.titlePhoto.sys.id}`;
+
+    content.push(
+      <div className={styles.twoMostRecent} key={link}>
+        <Link href={link} style={{textDecoration: "none", color: "#000000"}}>
+          <img src={article.titlePhoto.fields.file.url} alt="headlinePhoto" className={styles.mostRecentImage}/>
+          <p className={styles.mostRecentDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</p>
+          <h3 className={styles.mostRecentTitle}>{article.title}</h3>
+        </Link>
+      </div>
+    )
   })
 
   return content;
@@ -70,8 +67,6 @@ const OlderArticles = (articles) => {
 const Articles = ({ articles }) => {
   const mobile = useMediaQuery("(max-width: 800px)")
   var older = articles.slice(2);
-
-  console.log(articles)
 
   return (
     <div className={styles.container}>

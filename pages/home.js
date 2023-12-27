@@ -19,7 +19,7 @@ export default function Home({ feed, latestArticles }) {
       </Head>
       <LatestArticles articles={latestArticles}/>
       <FloatingPics />
-      <InstaFeed posts={feed}/>
+      {/* <InstaFeed posts={feed}/> */}
     </div>
   )
 }
@@ -37,7 +37,6 @@ export async function getServerSideProps() {
   await client.getEntries()
   .then(function(res) {
     res.items.forEach(item => {
-      console.log(item);
       latestArticles.push(item.fields);
       latestArticles.reverse();
     })
