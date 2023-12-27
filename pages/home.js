@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image'
-import styles from './home.module.css';
-import Parallax from '../components/Parallax';
-import PhotoDisplay from '../components/PhotoDisplay';
+import HomepageHeader from '../components/HomepageHeader';
 import FloatingPics from '../components/FloatingPics';
 import LatestArticles from '../components/LatestArticles';
 import InstaFeed from '../components/InstaFeed';
@@ -17,6 +15,7 @@ export default function Home({ feed, latestArticles }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <HomepageHeader /> */}
       <LatestArticles articles={latestArticles}/>
       <FloatingPics />
       {/* <InstaFeed posts={feed}/> */}
