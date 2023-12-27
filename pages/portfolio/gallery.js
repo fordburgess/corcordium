@@ -34,8 +34,8 @@ function Gallery({ photos }) {
   return (
     <>
       <div className={styles.container}>
+        <h1 className={styles.title}>photography</h1>
         <div className={styles.imageContainer}>
-          {/* <GalleryPart1 photos={photos.slice(15, 30)} /> */}
           {!loading ? (
             photos.map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
