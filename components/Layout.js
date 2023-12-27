@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import AltNavbar from './AltNavbar';
 import NewHeader from './NewHeader';
 
 export default function Layout({ children }) {
@@ -14,14 +13,16 @@ export default function Layout({ children }) {
     return (
       <>
         <style jsx global>
-        {`
+        {
+        `
           html, body {
             margin: 0;
-            padding: 0;
+            padding: 9vh 0 0 0;
           },
-        `}
+        `
+        }
         </style>
-        <NewHeader title={altNavTitle}/>
+        <NewHeader />
           <main>{children}</main>
         {/* <Footer /> */}
     </>
