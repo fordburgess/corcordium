@@ -31,7 +31,7 @@ function Gallery({ photos }) {
     return id;
   }
 
-  // var sorted = photos.sort((a, b) => (a.fields.file.details.image.width / a.fields.file.details.image.height) - (b.fields.file.details.image.width / b.fields.file.details.image.height));
+  // console.log(photos)
 
   return (
     <>
@@ -76,13 +76,12 @@ Gallery.getInitialProps = async (ctx) => {
       }
     })
   })
-  // .then(() => console.log(data))
+
+  data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
 
   return {
     photos: data
   }
-
-  // data.sort((a, b) => 0.5 - Math.random())
 }
 
 

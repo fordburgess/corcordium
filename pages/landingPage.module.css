@@ -17,6 +17,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  z-index: 0;
 }
 
 .videoContainer video {
@@ -24,19 +25,36 @@
   height: 100%;
   position: absolute;
   object-fit: cover;
+  z-index: 0;
+}
+
+.mobileGreeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+  z-index: 1000;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: rgb(255, 254, 245);
+}
+
+.logoMobile {
+  margin-bottom: 75px;
+}
+
+.greetingHeader {
+  font-family: "Roboto-Light";
+  font-size: 2.75rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .rightSection {
   display: none;
-}
-
-.mobileText {
-  display: block;
-  z-index: 1000;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  color: rgb(255, 254, 245);
 }
 
 .textContainer {
@@ -49,21 +67,12 @@
   color: rgb(255, 254, 245);
 }
 
-.logo {
-  height: 175px;
-  width: 175px;
-  /* position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%); */
-  z-index: 1000;
-}
-
 .downArrowMobile {
+  display: block;
   position: absolute;
-  bottom: 5%;
+  bottom: 0%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -0%);
 }
 
 @media (min-width: 900px) {
@@ -76,6 +85,10 @@
     height: 100%;
   }
 
+  .mobileGreeting {
+    display: none;
+  }
+
   .desktopGreeting {
     position: absolute;
     top: 40%;
@@ -84,11 +97,11 @@
   }
 
   .logoDesktop {
-    margin-left: -50px;
+    margin-left: -40px;
+    margin-bottom: 30px;
   }
 
   .greetingHeader {
-    font-family: "Roboto-Light";
     font-size: 4rem;
     margin: 0;
     white-space: nowrap;
