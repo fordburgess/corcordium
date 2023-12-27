@@ -78,8 +78,7 @@ const useMediaQuery = (width) => {
 };
 
 const Project = ({ project }) => {
-  var mobile = useMediaQuery(800);
-  var poop = mobile ? 'imagesMobile' : 'imagesDesktop';
+  const [currIndex, setCurrIndex] = useState(0);
 
   return (
     <>
@@ -93,33 +92,41 @@ const Project = ({ project }) => {
           <div className={styles.test}></div>
         <h3>Portfolio</h3>
       </div>
-      <div className={styles.contentContainer}>
-        <div className={styles.images}>
-          {project.images.map(photo => {
-            var url = "https:" + photo.file.url
-
-            return (
-              <Image
-                height={1000}
-                width={1000}
-                src={url}
-                key={photo.title}
-                className={styles.photo}
-                alt="undefined"
-              />
-            )
-          })}
+      <div className={styles.wrapper}>
+        <div className={styles.leftContainer}>
+          <Image
+            height={project.images[currIndex].file.details.image.height / 10}
+            width={project.images[currIndex].file.details.image.width / 10}
+            src={`https:${project.images[currIndex].file.url}`}
+            alt="current-image"
+            style={{ marginTop: '-30px', marginLeft: '-30px' }}
+          />
         </div>
-        <div className={styles.info}>
-          <h1>{project.title}</h1>
-          <p>{project.text}</p>
-          <Link href="/portfolio/gallery" className={styles.backLink}>Back</Link>
-          <div className={styles.miniFooter}>
-            <Link href="/contact" className={styles.link}>Contact</Link>
-            <a href="https://www.instagram.com/corcordiumarchive/" className={styles.link}>
-              <Image href="" src={Instagram} alt="instagram" style={{height: 35, width: 35}}/>
-            </a>
-            <a href="" className={styles.link}>Share</a>
+        <div className={styles.rightContainer}>
+          <div style={{ width: '75%'}}>
+            <h1 className={styles.projectTitle}>{project.title.toLocaleLowerCase()}</h1>
+            <p className={styles.projectText}>{project.text}</p>
+          </div>
+          <div className={styles.photoPreview}>
+            <Image src={'/media/chevron-left.png'} height={50} width={50} alt="chevron-left"/>
+            <div className={styles.photoCarousel}>
+              {
+                project.images.map((photo, index) => {
+                  return (
+                    <Image
+                      className={styles.previewedPhoto}
+                      key={index}
+                      src={`https:${photo.file.url}`}
+                      height={120}
+                      width={photo.file.details.image.width / 40}
+                      alt="photo"
+                      style={{ marginRight: '5px' }}
+                    />
+                  )
+                })
+              }
+            </div>
+            <Image src={'/media/chevron-right.png'} height={50} width={50} alt="chevron-right"/>
           </div>
         </div>
       </div>
