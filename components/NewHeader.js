@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from "./NewHeader.module.css"
@@ -10,10 +10,35 @@ const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
+  useEffect(() => {
+    setOpen(false)
+    console.log(router.pathname)
+  }, [])
+
   return (
     <div className={styles.container}>
-      <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
-      <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={70} width={70} />
+      {
+        router.pathname.includes("/home") && (
+          <>
+            <Link href="/home">
+              <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
+            </Link>
+            <Link href="/home">
+              <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={70} width={70} />
+            </Link>
+          </>
+        )
+      }
+      {
+        !router.pathname.includes("/home") && (
+          <>
+            <div className={styles.bufferDiv} style={{ height: '100px', width: '100px' }}></div>
+            <Link href="/home">
+              <Image className={styles.desktopLogoLarge} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={220} />
+            </Link>
+          </>
+        )
+      }
       {
         router.pathname == "/home" && (
           <div className={styles.links}>
@@ -55,7 +80,7 @@ const NewHeader = () => {
         <div className={styles.drawerContainer}>
           <Image onClick={() => setOpen(false)} className={styles.xIcon} src="/media/x-icon.svg" height={45} width={45} alt="x-icon"/>
           <div style={{ display: 'flex', flexDirection: 'column'}}>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">home</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/home">home</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/articles">writing</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">projects</Link>

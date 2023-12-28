@@ -1,18 +1,13 @@
 @font-face {
-  font-family: "Alata";
-  src: local("Alata-Regular"),
-    url("../fonts/Alata-Regular.ttf") format("truetype");
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"),
+    url("../fonts/Roboto-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Georgia";
-  src: local("Georgia"), url("../fonts/Georgia.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Georgia-Light";
-  src: local("SD_Georgia_Light"),
-    url("../fonts/SD_Georgia_Light.ttf") format("truetype");
+  font-family: "Inter-Regular";
+  src: local("Inter-Regular"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
 }
 
 .container {
@@ -21,6 +16,16 @@
   box-sizing: border-box;
   overflow-y: auto;
   font-family: Roboto-Light;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Roboto-Light";
+  font-size: 3rem;
+  margin-bottom: 50px;
 }
 
 .header {
@@ -46,8 +51,9 @@
 }
 
 .blurb {
-  font-size: 20px;
+  font-size: 1rem;
   margin-bottom: 40px;
+  font-family: "Inter-Regular";
 }
 
 .email {
@@ -63,6 +69,7 @@
   flex-direction: column;
   margin-bottom: 15px;
   width: 96%;
+  font-family: "Inter-Regular";
 }
 
 .contactForm input {
@@ -79,15 +86,19 @@
   border-radius: 0;
   padding: 15px 10px;
   height: 70px;
+  font-family: "Inter-Regular";
 }
 
 .submitButton {
   border-radius: 0;
-  background-color: transparent;
-  color: #000000;
-  border: solid 1px #787777;
-  padding: 15px 40px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 15px 0;
   font-size: 15px;
+  width: 96%;
+  font-family: "Inter-Regular";
+  transition: 0.3s;
 }
 
 .miniFooter {
@@ -127,17 +138,21 @@
   .mainContent {
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
+    height: 100%;
+    align-items: center;
   }
 
   .leftContainer {
     width: 40%;
+    height: 100%;
     display: flex;
     align-items: center;
   }
 
   .blurb {
-    font-size: 27px;
+    font-size: 1.5rem;
+    font-family: "Inter-Regular";
+    font-style: italic;
   }
 
   .rightContainer {
