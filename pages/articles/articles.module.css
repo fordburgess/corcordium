@@ -46,8 +46,12 @@
 }
 
 .articleInstance {
-  width: 33%;
+  width: 100%;
   margin: 20px;
+}
+
+.articlePhoto {
+  height: 200px;
 }
 
 .articleCategory {
