@@ -13,7 +13,7 @@ const ZineDisplay = () => {
   })
 
   const getPdf = async () => {
-    var pdfResponse = await client.getAsset("7D2muwgHvQQGlxXJjXCU8S");
+    var pdfResponse = await client.getAsset("7D2muwgHvQQGlxXJjXCU8S", { select: 'fields.file' });
     setPdfLink('https:' + pdfResponse.fields.file.url)
   }
 
