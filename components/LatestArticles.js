@@ -12,7 +12,7 @@ const Content = (articles) => {
   for (var i = 0; i < 3; i++) {
     content.push(
       <LatestArticle
-      blurb={articles[i].content.content[0].content[0].value}
+      blurb={articles[i].content.content[1].content[0].value.split(".")[0]}
       key={articles[i].titlePhoto.sys.id}
       date={articles[i].date}
       title={articles[i].title}

@@ -36,7 +36,7 @@ const NewHeader = () => {
           <div className={styles.links}>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/articles/all"><p>writing</p></Link>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/portfolio/gallery"><p>photography</p></Link>
-            <Link style={{ textDecoration: "none", color: "#000000"}}href="/test"><p>projects</p></Link>
+            <Link style={{ textDecoration: "none", color: "#000000"}}href="/projects"><p>projects</p></Link>
           </div>
         )
       }

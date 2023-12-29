@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         `
           html, body {
             margin: 0;
-            padding: 9vh 0 0 0;
+            padding: 5vh 0 0 0;
           },
         `
         }

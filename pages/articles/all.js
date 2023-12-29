@@ -18,7 +18,7 @@ const Articles = ({ articles }) => {
             var titleImageLink = "https://" + article.titlePhoto.fields.file.url;
             var formattedDate = dateFormat(Date.parse(article.date), "dd/mm/yyyy").split("/");
             var monthYear = formattedDate[1] + "-" + formattedDate[2].slice(2);
-            var blurb = article.content.content[2].content[0].value.split(".")[0];
+            var blurb = article.content.content[1].content[0].value.split(".")[0];
             var link = `/articles/${article.titlePhoto.sys.id}`;
 
             return (
