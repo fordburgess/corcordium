@@ -40,7 +40,7 @@ export const getStaticProps = async (context) => {
   await client.getAssets()
     .then(function(res) {
       res.items.forEach(item => {
-        if (item.fields.title.toLocaleLowerCase().includes(project.title.toLocaleLowerCase())) {
+        if (item.fields.title !== undefined && item.fields.title.toLocaleLowerCase().includes(project.title.toLocaleLowerCase())) {
           project.images.push(item.fields);
         }
       })

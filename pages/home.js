@@ -42,14 +42,14 @@ export async function getServerSideProps() {
     })
   })
 
-  await client.getAssets()
-  .then((res) => {
-    res.items.forEach(item => {
-      if (item.fields.title.includes("instagram")) {
-        feed.push(item.fields)
-      }
-    })
-  })
+  // await client.getAssets()
+  // .then((res) => {
+  //   res.items.forEach(item => {
+  //     if (item.fields.title.includes("instagram")) {
+  //       feed.push(item.fields)
+  //     }
+  //   })
+  // })
 
   return {
     props: {
