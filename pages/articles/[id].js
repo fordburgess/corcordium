@@ -81,10 +81,6 @@ const options = {
 
 const Article = ({ article }) => {
 
-  console.log(article.content);
-
-  https://images.ctfassets.net/8nj05hr9nsqo/5rgImTcA66MK7DgDuLy8mT/9c823a5874543a9a09083ef1cb120252/Drag_HeaderPic.jpg
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
