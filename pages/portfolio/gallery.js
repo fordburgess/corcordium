@@ -34,7 +34,7 @@ function Gallery({ photos }) {
   return (
     <>
       <div className={styles.container}>
-        <h1 className={styles.title}>photography</h1>
+        <p className={styles.title}>photography</p>
         <div className={styles.imageContainer}>
           {!loading ? (
             photos.map((item, index) => {

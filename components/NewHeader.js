@@ -10,15 +10,19 @@ const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    setOpen(false)
-    console.log(router.pathname)
-  }, [])
+  console.log(router.pathname.includes("/home")) || (router.pathname.includes("/articles/[id]"))
 
   return (
-    <div className={styles.container}>
+    <div className={cx(styles.container, router.pathname == "/articles/[id]" && styles.articleHeader)}>
       {
-        router.pathname.includes("/home") && (
+        !router.pathname.includes("/home") && router.pathname !== '/articles/[id]' ? (
+          <>
+            <div className={styles.bufferDiv} style={{ height: '100px', width: '100px' }}></div>
+            <Link href="/home">
+              <Image className={styles.desktopLogoLarge} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={230} />
+            </Link>
+          </>
+        ) : (
           <>
             <Link href="/home">
               <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
@@ -30,19 +34,9 @@ const NewHeader = () => {
         )
       }
       {
-        !router.pathname.includes("/home") && (
-          <>
-            <div className={styles.bufferDiv} style={{ height: '100px', width: '100px' }}></div>
-            <Link href="/home">
-              <Image className={styles.desktopLogoLarge} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={220} />
-            </Link>
-          </>
-        )
-      }
-      {
         router.pathname == "/home" && (
           <div className={styles.links}>
-            <Link style={{ textDecoration: "none", color: "#000000"}}href="/articles/articles"><p>writing</p></Link>
+            <Link style={{ textDecoration: "none", color: "#000000"}}href="/articles/all"><p>writing</p></Link>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/portfolio/gallery"><p>photography</p></Link>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/test"><p>projects</p></Link>
           </div>

@@ -11,6 +11,10 @@
   background-color: rgb(255, 254, 245);
 }
 
+.container.articleHeader {
+  background-color: transparent;
+}
+
 .mobileLogo {
   display: block;
   margin-bottom: -15px;

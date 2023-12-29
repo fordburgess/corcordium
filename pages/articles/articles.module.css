@@ -1,43 +1,66 @@
 @font-face {
-  font-family: "Alata";
-  src: local("Alata-Regular"),
-    url("../../fonts/Alata-Regular.ttf") format("truetype");
+  font-family: "Inter-Regular";
+  src: local("Inter-Regular"),
+    url("../../fonts/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Georgia";
-  src: local("Georgia"), url("../../fonts/Georgia.ttf") format("truetype");
+  font-family: "Inter-SemiBold";
+  src: local("Inter-SemiBold"),
+    url("../../fonts/Inter-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Georgia-Light";
-  src: local("SD_Georgia_Light"),
-    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"),
+    url("../../fonts/Roboto-Light.ttf") format("truetype");
 }
 
 .container {
   width: 100vw;
-}
-
-.container p {
-  font-family: ZenKakuGothic;
-  margin: 10px 0;
-}
-
-.container h3 {
-  font-family: Alata;
-  margin: 10px 0;
-}
-
-.header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 25px;
-  font-family: Alata;
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: Roboto-Light;
+  font-size: 2.75rem;
+  margin-bottom: 100px;
+}
+
+.articleLink {
+  color: #000000;
+  text-decoration: none;
+}
+
+.articlesWrapper {
+  display: grid;
+  /* justify-content: flex-start;
+  flex-wrap: wrap; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.articleInstance {
+  width: 33%;
+}
+
+.articlePhoto {
+  width: 100%;
+}
+
+.articleCategory {
+  font-family: "Inter-Regular";
+}
+
+.articleTitle {
+  font-family: "Inter-SemiBold";
+  font-size: 1.25rem;
 }
 
 .header h3 {
@@ -80,12 +103,6 @@
   margin: 0;
 }
 
-.title {
-  font-family: Alata;
-  font-size: 20px;
-  margin: 0;
-}
-
 .mostRecentArticles {
   display: none;
 }
@@ -95,75 +112,11 @@
 }
 
 @media (min-width: 800px) {
-  .header {
-    padding: 10px 50px;
-    height: 14vh;
-    z-index: 5;
+  .articleInstance {
+    grid-column: span 1;
   }
 
-  .header h2 {
-    font-size: 40px;
-  }
-
-  .logo {
-    height: 83px;
-    width: 250px;
-    margin-top: 20px;
-  }
-
-  .mostRecentArticles {
-    display: flex;
-    justify-content: space-between;
-    width: 85vw;
-    margin: 0 auto;
-    margin-bottom: 25px;
-    padding-top: 50px;
-  }
-
-  .twoMostRecent {
-    width: 49%;
-    transition: 0.3s;
-  }
-
-  .twoMostRecent:hover {
-    transform: scale(1.01);
-    cursor: pointer;
-  }
-
-  .mostRecentImage {
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 0px;
-    padding: 0px;
-  }
-
-  .olderArticles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 85vw;
-    margin: 0 auto;
-  }
-
-  .olderArticleContainer {
-    width: 30%;
-    margin-right: 40px;
-    transition: 0.3s;
-    margin-bottom: 25px;
-  }
-
-  .olderArticleContainer:hover {
-    transform: scale(1.01);
-    cursor: pointer;
-  }
-
-  .olderArticlesImage {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .articleContainerMobile {
-    display: none;
+  .articlePhoto {
+    width: 25vw;
   }
 }

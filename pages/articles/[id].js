@@ -39,7 +39,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-
   var article = {};
 
   for (var i = 0; i < articles.length; i++) {
@@ -70,21 +69,34 @@ const options = {
       );
     }
   },
-  renderMark:  {
-    [MARKS.BOLD]: (text) => <p style={{fontWeight: "700", fontSize: "1.2rem"}}>{text}</p>
+  [BLOCKS.PARAGRAPH]: (node, children) => {
+    // Style the regular text here
+    return <p style={{ fontSize: "2rem" }}>{children}</p>;
   },
+  renderMark:  {
+    [MARKS.BOLD]: (text) => <p style={{fontWeight: "900", fontSize: "1.1rem"}}>{text}</p>
+  },
+
 }
 
 const Article = ({ article }) => {
 
+  console.log(article.content);
+
+  https://images.ctfassets.net/8nj05hr9nsqo/5rgImTcA66MK7DgDuLy8mT/9c823a5874543a9a09083ef1cb120252/Drag_HeaderPic.jpg
+
   return (
     <div className={styles.container}>
-      <img src={article.titlePhoto.fields.file.url} alt="mainPhoto" className={styles.mainPhoto}/>
-      <Link href="/articles/articles" style={{ textDecoration: "none" }}><button className={styles.backButton}>Back</button></Link>
+      <div className={styles.header}>
+        <div className={styles.leftHeader}>
+          <p className={styles.articleCategory}>{article.articleCategory}</p>
+          <h1 className={styles.articleTitle}>{article.title}</h1>
+          <p className={styles.articleAuthor}>By Leelou Reboh</p>
+        </div>
+        <div className={styles.rightHeader} style={{ backgroundImage: `url(https:${article.headerPhoto.fields.file.url})`}}></div>
+      </div>
+      <Link href="/articles/all" style={{ textDecoration: "none" }}><button className={styles.backButton}>Back</button></Link>
       <div className={styles.articleHeader}>
-        <h1 className={styles.articleTitle}>{article.title}</h1>
-        <h3 className={styles.articleSubtitle}>Leelou Reboh</h3>
-        <h4 className={styles.articleDate}>{dateFormat(Date.parse(article.date), "dd/mm/yyyy")}</h4>
       </div>
       <div className={styles.textContainer}>
         {documentToReactComponents(article.content, options)}
