@@ -88,12 +88,12 @@ const NewHeader = () => {
         <div className={styles.drawerContainer}>
           <Image onClick={() => setOpen(false)} className={styles.xIcon} src="/media/x-icon.svg" height={45} width={45} alt="x-icon"/>
           <div style={{ display: 'flex', flexDirection: 'column'}}>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/home">home</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/all">writing</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/projects">projects</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">CV</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/contact">contact</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/home">home</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/all">writing</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/projects">projects</Link>
+            <Link onClick={() => setOpen(false)} target="_blank" style={{ textDecoration: "none" }}className={styles.drawerLinks} href={cvUrl}>CV</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/contact">contact</Link>
           </div>
         </div>
       </Drawer>
