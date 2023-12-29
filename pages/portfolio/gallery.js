@@ -68,8 +68,10 @@ Gallery.getInitialProps = async (ctx) => {
   await client.getAssets()
   .then(function(res) {
     res.items.forEach(item => {
-      if (item.fields.title.includes("portrait") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
-        data.push(item)
+      if (item.fields.title !== undefined) {
+        if (item.fields.title.includes("portrait") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
+          data.push(item)
+        }
       }
     })
   })

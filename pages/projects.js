@@ -38,7 +38,7 @@ const Projects = () => {
         <p className={styles.projectHeader}>spicier - a zine on the spice girls (2023)</p>
         <p className={styles.projectDescription}>spicier explores the multi-faceted reality of the manufactured girl band. from interviews with the talented jennie roberts and karin darnell, the beauty team behind the spice girls’ most memorable looks, to questioning the legitimacy of the band’s “girl power”, spicier offers a wider scope of POVs in order to encapsulate the complexity of being a woman in the music industry.</p>
         <ProjectDisplay images={spicierImages} />
-        <Link className={styles.link} href="/home">
+        <Link className={styles.link} target="_blank" href="/pdfFiles/spicier-zine.pdf">
           <p style={{ marginRight: '10px' }}>there&apos;s more of <strong style={{ fontStyle: 'italic' }}>spicier</strong>  this way. read now!</p>
           <Image src="/media/right-arrow.png" height={40} width={90} alt="right-arrow"/>
         </Link>
