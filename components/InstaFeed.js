@@ -23,7 +23,7 @@ const InstaFeed = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.subContainer}>
+      {/* <div className={styles.subContainer}>
         <h4 className={styles.instaHeader}>For more fashion stories:</h4>
         <Link className={styles.instaLink} href={link} style={{ color: "#000000" }}>
           <h2 className={styles.header}>@corcordiumarchive</h2>
@@ -38,7 +38,7 @@ const InstaFeed = (props) => {
         <div className={styles.desktopFeed}>
           {postImages}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
