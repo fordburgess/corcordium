@@ -18,19 +18,35 @@
 
 .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
 }
 
 .imageCarousel {
-  height: 500px;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 600px;
+  width: 110%;
   display: flex;
   overflow-x: hidden;
-  margin-bottom: 20px;
 }
 
 .carouselImage {
   height: 100%;
+  width: 110%;
+}
+
+.chevron:hover {
+  cursor: pointer;
+}
+
+.textContainer {
   width: 100%;
+  text-align: left;
 }
 
 .projectTitle {
