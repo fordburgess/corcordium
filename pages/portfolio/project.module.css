@@ -4,20 +4,14 @@
     url("../../fonts/Roboto-Light.ttf") format("truetype");
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
-}
-
 .wrapper {
   display: flex;
-  position: absolute;
+  /* height: 95vh; */
+  /* position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0; */
   overflow: hidden;
 }
 
@@ -96,9 +90,9 @@
   .photoPreview {
     display: flex;
     align-items: center;
-    position: absolute;
+    /* position: absolute;
     bottom: 15%;
-    transform: translateY(-15%);
+    transform: translateY(-15%); */
     width: 100%;
     margin-right: -30px;
     height: auto;

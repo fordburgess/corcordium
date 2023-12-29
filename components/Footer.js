@@ -6,15 +6,10 @@ import Instagram from '../media/insta.svg'
 
 
 export default function Footer(props) {
-  const shareData = {
-    title: props.title,
-    text: "",
-    url: "https://corcordiu.vercel.app"
-  }
 
   return (
     <div className={styles.container}>
-      <p className={styles.watermark} style={{ margin: 0}}>@2024 Ford Burgess</p>
+      <p className={styles.watermark} style={{ margin: 0 }}>@2024 Ford Burgess</p>
       <p style={{ margin: 0 }}>LinkedIn: <Link target="_blank" style={{ color: "#000000" }} href="https://www.linkedin.com/in/ford-burgess/">linkedin.com/in/ford-burgess</Link></p>
     </div>
   );

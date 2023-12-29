@@ -24,7 +24,7 @@ export default function Layout({ children }) {
         </style>
         <NewHeader />
           <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </>
     )
   }
@@ -43,7 +43,7 @@ export default function Layout({ children }) {
         </style>
         <NewHeader />
           <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </>
     )
   }
