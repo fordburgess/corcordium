@@ -5,10 +5,26 @@ import styles from "./NewHeader.module.css"
 import { useRouter } from 'next/router';
 import cx from 'classnames'
 import { Drawer } from '@mui/material';
+var contentful = require("contentful")
 
 const NewHeader = () => {
   const [open, setOpen] = useState(false);
+  const [cvUrl, setCVUrl] = useState('')
   const router = useRouter();
+
+  const client = contentful.createClient({
+    space: "8nj05hr9nsqo",
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+  })
+
+  const getCV = async () => {
+    var pdfResponse = await client.getAsset("6SaqAajpjEEla8no0Oj0tr", { select: 'fields.file' });
+    setCVUrl('https:' + pdfResponse.fields.file.url)
+  }
+
+  useEffect(() => {
+    getCV()
+  }, [])
 
   return (
     <div className={cx(styles.container, router.pathname == "/articles/[id]" && styles.articleHeader)}>
@@ -43,7 +59,7 @@ const NewHeader = () => {
       {
         router.pathname == "/home" && (
           <div className={styles.iconLinks}>
-            <Link href="/contact"><Image src="/media/cv-icon.png" height={100} width={100}/></Link>
+            <Link href={cvUrl} target="_blank"><Image src="/media/cv-icon.png" height={100} width={100}/></Link>
             <Link href="/contact"><Image src="/media/mail-icon.png" height={100} width={100}/></Link>
           </div>
         )

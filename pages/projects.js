@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './projects.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProjectDisplay from '../components/ProjectDisplay'
 import AssistingWork from '../components/AssistingWork'
+var contentful = require("contentful")
 
 const Projects = () => {
+  const [blazerPdf, setBlazerPdf] = useState('');
+  const client = contentful.createClient({
+    space: "8nj05hr9nsqo",
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+  })
+
+  const getBlazerPdf = async () => {
+    var pdfResponse = await client.getAsset("s2l5LMWuLonHb7i3yIOHs", { select: 'fields.file' });
+    console.log({ blazerpdf: pdfResponse })
+    setBlazerPdf('https:' + pdfResponse.fields.file.url)
+  }
+
+  useEffect(() => {
+    getBlazerPdf();
+  }, [])
+
   const spicierImages = ["/media/spicier_mockup.webp", "/media/Spicier_Page1.webp", "/media/Spicier_Page2.webp", "/media/Spicier_Page3.webp", "/media/Spicier_Page4.webp", "/media/Spicier_Page5.webp", "/media/Spicier_Page6.webp"];
-  const notionShootImages = ["/media/innocente1.jpeg", "/media/movement7.webp"]
 
   const assistingWork = [
     {
@@ -54,7 +70,7 @@ const Projects = () => {
           this contemporary metamorphosis takes place in the course of a night our in central london. with every change of blazer, one takes a step closer towards infinite freedom of self.
         </p>
         <Image style={{ marginBottom: "30px" }} src="/media/BlazerIdentity.webp" layout="responsive" width={500} height={100} alt="blazer-image" />
-        <Link className={styles.link} href="/">
+        <Link className={styles.link} target="_blank" href={blazerPdf}>
           <p style={{ marginRight: '10px' }}>discover the full edit of <strong style={{ fontStyle: 'italic' }}>blazer identity</strong></p>
           <Image src="/media/right-arrow.png" height={40} width={90} alt="right-arrow"/>
         </Link>
