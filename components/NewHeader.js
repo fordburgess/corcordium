@@ -10,8 +10,6 @@ const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  console.log(router.pathname.includes("/home")) || (router.pathname.includes("/articles/[id]"))
-
   return (
     <div className={cx(styles.container, router.pathname == "/articles/[id]" && styles.articleHeader)}>
       {
@@ -38,7 +36,7 @@ const NewHeader = () => {
           <div className={styles.links}>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/articles/all"><p>writing</p></Link>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/portfolio/gallery"><p>photography</p></Link>
-            <Link style={{ textDecoration: "none", color: "#000000"}}href="/test"><p>projects</p></Link>
+            <Link style={{ textDecoration: "none", color: "#000000"}}href="/projects"><p>projects</p></Link>
           </div>
         )
       }
@@ -75,9 +73,9 @@ const NewHeader = () => {
           <Image onClick={() => setOpen(false)} className={styles.xIcon} src="/media/x-icon.svg" height={45} width={45} alt="x-icon"/>
           <div style={{ display: 'flex', flexDirection: 'column'}}>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/home">home</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/articles">writing</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/all">writing</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
-            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">projects</Link>
+            <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/projects">projects</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/">CV</Link>
             <Link style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/contact">contact</Link>
           </div>

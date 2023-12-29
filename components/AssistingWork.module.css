@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("Roboto-Light"),
+    url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: local("Inter-SemiBold"),
+    url("../fonts/Inter-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: local("Inter-Regular"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+}
+
+.container {
+  width: 100%;
+}
+
+.imageCarousel {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+.carouselImage {
+  height: 100%;
+  width: 100%;
+}
+
+.projectTitle {
+  font-family: "Inter-Regular";
+  font-size: 1.5rem;
+}
+
+.projectDescription {
+  font-family: "Inter-Regular";
+  font-size: 1rem;
+}

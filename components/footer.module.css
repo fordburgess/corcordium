@@ -5,6 +5,8 @@
 }
 
 .container {
+  position: absolute;
+  bottom: 0;
   height: 10vh;
   display: flex;
   justify-content: flex-end;
@@ -14,8 +16,5 @@
   font-family: Roboto-Light;
   font-size: 0.75rem;
   padding-bottom: 30px;
-}
-
-.share:hover {
-  cursor: pointer;
+  /* background-color: red; */
 }

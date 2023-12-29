@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from "./footer.module.css"
 import Instagram from '../media/insta.svg'
-import { style } from '@mui/system';
 
 
 export default function Footer(props) {
@@ -11,10 +10,6 @@ export default function Footer(props) {
     title: props.title,
     text: "",
     url: "https://corcordiu.vercel.app"
-  }
-
-  async function handlShare() {
-    await navigator.share(shareData);
   }
 
   return (
