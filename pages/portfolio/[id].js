@@ -77,8 +77,8 @@ const Project = ({ project }) => {
       <div className={styles.wrapper}>
         <div className={styles.leftContainer}>
           <Image
-            height={project.images[currIndex].file.details.image.height / 10}
-            width={project.images[currIndex].file.details.image.width / 10}
+            height={project.images[currIndex].file.details.image.height}
+            width={project.images[currIndex].file.details.image.width}
             src={`https:${project.images[currIndex].file.url}`}
             alt="current-image"
             style={{ marginTop: '-30px', marginLeft: '-30px' }}
@@ -102,7 +102,7 @@ const Project = ({ project }) => {
                       key={index}
                       src={`https:${photo.file.url}`}
                       height={120}
-                      width={photo.file.details.image.width / 40}
+                      width={photo.file.details.image.width}
                       alt="photo"
                       style={{ marginRight: '10px' }}
                     />
