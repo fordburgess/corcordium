@@ -18,17 +18,17 @@ const Articles = ({ articles }) => {
             var titleImageLink = "https://" + article.titlePhoto.fields.file.url;
             var formattedDate = dateFormat(Date.parse(article.date), "dd/mm/yyyy").split("/");
             var monthYear = formattedDate[1] + "-" + formattedDate[2].slice(2);
-            var blurb = article.content.content[2].content[0].value.split(" ").slice(0, 25).join(" ");
+            var blurb = article.content.content[2].content[0].value.split(".")[0];
             var link = `/articles/${article.titlePhoto.sys.id}`;
 
             return (
-              <div key={article.title} className={styles.articleInstance} >
+              <div key={article.title} className={styles.articleInstance}>
                 <Link href={link} key={article.titlePhoto.sys.id} className={styles.articleLink}>
                   <img src={titleImageLink} className={styles.articlePhoto} alt="article"/>
                   <p className={styles.articleCategory}>{article.articleCategory}</p>
                   <p className={styles.articleTitle}>{article.title}</p>
                   <p style={{ fontStyle: "italic" }} className={styles.articleTitle}>{monthYear}</p>
-                  <p>{blurb}</p>
+                  <p className={styles.blurb}>{blurb}</p>
                 </Link>
               </div>
             )
