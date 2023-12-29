@@ -9,6 +9,27 @@ const Projects = () => {
   const spicierImages = ["/media/banshee1.webp", "/media/banshee2.jpg", "/media/banshee3.jpg", "/media/banshee4.jpg"];
   const notionShootImages = ["/media/innocente1.jpeg", "/media/movement7.webp"]
 
+  const assistingWork = [
+    {
+      title: "Nell Mescal for Notion, shot by Jemima Marriott",
+      description: "Styled by Celementine Lucy Brown, Hair by Jon Chapman, Makeup by Charlotte Kraftman, Assistant Leelou Reboh, Words by Yazzi Gokcemen",
+      link: "https://notion.online/nell-mescal-interview/",
+      images: ['/media/NellMescal_1.webp', '/media/NellMescal_2.webp']
+    },
+    {
+      title: "Georgie Henley for 1883 Magazine, shot by Jemima Marriott",
+      description: "Styled by Rachael Perry, Hair by Jon Chapman, Makeup by Maya Man, Assistant Leelou Reboh, Words by Kelsey Barnes",
+      link: "https://1883magazine.com/georgie-henley/",
+      images: ['/media/GeorgieHenley_1.webp', '/media/GeorgieHenley_2.webp']
+    },
+    {
+      title: "Oscal Pollock for Man About Town, shot by Jemima Marriott",
+      description: "Styled by Doug Broad, Grooming by Jon Chapman, Assistant Leelou Reboh, Art Director Mike Morton, Words by Ella Hodson",
+      link: "https://www.instagram.com/p/Cz_irwvINFV/?igsh=eDR5YzhxcmNubWQ3",
+      images: ['/media/OscarPollock_1.webp', '/media/OscarPollock_2.webp']
+    }
+  ]
+
 
   return (
     <div className={styles.container}>
@@ -23,12 +44,7 @@ const Projects = () => {
       </div>
       <div className={styles.project}>
         <p className={styles.projectHeader}>assisting work (2023)</p>
-        <AssistingWork
-          title="Nell Mescal for Notion, shot by Jemima Marriott"
-          description="Styled by Celementine Lucy Brown, Hair by Jon Chapman, Makeup by Charlotte Kraftman, Assistant Leelou Reboh, Words by Yazzi Gokcemen"
-          link="https://notion.online/nell-mescal-interview/"
-          images={notionShootImages}
-        />
+        <AssistingWork info={assistingWork}/>
       </div>
     </div>
   )
