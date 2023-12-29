@@ -11,7 +11,7 @@ const AssistingWork = ({ title, description, link, images}) => {
         {
           images.map(image => {
             return (
-              <img src={image} className={styles.carouselImage} alt="image"/>
+              <img key={image} src={image} className={styles.carouselImage} alt="image"/>
             )
           })
         }
