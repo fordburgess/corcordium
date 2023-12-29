@@ -2,17 +2,22 @@
   width: 100%;
   height: 500px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* justify-content: center; */
   margin-bottom: 70px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .activeImage {
   object-fit: cover;
   object-position: center;
+  height: 100%;
 }
 
 .verticalImageCarousel {
   height: 100%;
-  width: auto;
+  width: 40%;
   text-align: center;
 }
 
@@ -25,11 +30,11 @@
 
 .carouselImage {
   width: auto;
-  height: 200px;
+  height: auto;
 }
 
 .chevronDown {
-  transform: rotate(270deg);
+  /* transform: rotate(270deg); */
 }
 
 .chevronDown:hover {

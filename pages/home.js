@@ -18,7 +18,7 @@ export default function Home({ feed, latestArticles }) {
       {/* <HomepageHeader /> */}
       <LatestArticles articles={latestArticles}/>
       <FloatingPics />
-      <ZineDisplay />
+      <ZineDisplay id="spicier"/>
       {/* <InstaFeed posts={feed}/> */}
     </div>
   )
