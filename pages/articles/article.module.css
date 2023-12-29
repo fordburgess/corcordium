@@ -5,14 +5,15 @@
 }
 
 @font-face {
-  font-family: "Georgia";
-  src: local("Georgia"), url("../../fonts/Georgia.ttf") format("truetype");
+  font-family: "JejuGothic-Regular";
+  src: local("JejuGothic-Regular"),
+    url("../../fonts/JejuGothic-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Georgia-Light";
-  src: local("SD_Georgia_Light"),
-    url("../../fonts/SD_Georgia_Light.ttf") format("truetype");
+  font-family: "Inter-Regular";
+  src: local("Inter-Regular"),
+    url("../../fonts/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -25,7 +26,7 @@
   width: 100vw;
 }
 
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +34,7 @@
   font-family: Alata;
   top: 0;
   background-color: #ffffff;
-}
+} */
 
 .header h3 {
   font-size: 22px;
@@ -110,6 +111,49 @@
     margin-bottom: 20px;
   }
 
+  .header {
+    height: 70vh;
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .leftHeader {
+    background-color: #f5f5f5;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightHeader {
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+  }
+
+  .articleCategory {
+    font-family: "Inter-Regular";
+    margin-bottom: 15px;
+  }
+
+  .articleTitle {
+    font-family: "JejuGothic-Regular";
+    text-align: center;
+    width: 60%;
+    line-height: 50px;
+    margin: 0 0 15px 0px;
+  }
+
+  .articleAuthor {
+    font-family: "Inter-Regular";
+    font-style: italic;
+    margin: 0;
+  }
+
   .articleHeader {
     padding-left: 200px;
     padding-right: 200px;
@@ -118,7 +162,11 @@
   .textContainer {
     width: 50%;
     margin: 0 auto;
-    font-size: 18px;
+    font-family: "Inter-Regular";
+  }
+
+  .textContainer p:first-child {
+    margin-top: -30px;
   }
 
   .textContainer img {

@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   var arr = router.pathname.split("/")
   var altNavTitle = router.pathname.includes("articles/[id]") ? "Articles" : arr[arr.length - 1].charAt(0).toUpperCase() + arr[arr.length - 1].slice(1);
 
-  if (router.pathname !== "/") {
+  if (router.pathname !== "/" && router.pathname !== "/articles/[id]") {
     return (
       <>
         <style jsx global>
@@ -25,7 +25,26 @@ export default function Layout({ children }) {
         <NewHeader />
           <main>{children}</main>
         {/* <Footer /> */}
-    </>
+      </>
+    )
+  }
+  else if (router.pathname == "/articles/[id]") {
+    return (
+      <>
+        <style jsx global>
+        {
+        `
+          html, body {
+            margin: 0;
+            padding: 0 0 0 0;
+          },
+        `
+        }
+        </style>
+        <NewHeader />
+          <main>{children}</main>
+        {/* <Footer /> */}
+      </>
     )
   }
   else {

@@ -11,6 +11,10 @@
   background-color: rgb(255, 254, 245);
 }
 
+.container.articleHeader {
+  background-color: transparent;
+}
+
 .mobileLogo {
   display: block;
   margin-bottom: -15px;
@@ -128,8 +132,7 @@
     font-family: Roboto-Light;
     width: 33%;
     font-size: 1.5rem;
-    padding-left: 65px;
-    padding-right: 30px;
+    padding-right: 50px;
   }
 
   .desktopLogo {
