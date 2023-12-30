@@ -24,7 +24,11 @@ export default function Layout({ children }) {
         </style>
         <NewHeader />
           <main>{children}</main>
-        <Footer />
+        {
+          router.pathname !== "/portfolio/[id]" && (
+            <Footer />
+          )
+        }
       </>
     )
   }
