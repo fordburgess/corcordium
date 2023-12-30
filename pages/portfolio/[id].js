@@ -76,16 +76,16 @@ const Project = ({ project }) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.leftContainer}>
-          <Image
-            height={project.images[currIndex].file.details.image.height / 10}
-            width={project.images[currIndex].file.details.image.width / 10}
+          <img
+            height={project.images[currIndex].file.details.image.height / 9}
+            width={project.images[currIndex].file.details.image.width / 9}
             src={`https:${project.images[currIndex].file.url}`}
             alt="current-image"
             style={{ marginTop: '-30px', marginLeft: '-30px' }}
           />
         </div>
         <div className={styles.rightContainer}>
-          <div style={{ width: '75%'}}>
+          <div style={{ width: '75%', marginBottom: '40px'}}>
             <h1 className={styles.projectTitle}>{project.title.toLocaleLowerCase()}</h1>
             <div className={styles.htmlText} dangerouslySetInnerHTML={{ __html: project.text }}/>
           </div>
@@ -95,7 +95,7 @@ const Project = ({ project }) => {
               {
                 project.images.map((photo, index) => {
                   return (
-                    <Image
+                    <img
                       id={`photo-${index}`}
                       onClick={() => setCurrIndex(index)}
                       className={cx(styles.previewedPhoto, index == currIndex && styles.active)}

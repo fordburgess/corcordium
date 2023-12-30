@@ -5,7 +5,7 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: ['images.ctfassets.net', 'downloads.ctfassets.net'],
   },
   experimental: { appDir: true },
   webpack(config) {

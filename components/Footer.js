@@ -2,19 +2,16 @@ import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from "./footer.module.css"
-import Instagram from '../media/insta.svg'
+import { useRouter } from 'next/router';
+import cx from 'classnames'
 
 
 export default function Footer(props) {
-  const shareData = {
-    title: props.title,
-    text: "",
-    url: "https://corcordiu.vercel.app"
-  }
+  const router = useRouter().pathname;
 
   return (
-    <div className={styles.container}>
-      <p className={styles.watermark} style={{ margin: 0}}>@2024 Ford Burgess</p>
+    <div className={cx(styles.container, router == "/contact" && styles.contactPage)}>
+      <p className={styles.watermark} style={{ margin: 0 }}>@2024 Ford Burgess</p>
       <p style={{ margin: 0 }}>LinkedIn: <Link target="_blank" style={{ color: "#000000" }} href="https://www.linkedin.com/in/ford-burgess/">linkedin.com/in/ford-burgess</Link></p>
     </div>
   );

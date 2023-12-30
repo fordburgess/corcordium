@@ -18,14 +18,17 @@ function Gallery({ photos }) {
     var id = null
 
     switch(string) {
-      case "Innocente":
+      case "innocente":
         id = 0
         break;
-      case "Restriction":
+      case "restriction":
         id = 1
         break;
-      case "Movement":
+      case "movement":
         id = 2
+        break;
+      case "banshee":
+        id = 3
         break;
     }
     return id;
@@ -39,13 +42,15 @@ function Gallery({ photos }) {
           {!loading ? (
             photos.map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
-              // var projectLink = `${projId(title)}`;
+              var title = item.fields.title.split("-")[0].toLowerCase();;
+              var projectLink = `${projId(title)}`;
               var height = item.fields.file.details.image.height;
               var width = item.fields.file.details.image.width;
 
               return (
-                  // <Link key={photoUrl} href={projectLink} className={styles.mobileLink}>
-                  <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, width > height ? styles.horizontal : styles.vertical)}/>
+                  <Link key={photoUrl} href={projectLink} className={styles.mobileLink}>
+                    <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, width > height ? styles.horizontal : styles.vertical)}/>
+                  </Link>
               )
             })
           ) : (
