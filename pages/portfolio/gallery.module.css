@@ -33,11 +33,11 @@
   aspect-ratio: attr(width) / attr(height);
 }
 
-.image.vertical {
+.wrapperLink {
   grid-column: span 1;
 }
 
-.image.horizontal {
+.wrapperLink.wide {
   grid-column: span 2;
 }
 
@@ -77,11 +77,6 @@
     height: 30%;
   }
 
-  .image {
-    transition: 0.15s;
-    z-index: -5;
-  }
-
   .contentContainer:hover {
     position: relative;
   }
@@ -116,13 +111,5 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: attr(width) / attr(height);
-  }
-
-  .image.vertical {
-    grid-column: span 1;
-  }
-
-  .image.horizontal {
-    grid-column: span 2;
   }
 }

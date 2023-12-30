@@ -46,10 +46,12 @@ function Gallery({ photos }) {
               var projectLink = `${projId(title)}`;
               var height = item.fields.file.details.image.height;
               var width = item.fields.file.details.image.width;
+              var wide = width > height;
 
+              if (height < width) console.log(item);
               return (
-                  <Link key={photoUrl} href={projectLink} className={styles.mobileLink}>
-                    <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, width > height ? styles.horizontal : styles.vertical)}/>
+                  <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                    <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}/>
                   </Link>
               )
             })
