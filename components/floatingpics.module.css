@@ -14,48 +14,23 @@
 }
 
 .container {
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   position: relative;
-  margin-bottom: 120px;
+  margin-bottom: 10px;
 }
 
 .header {
   font-family: "Roboto-Light";
+  font-size: 1.5rem;
+  padding: 0 0 0 20px;
 }
-
-/* .container::after,
-.container::before {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  position: absolute;
-  width: 20%;
-  z-index: 2;
-}
-
-.container::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-} */
-/* .container::before {
-  left: 0;
-  top: 0;
-} */
 
 .floatingImage {
-  /* height: 100px;
-  width: 100px; */
-  /* left: 110%; */
-  /* background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat; */
   object-fit: fill;
-  /* object-position: center; */
+  /* max-width: 100px;
+  max-height: 100px; */
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   /* animation: movingImage linear infinite;
@@ -71,6 +46,7 @@
 @media (min-width: 900px) {
   .container {
     height: 100vh;
+    margin-bottom: 120px;
   }
 
   .header {

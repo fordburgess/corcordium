@@ -1,6 +1,6 @@
 .container {
   /* padding-left: 20px; */
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   overflow-y: visible;
   overflow-x: hidden;
@@ -10,20 +10,20 @@
 
 .header {
   font-family: Roboto-Light;
+  font-size: 1.5rem;
+  padding: 0 0 0 20px;
 }
 
 .articleContainer {
   display: flex;
   overflow-x: hidden;
   box-sizing: border-box;
-  /* scroll-behavior: smooth; */
 }
 
 .link {
   color: #000000;
   width: 100%;
   display: flex;
-  /* justify-content: center; */
   margin-bottom: 50px;
 }
 
@@ -31,7 +31,6 @@
   height: 44px;
   width: 40px;
   top: 40%;
-  /* transform: translateY(-50%); */
   position: absolute;
   color: #000000;
 }
@@ -39,7 +38,6 @@
 @media (min-width: 800px) {
   .container {
     width: 100vw;
-    /* padding-left: 75px; */
     box-sizing: border-box;
     padding: 0;
     margin-bottom: 100px;
