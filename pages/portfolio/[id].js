@@ -79,22 +79,20 @@ const Project = ({ project }) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.leftContainer}>
+        <h1 className={styles.projectTitleMobile}>{project.title.toLocaleLowerCase()}</h1>
           <Image
             height={project.images[currIndex].file.details.image.height / 5}
             width={project.images[currIndex].file.details.image.width / 5}
             src={`https:${project.images[currIndex].file.url}`}
             alt="current-image"
             className={cx(styles.currentImage, project.images[currIndex].file.details.image.height > project.images[currIndex].file.details.image.width ? styles.vertical : styles.horizontal )}
-            style={{
-              marginTop: '-30px',
-              marginLeft: '-30px',
-            }}
           />
         </div>
         <div className={styles.rightContainer}>
-          <div style={{ width: '75%', marginBottom: '40px'}}>
+          <div className={styles.descriptionContainer} style={{ width: '75%', marginBottom: '40px'}}>
             <h1 className={styles.projectTitle}>{project.title.toLocaleLowerCase()}</h1>
-            <div className={styles.htmlText} dangerouslySetInnerHTML={{ __html: project.text }}/>
+            <div className={styles.htmlTextDesktop} dangerouslySetInnerHTML={{ __html: project.textDesktop }}/>
+            <div className={styles.htmlTextMobile} dangerouslySetInnerHTML={{ __html: project.textMobile }}/>
           </div>
           <div className={styles.photoPreview}>
             <Image onClick={() => changePhoto('dec')} className={styles.chevron} src={'/media/chevron-left.png'} height={50} width={50} alt="chevron-left"/>
@@ -102,7 +100,7 @@ const Project = ({ project }) => {
               {
                 project.images.map((photo, index) => {
                   return (
-                    <img
+                    <Image
                       id={`photo-${index}`}
                       onClick={() => setCurrIndex(index)}
                       className={cx(styles.previewedPhoto, index == currIndex && styles.active)}

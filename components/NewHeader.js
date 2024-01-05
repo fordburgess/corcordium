@@ -5,12 +5,14 @@ import styles from "./NewHeader.module.css"
 import { useRouter } from 'next/router';
 import cx from 'classnames'
 import { Drawer } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 var contentful = require("contentful")
 
 const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const [cvUrl, setCVUrl] = useState('')
   const router = useRouter();
+  const themeWidths = useTheme();
 
   const client = contentful.createClient({
     space: "8nj05hr9nsqo",
@@ -82,6 +84,10 @@ const NewHeader = () => {
           sx: {
             backgroundColor: 'rgb(255, 254, 245)',
             width: '25vw',
+
+            // [theme.breakpoints.down('md')]: {
+            //   width: '75vw'
+            // }
           }
         }}
       >

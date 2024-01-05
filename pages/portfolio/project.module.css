@@ -7,49 +7,74 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: scroll;
-  padding-top: 200px;
+  overflow: scroll; */
+  /* padding-top: 100px; */
+  padding-bottom: 50px;
+  /* box-sizing: border-box; */
 }
 
 .leftContainer {
-  height: 100%;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 70vh; */
+  width: 100%;
 }
 
 .rightContainer {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
-.projectTitle {
+.descriptionContainer {
+  margin-bottom: 20px;
+}
+
+.projectTitleMobile {
   font-family: Roboto-Light;
   font-style: italic;
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   margin-bottom: 25px;
 }
 
+.projectTitle {
+  display: none;
+}
+
 .currentImage.vertical {
-  max-height: 600px;
+  max-height: 500px;
   max-width: 90%;
 }
 
 .currentImage.horizontal {
-  max-height: 400px;
+  max-height: 200px;
   max-width: 90%;
+}
+
+.chevron {
+  display: none;
+}
+
+.htmlTextMobile {
+  display: block;
+  font-family: Roboto-Light;
+  padding-left: 20px;
+}
+
+.htmlTextDesktop {
+  display: none;
 }
 
 .photoCarousel {
   display: flex;
-  width: 50%;
-}
-
-.htmlText {
-  font-family: Roboto-Light;
+  align-items: center;
+  overflow-x: scroll;
+  width: 100%;
 }
 
 .projectText {
@@ -62,10 +87,6 @@
 }
 
 .previewedPhoto:hover {
-  cursor: pointer;
-}
-
-.chevron:hover {
   cursor: pointer;
 }
 
@@ -89,6 +110,18 @@
     padding: 0 0 0 40px;
   }
 
+  .projectTitleMobile {
+    display: none;
+  }
+
+  .projectTitle {
+    display: block;
+    font-family: Roboto-Light;
+    font-style: italic;
+    font-size: 3.75rem;
+    margin-bottom: 25px;
+  }
+
   .rightContainer {
     display: flex;
     flex-direction: column;
@@ -102,12 +135,10 @@
     position: relative;
   }
 
-  /* .leftContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0 0 40px;
-  } */
+  .descriptionContainer {
+    width: 75%;
+    margin-bottom: 40px;
+  }
 
   .header {
     display: flex;
@@ -121,6 +152,11 @@
     z-index: 5;
     padding: 10px 50px;
     height: 12vh;
+  }
+
+  .currentImage {
+    margin-top: -30px;
+    margin-left: -30px;
   }
 
   .currentImage.vertical {
@@ -141,11 +177,20 @@
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 15%;
-    transform: translateY(-15%);
+    bottom: 10%;
+    transform: translateY(-10%);
     width: 100%;
     margin-right: -30px;
     height: auto;
+  }
+
+  .htmlTextDesktop {
+    display: block;
+    font-family: Roboto-Light;
+  }
+
+  .htmlTextMobile {
+    display: none;
   }
 
   .photoCarousel {
@@ -153,6 +198,14 @@
     overflow-x: hidden;
     display: flex;
     align-items: center;
+  }
+
+  .chevron {
+    display: block;
+  }
+
+  .chevron:hover {
+    cursor: pointer;
   }
 
   .miniFooter {
