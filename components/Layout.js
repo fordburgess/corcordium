@@ -22,7 +22,7 @@ export default function Layout({ children }) {
         `
         }
         </style>
-        {/* <NewHeader /> */}
+        <NewHeader />
           <main>{children}</main>
         {
           router.pathname !== "/portfolio/[id]" && (

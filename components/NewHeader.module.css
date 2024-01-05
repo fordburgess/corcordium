@@ -8,6 +8,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 0 30px 0 0;
   background-color: rgb(255, 254, 245);
 }
 
@@ -20,7 +21,17 @@
   margin-bottom: -15px;
 }
 
-.desktopLogo {
+.desktopLogoMain {
+  display: none;
+}
+
+.mobileLogoMain {
+  display: block;
+  margin-left: -35px;
+  margin-top: -12px;
+}
+
+.desktopLogoLink {
   display: none;
 }
 
@@ -82,7 +93,10 @@
 .drawer {
   width: 33vw;
   height: 100vh;
-  /* background-color: rgb(255, 254, 245); */
+}
+
+.bufferDiv {
+  display: none;
 }
 
 .drawerContainer {
@@ -123,7 +137,7 @@
   .container {
     height: 12vh;
     box-sizing: border-box;
-    padding-right: 30px;
+    padding: 0 30px 0 0;
   }
 
   .links {
@@ -133,6 +147,24 @@
     width: 33%;
     font-size: 1.5rem;
     padding-right: 50px;
+  }
+
+  .bufferDiv {
+    display: block;
+    height: 100px;
+    width: 100px;
+  }
+
+  .desktopLogoMain {
+    display: block;
+  }
+
+  .mobileLogoMain {
+    display: none;
+  }
+
+  .desktopLogoLink {
+    display: block;
   }
 
   .desktopLogo {

@@ -33,14 +33,15 @@ const NewHeader = () => {
       {
         !router.pathname.includes("/home") && router.pathname !== '/articles/[id]' ? (
           <>
-            <div className={styles.bufferDiv} style={{ height: '100px', width: '100px' }}></div>
+            <div className={styles.bufferDiv}></div>
             <Link href="/home">
-              <Image className={styles.desktopLogoLarge} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={230} />
+              <Image className={styles.desktopLogoMain} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={230} />
+              <Image className={styles.mobileLogoMain} src="/media/logo-small.png" alt="logo" height={80} width={80} />
             </Link>
           </>
         ) : (
           <>
-            <Link href="/home">
+            <Link href="/home" className={styles.desktopLogoLink}>
               <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
             </Link>
             <Link href="/home">
