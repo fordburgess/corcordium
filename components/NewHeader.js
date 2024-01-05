@@ -5,12 +5,14 @@ import styles from "./NewHeader.module.css"
 import { useRouter } from 'next/router';
 import cx from 'classnames'
 import { Drawer } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 var contentful = require("contentful")
 
 const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const [cvUrl, setCVUrl] = useState('')
   const router = useRouter();
+  const themeWidths = useTheme();
 
   const client = contentful.createClient({
     space: "8nj05hr9nsqo",
@@ -59,8 +61,8 @@ const NewHeader = () => {
       {
         router.pathname == "/home" && (
           <div className={styles.iconLinks}>
-            <Link href={cvUrl} target="_blank"><Image src="/media/cv-icon.png" height={100} width={100}/></Link>
-            <Link href="/contact"><Image src="/media/mail-icon.png" height={100} width={100}/></Link>
+            <Link href={cvUrl} target="_blank"><Image alt="cv" src="/media/cv-icon.png" height={100} width={100}/></Link>
+            <Link href="/contact"><Image alt="contact" src="/media/mail-icon.png" height={100} width={100}/></Link>
           </div>
         )
       }
@@ -82,6 +84,10 @@ const NewHeader = () => {
           sx: {
             backgroundColor: 'rgb(255, 254, 245)',
             width: '25vw',
+
+            // [theme.breakpoints.down('md')]: {
+            //   width: '75vw'
+            // }
           }
         }}
       >

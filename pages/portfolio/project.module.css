@@ -6,41 +6,75 @@
 
 .wrapper {
   display: flex;
-  position: absolute;
-  top: 0;
+  flex-direction: column;
+  /* position: absolute; */
+  /* top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow: scroll; */
+  /* padding-top: 100px; */
+  padding-bottom: 50px;
+  /* box-sizing: border-box; */
 }
 
 .leftContainer {
-  height: 100%;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 70vh; */
+  width: 100%;
 }
 
 .rightContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 100%;
-  width: 50%;
-  padding: 50px 60px;
-  text-align: right;
-  margin-left: auto;
-  margin-right: 0;
-  position: relative;
+  width: 100%;
+  text-align: left;
 }
 
-.projectTitle {
+.descriptionContainer {
+  margin-bottom: 20px;
+}
+
+.projectTitleMobile {
   font-family: Roboto-Light;
   font-style: italic;
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   margin-bottom: 25px;
 }
 
-.htmlText {
+.projectTitle {
+  display: none;
+}
+
+.currentImage.vertical {
+  max-height: 500px;
+  max-width: 90%;
+}
+
+.currentImage.horizontal {
+  max-height: 200px;
+  max-width: 90%;
+}
+
+.chevron {
+  display: none;
+}
+
+.htmlTextMobile {
+  display: block;
   font-family: Roboto-Light;
+  padding-left: 20px;
+}
+
+.htmlTextDesktop {
+  display: none;
+}
+
+.photoCarousel {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  width: 100%;
 }
 
 .projectText {
@@ -56,16 +90,54 @@
   cursor: pointer;
 }
 
-.chevron:hover {
-  cursor: pointer;
-}
-
 @media (min-width: 800px) {
+  .wrapper {
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
   .leftContainer {
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 0 0 40px;
+  }
+
+  .projectTitleMobile {
+    display: none;
+  }
+
+  .projectTitle {
+    display: block;
+    font-family: Roboto-Light;
+    font-style: italic;
+    font-size: 3.75rem;
+    margin-bottom: 25px;
+  }
+
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 50%;
+    padding: 50px 60px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+  }
+
+  .descriptionContainer {
+    width: 75%;
+    margin-bottom: 40px;
   }
 
   .header {
@@ -82,6 +154,21 @@
     height: 12vh;
   }
 
+  .currentImage {
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+
+  .currentImage.vertical {
+    max-height: 600px;
+    max-width: 400px;
+  }
+
+  .currentImage.horizontal {
+    max-height: 400px;
+    max-width: 600px;
+  }
+
   .wrapper {
     padding-top: 12vh;
   }
@@ -90,11 +177,20 @@
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 15%;
-    transform: translateY(-15%);
+    bottom: 10%;
+    transform: translateY(-10%);
     width: 100%;
     margin-right: -30px;
     height: auto;
+  }
+
+  .htmlTextDesktop {
+    display: block;
+    font-family: Roboto-Light;
+  }
+
+  .htmlTextMobile {
+    display: none;
   }
 
   .photoCarousel {
@@ -102,6 +198,14 @@
     overflow-x: hidden;
     display: flex;
     align-items: center;
+  }
+
+  .chevron {
+    display: block;
+  }
+
+  .chevron:hover {
+    cursor: pointer;
   }
 
   .miniFooter {

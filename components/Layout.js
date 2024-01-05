@@ -7,7 +7,7 @@ import NewHeader from './NewHeader';
 export default function Layout({ children }) {
   const router = useRouter();
   var arr = router.pathname.split("/")
-  var altNavTitle = router.pathname.includes("articles/[id]") ? "Articles" : arr[arr.length - 1].charAt(0).toUpperCase() + arr[arr.length - 1].slice(1);
+  console.log(router.pathname)
 
   if (router.pathname !== "/" && router.pathname !== "/articles/[id]") {
     return (
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
       </>
     )
   }
-  else if (router.pathname == "/articles/[id]") {
+  else if (router.pathname == "/articles/[id]" || router.pathname == "/portfolio/[id]") {
     return (
       <>
         <style jsx global>
