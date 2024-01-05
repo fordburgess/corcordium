@@ -70,18 +70,26 @@ const Project = ({ project }) => {
         photoCarouselRef.current.scrollLeft = activePhoto.offsetLeft - (photoCarouselRef.current.offsetWidth / 2) + (activePhoto.offsetWidth / 2);
       }
     }
+
+    console.log(project.images[currIndex].file.details.image.width / 5);
+
   }, [currIndex]);
 
   return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.leftContainer}>
-          <img
-            height={project.images[currIndex].file.details.image.height / 9}
-            width={project.images[currIndex].file.details.image.width / 9}
+          <Image
+            height={project.images[currIndex].file.details.image.height / 5}
+            width={project.images[currIndex].file.details.image.width / 5}
             src={`https:${project.images[currIndex].file.url}`}
             alt="current-image"
-            style={{ marginTop: '-30px', marginLeft: '-30px' }}
+            style={{
+              marginTop: '-30px',
+              marginLeft: '-30px',
+              maxHeight: project.images[currIndex].file.details.image.height > project.images[currIndex].file.details.image.width ? '600px' : '400px',
+              maxWidth: project.images[currIndex].file.details.image.width > project.images[currIndex].file.details.image.height ? '600px' : '400px',
+            }}
           />
         </div>
         <div className={styles.rightContainer}>
@@ -102,7 +110,7 @@ const Project = ({ project }) => {
                       key={index}
                       src={`https:${photo.file.url}`}
                       height={120}
-                      width={photo.file.details.image.width / 40}
+                      width={photo.file.details.image.width / 6}
                       alt="photo"
                       style={{ marginRight: '10px' }}
                     />

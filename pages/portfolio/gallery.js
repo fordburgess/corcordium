@@ -48,7 +48,6 @@ function Gallery({ photos }) {
               var width = item.fields.file.details.image.width;
               var wide = width > height;
 
-              if (height < width) console.log(item);
               return (
                   <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
                     <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}/>
