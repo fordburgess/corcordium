@@ -111,10 +111,10 @@
 }
 
 .drawerLinks {
+  font-size: 1.75rem;
   font-family: Roboto-Light;
   font-style: italic;
   color: #000000;
-  font-size: 2rem;
   text-align: right;
   margin-bottom: 10px;
   transition: 0.3s;
@@ -185,5 +185,9 @@
 
   .navIcon.desktopVisible {
     display: block;
+  }
+
+  .drawerLinks {
+    font-size: 2rem;
   }
 }

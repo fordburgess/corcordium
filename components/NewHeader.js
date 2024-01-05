@@ -5,14 +5,14 @@ import styles from "./NewHeader.module.css"
 import { useRouter } from 'next/router';
 import cx from 'classnames'
 import { Drawer } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 var contentful = require("contentful")
 
 const NewHeader = () => {
   const [open, setOpen] = useState(false);
   const [cvUrl, setCVUrl] = useState('')
   const router = useRouter();
-  const themeWidths = useTheme();
+  const desktop = useMediaQuery('(min-width: 800px');
 
   const client = contentful.createClient({
     space: "8nj05hr9nsqo",
@@ -36,7 +36,7 @@ const NewHeader = () => {
             <div className={styles.bufferDiv}></div>
             <Link href="/home">
               <Image className={styles.desktopLogoMain} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={230} />
-              <Image className={styles.mobileLogoMain} src="/media/logo-small.png" alt="logo" height={80} width={80} />
+              <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={80} width={80} />
             </Link>
           </>
         ) : (
@@ -45,7 +45,7 @@ const NewHeader = () => {
               <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
             </Link>
             <Link href="/home">
-              <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={70} width={70} />
+              <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={80} width={80} />
             </Link>
           </>
         )
@@ -84,7 +84,7 @@ const NewHeader = () => {
         PaperProps={{
           sx: {
             backgroundColor: 'rgb(255, 254, 245)',
-            width: '25vw',
+            width: desktop ? '25vw' : '60vw',
 
             // [theme.breakpoints.down('md')]: {
             //   width: '75vw'
@@ -95,10 +95,10 @@ const NewHeader = () => {
         <div className={styles.drawerContainer}>
           <Image onClick={() => setOpen(false)} className={styles.xIcon} src="/media/x-icon.svg" height={45} width={45} alt="x-icon"/>
           <div style={{ display: 'flex', flexDirection: 'column'}}>
-            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/home">home</Link>
-            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/articles/all">writing</Link>
-            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
-            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/projects">projects</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }} className={styles.drawerLinks} href="/home">home</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }} className={styles.drawerLinks} href="/articles/all">writing</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }} className={styles.drawerLinks} href="/portfolio/gallery">photography</Link>
+            <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }} className={styles.drawerLinks} href="/projects">projects</Link>
             <Link onClick={() => setOpen(false)} target="_blank" style={{ textDecoration: "none" }}className={styles.drawerLinks} href={cvUrl}>CV</Link>
             <Link onClick={() => setOpen(false)} style={{ textDecoration: "none" }}className={styles.drawerLinks} href="/contact">contact</Link>
           </div>
