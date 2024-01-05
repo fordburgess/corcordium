@@ -84,11 +84,10 @@ const Project = ({ project }) => {
             width={project.images[currIndex].file.details.image.width / 5}
             src={`https:${project.images[currIndex].file.url}`}
             alt="current-image"
+            className={cx(styles.currentImage, project.images[currIndex].file.details.image.height > project.images[currIndex].file.details.image.width ? styles.vertical : styles.horizontal )}
             style={{
               marginTop: '-30px',
               marginLeft: '-30px',
-              maxHeight: project.images[currIndex].file.details.image.height > project.images[currIndex].file.details.image.width ? '600px' : '400px',
-              maxWidth: project.images[currIndex].file.details.image.width > project.images[currIndex].file.details.image.height ? '600px' : '400px',
             }}
           />
         </div>

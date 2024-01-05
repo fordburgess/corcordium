@@ -12,7 +12,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  overflow: scroll;
+  padding-top: 200px;
 }
 
 .leftContainer {
@@ -21,16 +22,8 @@
 }
 
 .rightContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: 100%;
-  width: 50%;
-  padding: 50px 60px;
-  text-align: right;
-  margin-left: auto;
-  margin-right: 0;
-  position: relative;
+  width: 100%;
+  text-align: center;
 }
 
 .projectTitle {
@@ -38,6 +31,21 @@
   font-style: italic;
   font-size: 3.75rem;
   margin-bottom: 25px;
+}
+
+.currentImage.vertical {
+  max-height: 600px;
+  max-width: 90%;
+}
+
+.currentImage.horizontal {
+  max-height: 400px;
+  max-width: 90%;
+}
+
+.photoCarousel {
+  display: flex;
+  width: 50%;
 }
 
 .htmlText {
@@ -73,11 +81,33 @@
   }
 
   .leftContainer {
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 0 0 40px;
   }
+
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 50%;
+    padding: 50px 60px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+  }
+
+  /* .leftContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 40px;
+  } */
 
   .header {
     display: flex;
@@ -91,6 +121,16 @@
     z-index: 5;
     padding: 10px 50px;
     height: 12vh;
+  }
+
+  .currentImage.vertical {
+    max-height: 600px;
+    max-width: 400px;
+  }
+
+  .currentImage.horizontal {
+    max-height: 400px;
+    max-width: 600px;
   }
 
   .wrapper {
