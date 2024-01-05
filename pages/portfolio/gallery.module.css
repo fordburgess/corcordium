@@ -34,11 +34,11 @@
 }
 
 .wrapperLink {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
 .wrapperLink.wide {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 
 .link {
@@ -111,5 +111,13 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: attr(width) / attr(height);
+  }
+
+  .wrapperLink {
+    grid-column: span 1;
+  }
+
+  .wrapperLink.wide {
+    grid-column: span 2;
   }
 }

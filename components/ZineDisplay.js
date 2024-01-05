@@ -26,10 +26,18 @@ const ZineDisplay = () => {
       <h1 className={styles.header}>flip through my latest project!</h1>
       <div className={styles.wrapper}>
         <iframe className={styles.iframe} src={pdfLink}></iframe>
-        <Link href="/projects" className={styles.link}>
+        <Link href="/projects" className={styles.desktopLink}>
           <p style={{ marginRight: '20px' }}>discover more this way</p>
           <Image className={styles.downArrow} src="/media/down-arrow.png" alt="right-arrow" width={75} height={120}/>
         </Link>
+        <div className={styles.mobilePhotos}>
+          <Image
+            src='/media/spicier_mockup.webp'
+            height={250}
+            width={250}
+            alt="spicier"
+          />
+        </div>
       </div>
     </div>
   )
