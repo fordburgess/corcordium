@@ -1,5 +1,4 @@
 .container {
-  /* padding-left: 20px; */
   width: 100%;
   box-sizing: border-box;
   overflow-y: visible;
@@ -31,8 +30,8 @@
 .chevronRight {
   display: block;
   position: absolute;
-  top: 32%;
-  transform: translateY(-32%);
+  top: 40%;
+  transform: translateY(-40%);
 }
 
 .chevronLeft {
