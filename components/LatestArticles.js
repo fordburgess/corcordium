@@ -62,7 +62,8 @@ const LatestArticles = ({ articles }) => {
           {
             Object.entries(articles).slice(0, 3).map(([key, value], index) => {
               return (
-                <div key={index} style={{ height: "100%", width: "100%", position: 'relative' }}>
+                // <div key={index} style={{ height: "100%", width: "100%", position: 'relative' }}>
+                <>
                   {
                     index > 0 && (
                       <Link href="#" onClick={() => scrollToArticle(currentArticle - 1)}>
@@ -86,7 +87,8 @@ const LatestArticles = ({ articles }) => {
                         </Link>
                       )
                     }
-                </div>
+                  </>
+                // </div>
               )
             })
           }
