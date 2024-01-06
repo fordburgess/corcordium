@@ -20,6 +20,7 @@
   height: auto;
   box-sizing: border-box;
   padding: 25px;
+  position: relative;
 }
 
 .image {
