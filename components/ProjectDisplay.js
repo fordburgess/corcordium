@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styles from "./ProjectDisplay.module.css"
+import { useMediaQuery } from '@mui/material';
 
 const ProjectDisplay = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -26,19 +27,9 @@ const ProjectDisplay = ({ images }) => {
       <img
         src={images[activeIndex]}
         alt="main-image"
-        style={{ width: "60%" }}
         className={styles.activeImage}
       />
       <div className={styles.verticalImageCarousel}>
-        {/* <Image
-            src="/media/chevron-left.png"
-            height={50}
-            width={50}
-            alt="chevron"
-            style={{ transform: 'rotate(90deg)'}}
-            className={styles.chevronDown}
-            onClick={() => changeImage()}
-          /> */}
         <div className={styles.imageSlideTrack} ref={carouselRef}>
           {
             images.slice(1).map((image, index) => {

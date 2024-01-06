@@ -4,10 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ProjectDisplay from '../components/ProjectDisplay'
 import AssistingWork from '../components/AssistingWork'
+import { useMediaQuery } from '@mui/material';
 var contentful = require("contentful")
 
 const Projects = () => {
   const [blazerPdf, setBlazerPdf] = useState('');
+  const desktop = useMediaQuery('(min-width: 800px');
   const client = contentful.createClient({
     space: "8nj05hr9nsqo",
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
@@ -52,8 +54,19 @@ const Projects = () => {
       <p className={styles.title}>projects</p>
       <div className={styles.project}>
         <p className={styles.projectHeader}>spicier - a zine on the spice girls (2023)</p>
-        <p className={styles.projectDescription}>spicier explores the multi-faceted reality of the manufactured girl band. from interviews with the talented jennie roberts and karin darnell, the beauty team behind the spice girls’ most memorable looks, to questioning the legitimacy of the band’s “girl power”, spicier offers a wider scope of POVs in order to encapsulate the complexity of being a woman in the music industry.</p>
-        <ProjectDisplay images={spicierImages} />
+        {
+          desktop ? (
+            <>
+              <p className={styles.projectDescription}>spicier explores the multi-faceted reality of the manufactured girl band. from interviews with the talented jennie roberts and karin darnell, the beauty team behind the spice girls’ most memorable looks, to questioning the legitimacy of the band’s “girl power”, spicier offers a wider scope of POVs in order to encapsulate the complexity of being a woman in the music industry.</p>
+              <ProjectDisplay images={spicierImages} />
+            </>
+          ) : (
+            <>
+              <ProjectDisplay images={spicierImages} />
+              <p className={styles.projectDescription}>spicier explores the multi-faceted reality of the manufactured girl band. from interviews with the talented jennie roberts and karin darnell, the beauty team behind the spice girls’ most memorable looks, to questioning the legitimacy of the band’s “girl power”, spicier offers a wider scope of POVs in order to encapsulate the complexity of being a woman in the music industry.</p>
+            </>
+          )
+        }
         <Link className={styles.link} target="_blank" href="/pdfFiles/spicier-zine.pdf">
           <p style={{ marginRight: '10px' }}>there&apos;s more of <strong style={{ fontStyle: 'italic' }}>spicier</strong>  this way. read now!</p>
           <Image src="/media/right-arrow.png" height={40} width={90} alt="right-arrow"/>
@@ -65,11 +78,25 @@ const Projects = () => {
       </div>
       <div className={styles.project}>
         <p className={styles.projectHeader}>blazer identity: the blurred lines of gender - a csm art direction project (2022)</p>
-        <p className={styles.projectDescription}>
-          a journey through identity, using the blazer as a modern armour to shield oneself through this transition from the feminine to the unspecified.
-          this contemporary metamorphosis takes place in the course of a night our in central london. with every change of blazer, one takes a step closer towards infinite freedom of self.
-        </p>
-        <Image style={{ marginBottom: "30px" }} src="/media/BlazerIdentity.webp" layout="responsive" width={500} height={100} alt="blazer-image" />
+        {
+          desktop ? (
+            <>
+              <p className={styles.projectDescription}>
+                a journey through identity, using the blazer as a modern armour to shield oneself through this transition from the feminine to the unspecified.
+                this contemporary metamorphosis takes place in the course of a night our in central london. with every change of blazer, one takes a step closer towards infinite freedom of self.
+              </p>
+              <Image style={{ marginBottom: "30px" }} src="/media/BlazerIdentity.webp" layout="responsive" width={500} height={100} alt="blazer-image" />
+            </>
+          ) : (
+            <>
+              <Image src="/media/BlazerIdentity.webp" layout="responsive" width={500} height={100} alt="blazer-image" />
+              <p className={styles.projectDescription}>
+                a journey through identity, using the blazer as a modern armour to shield oneself through this transition from the feminine to the unspecified.
+                this contemporary metamorphosis takes place in the course of a night our in central london. with every change of blazer, one takes a step closer towards infinite freedom of self.
+              </p>
+            </>
+          )
+        }
         <Link className={styles.link} target="_blank" href={blazerPdf}>
           <p style={{ marginRight: '10px' }}>discover the full edit of <strong style={{ fontStyle: 'italic' }}>blazer identity</strong></p>
           <Image src="/media/right-arrow.png" height={40} width={90} alt="right-arrow"/>

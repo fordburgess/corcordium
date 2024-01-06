@@ -23,27 +23,28 @@
 }
 
 .title {
-  font-family: "Roboto-Light";
+  font-family: Roboto-Light;
   font-size: 2.25rem;
 }
 
 .project {
-  width: 70%;
+  width: 90%;
   margin-bottom: 50px;
 }
 
 .projectHeader {
   font-family: "Inter-SemiBold";
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .projectDescription {
-  font-family: "Inter-Regular";
+  font-family: "Roboto-Light";
 }
 
 .link {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-family: "Inter-Regular";
   text-decoration: none;
   color: #000000;
@@ -51,4 +52,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+@media (min-width: 900px) {
+  .project {
+    width: 70%;
+  }
+
+  .projectHeader {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
 }
