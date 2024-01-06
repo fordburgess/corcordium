@@ -92,8 +92,6 @@ const Article = ({ article }) => {
         <div className={styles.rightHeader} style={{ backgroundImage: `url(https:${article.headerPhoto.fields.file.url})`}}></div>
       </div>
       <Link href="/articles/all" style={{ textDecoration: "none" }}><button className={styles.backButton}>Back</button></Link>
-      <div className={styles.articleHeader}>
-      </div>
       <div className={styles.textContainer}>
         {documentToReactComponents(article.content, options)}
       </div>
