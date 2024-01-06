@@ -28,7 +28,7 @@ const ZineDisplay = () => {
         <iframe className={styles.iframe} src={pdfLink}></iframe>
         <Link href="/projects" className={styles.desktopLink}>
           <p style={{ marginRight: '20px' }}>discover more this way</p>
-          <Image className={styles.downArrow} src="/media/down-arrow.png" alt="right-arrow" width={75} height={120}/>
+          <Image className={styles.downArrow} src="/media/right-arrow.png" alt="right-arrow" width={200} height={75}/>
         </Link>
         <div className={styles.mobilePhotos}>
           <Image
@@ -37,6 +37,10 @@ const ZineDisplay = () => {
             width={250}
             alt="spicier"
           />
+          <Link href="/projects" className={styles.mobileLink}>
+            <p>discover more this way</p>
+            <Image style={{transform: 'rotate(270deg)'}} className={styles.downArrow} src="/media/down-arrow.png" alt="right-arrow" width={60} height={80}/>
+          </Link>
         </div>
       </div>
     </div>
