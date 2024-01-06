@@ -48,11 +48,11 @@
 
 .projectTitle {
   font-family: "Inter-Regular";
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .projectDescription {
-  font-family: "Inter-Regular";
+  font-family: "Roboto-Light";
   font-size: 1rem;
 }
 
@@ -76,5 +76,9 @@
     height: 600px;
     width: 110%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .projectTitle {
+    font-size: 1.5rem;
   }
 }
