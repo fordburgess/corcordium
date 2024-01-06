@@ -27,13 +27,13 @@
 .imageCarousel {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  width: 110%;
+  justify-content: center;
+  width: 100%;
 }
 
 .carouselImage {
-  height: 600px;
-  width: 110%;
+  height: 200px;
+  width: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -54,4 +54,27 @@
 .projectDescription {
   font-family: "Inter-Regular";
   font-size: 1rem;
+}
+
+@media (min-width: 900px) {
+  /* .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  } */
+
+  .imageCarousel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 110%;
+  }
+
+  .carouselImage {
+    height: 600px;
+    width: 110%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
