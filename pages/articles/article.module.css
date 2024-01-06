@@ -23,21 +23,37 @@
 }
 
 .container {
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
 }
 
-/* .header {
+.header {
+  height: 70vh;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
-  font-family: Alata;
-  top: 0;
-  background-color: #ffffff;
-} */
+  flex-direction: column;
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
 
-.header h3 {
-  font-size: 22px;
+.leftHeader {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 50px 30px 0;
+  box-sizing: border-box;
+}
+
+.rightHeader {
+  width: 100%;
+  height: 55%;
+  background-position: center;
+  background-size: contain;
 }
 
 .logo {
@@ -53,19 +69,6 @@
   margin-bottom: 50px;
 }
 
-.articleHeader {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: -40px;
-}
-
-.articleTitle {
-  font-family: Alata;
-  margin-top: 20px;
-  padding: 0 20px;
-  margin-bottom: 5px;
-}
-
 .articleSubtitle {
   font-family: ZenKakuGothic;
   margin: 0 0 7px;
@@ -79,6 +82,25 @@
   margin-bottom: -5px;
 }
 
+.articleCategory {
+  font-family: "Inter-Regular";
+  margin-bottom: 5px;
+}
+
+.articleTitle {
+  font-family: "JejuGothic-Regular";
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 35px;
+  margin: 0 0 5px 0;
+}
+
+.articleAuthor {
+  margin: 0;
+  font-family: "Inter-Regular";
+  font-style: italic;
+}
+
 .textContainer {
   padding: 10px 30px 20px;
   line-height: 1.5;
@@ -88,7 +110,12 @@
 }
 
 .textContainer p {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-family: "Inter-Regular";
+}
+
+.textContainer p:first-child {
+  margin: 0px;
 }
 
 .textContainer span {
@@ -114,6 +141,7 @@
   .header {
     height: 70vh;
     display: flex;
+    flex-direction: row;
     margin-bottom: 40px;
   }
 
@@ -125,6 +153,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
 
   .rightHeader {
@@ -144,6 +173,7 @@
     font-family: "JejuGothic-Regular";
     text-align: center;
     width: 60%;
+    font-size: 2rem;
     line-height: 50px;
     margin: 0 0 15px 0px;
   }

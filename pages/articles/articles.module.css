@@ -29,7 +29,7 @@
 .title {
   font-family: Roboto-Light;
   font-size: 2.75rem;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .articleLink {
@@ -97,6 +97,10 @@
 }
 
 @media (min-width: 800px) {
+  .title {
+    margin-bottom: 100px;
+  }
+
   .articleInstance {
     width: 30%;
   }
