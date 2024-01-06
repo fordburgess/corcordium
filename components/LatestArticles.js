@@ -63,9 +63,13 @@ const LatestArticles = ({ articles }) => {
             Object.entries(articles).slice(0, 3).map(([key, value], index) => {
               return (
                 <div key={index} style={{ height: "100%", width: "100%", position: 'relative' }}>
-                  <Link href="#" onClick={() => scrollToArticle(currentArticle - 1)}>
-                    <Image src="/media/chevron-left.png" height={35} width={35} alt="chevron-left" className={styles.chevronLeft}/>
-                  </Link>
+                  {
+                    index > 0 && (
+                      <Link href="#" onClick={() => scrollToArticle(currentArticle - 1)}>
+                        <Image src="/media/chevron-left.png" height={35} width={35} alt="chevron-left" className={styles.chevronLeft}/>
+                      </Link>
+                    )
+                  }
                     <LatestArticle
                       blurb={value.content.content[1].content[0].value.split(".")[0]}
                       key={value.titlePhoto.sys.id}
@@ -75,9 +79,13 @@ const LatestArticles = ({ articles }) => {
                       index={index}
                       image={value.titlePhoto.fields.file.url}
                     />
-                  <Link href="#" onClick={() => scrollToArticle(currentArticle + 1)}>
-                    <Image src="/media/chevron-right.png" height={35} width={35} alt="chevron-right" className={styles.chevronRight}/>
-                  </Link>
+                    {
+                      index < 2 && (
+                        <Link href="#" onClick={() => scrollToArticle(currentArticle + 1)}>
+                          <Image src="/media/chevron-right.png" height={35} width={35} alt="chevron-right" className={styles.chevronRight}/>
+                        </Link>
+                      )
+                    }
                 </div>
               )
             })
