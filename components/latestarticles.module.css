@@ -18,6 +18,7 @@
   display: flex;
   overflow-x: hidden;
   box-sizing: border-box;
+  position: relative;
 }
 
 .link {
@@ -27,12 +28,22 @@
   margin-bottom: 50px;
 }
 
-.chevron {
-  height: 44px;
-  width: 40px;
-  top: 40%;
+.chevronLeft,
+.chevronRight {
+  display: block;
   position: absolute;
-  color: #000000;
+  top: 32%;
+  transform: translateY(-32%);
+}
+
+.chevronLeft {
+  left: -1%;
+  transform: translateX(1%);
+}
+
+.chevronRight {
+  right: -1%;
+  transform: translateX(1%);
 }
 
 @media (min-width: 800px) {
@@ -55,5 +66,10 @@
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
+  }
+
+  .chevronLeft,
+  .chevronRight {
+    display: none;
   }
 }

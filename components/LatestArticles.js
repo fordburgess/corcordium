@@ -36,24 +36,52 @@ const LatestArticles = ({ articles }) => {
 
   articles = articles.sort((a, b) => b.date - a.date).slice(0, 3)
 
-  const clickHandler = (e, index) => {
-    e.preventDefault();
+  const scrollToArticle = (index) => {
 
-    if (index <= 3 && index >= 0) {
+    if (index > 0 && index < 3) {
+      const container = document.getElementById("article-container");
+      const articleWidth = container.clientWidth;
+      const newPosition = index * articleWidth;
+
+      container.scrollTo({
+        left: newPosition,
+        behavior: 'smooth',
+      })
+
       setCurrentArticle(index);
-      const targetElement = document.getElementById(`${index}`);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the target element smoothly
-      }
     }
-  };
+  }
+
+  console.log(articles)
 
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>latest articles</h1>
-      <div className={styles.articleContainer}>
-        {Content(articles)}
+      <div className={styles.articleContainer} id="article-container">
+          {/* {Content(articles)} */}
+          {
+            Object.entries(articles).slice(0, 3).map(([key, value], index) => {
+              return (
+                <div key={index} style={{ height: "100%", width: "100%", position: 'relative' }}>
+                  <Link href="#" onClick={() => scrollToArticle(currentArticle - 1)}>
+                    <Image src="/media/chevron-left.png" height={35} width={35} alt="chevron-left" className={styles.chevronLeft}/>
+                  </Link>
+                    <LatestArticle
+                      blurb={value.content.content[1].content[0].value.split(".")[0]}
+                      key={value.titlePhoto.sys.id}
+                      date={value.date}
+                      title={value.title}
+                      id={value.titlePhoto.sys.id}
+                      index={index}
+                      image={value.titlePhoto.fields.file.url}
+                    />
+                  <Link href="#" onClick={() => scrollToArticle(currentArticle + 1)}>
+                    <Image src="/media/chevron-right.png" height={35} width={35} alt="chevron-right" className={styles.chevronRight}/>
+                  </Link>
+                </div>
+              )
+            })
+          }
       </div>
     </div>
   )
