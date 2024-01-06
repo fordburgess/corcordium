@@ -40,7 +40,7 @@
 
 .leftHeader {
   width: 100%;
-  height: 45%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@
 
 .rightHeader {
   width: 100%;
-  height: 55%;
+  height: 60%;
   background-position: center;
   background-size: contain;
 }
@@ -197,6 +197,7 @@
 
   .textContainer p:first-child {
     margin-top: -30px;
+    margin-bottom: 10px;
   }
 
   .textContainer img {
