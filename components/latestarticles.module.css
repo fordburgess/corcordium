@@ -2,9 +2,8 @@
   width: 100%;
   box-sizing: border-box;
   overflow-y: visible;
-  overflow-x: hidden;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -15,7 +14,7 @@
 
 .articleContainer {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   box-sizing: border-box;
 }
 

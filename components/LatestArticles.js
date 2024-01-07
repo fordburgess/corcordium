@@ -56,7 +56,7 @@ const LatestArticles = ({ articles }) => {
             articlesSorted.slice(0, 3).map((article, index) => {
               return (
                 <React.Fragment key={index}>
-                  {
+                  {/* {
                     currentArticle > 0 && (
                       <Image
                         onClick={() => scrollToArticle(currentArticle - 1)}
@@ -68,7 +68,7 @@ const LatestArticles = ({ articles }) => {
                         style={{ zIndex: 999 }}
                       />
                     )
-                  }
+                  } */}
                   <LatestArticle
                     blurb={article.content.content[1].content[0].value.split(".")[0]}
                     key={article.titlePhoto.sys.id}
@@ -78,7 +78,7 @@ const LatestArticles = ({ articles }) => {
                     index={index}
                     image={article.titlePhoto.fields.file.url}
                   />
-                  {
+                  {/* {
                     currentArticle < 2 && (
                       <Image
                         onClick={() => scrollToArticle(currentArticle + 1)}
@@ -89,7 +89,7 @@ const LatestArticles = ({ articles }) => {
                         className={styles.chevronRight}
                       />
                     )
-                  }
+                  } */}
                 </React.Fragment>
               )
             })
