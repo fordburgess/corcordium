@@ -34,7 +34,7 @@ const ProjectDisplay = ({ images }) => {
           {
             images.slice(1).map((image, index) => {
               return (
-                <img id={`photo-${index}`} key={image} src={image} alt="image" className={styles.carouselImage} />
+                <img onClick={() => setActiveIndex(index + 1)} id={`photo-${index}`} key={image} src={image} alt="image" className={styles.carouselImage} />
               )
             })
           }

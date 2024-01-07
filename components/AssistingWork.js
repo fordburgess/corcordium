@@ -17,10 +17,10 @@ const AssistingWork = ({ info }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageCarousel}>
-        <Image src="/media/chevron-left.png" height={40} width={40} alt="chevron-left" className={styles.chevron} onClick={() => decrementImage()}/>
+        <Image style={{ opacity: activeIndex == 0 && 0 }} src="/media/chevron-left.png" height={40} width={40} alt="chevron-left" className={styles.chevron} onClick={() => decrementImage()}/>
         <img src={info[activeIndex].images[0]} className={styles.carouselImage} alt="image1"/>
         <img src={info[activeIndex].images[1]} className={styles.carouselImage} alt="image2" />
-        <Image src="/media/chevron-right.png" height={40} width={40} alt="chevron-right" className={styles.chevron} onClick={() => incrementImage()}/>
+        <Image style={{ opacity: activeIndex == 2 && 0 }} src="/media/chevron-right.png" height={40} width={40} alt="chevron-right" className={styles.chevron} onClick={() => incrementImage()}/>
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.projectTitle}>{info[activeIndex].title}</h1>

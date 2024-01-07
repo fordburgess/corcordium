@@ -6,6 +6,7 @@
 .container {
   font-family: Georgia;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .title {
