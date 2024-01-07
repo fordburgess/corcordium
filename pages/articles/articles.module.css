@@ -42,16 +42,21 @@
   flex-wrap: wrap;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .articleInstance {
-  width: 100%;
-  margin: 20px;
+  max-width: 45%;
+  margin-bottom: 20px;
+  /* margin: 20px; */
 }
 
 .articlePhoto {
-  height: 200px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 10px;
 }
 
 .articleCategory {
@@ -62,7 +67,7 @@
 
 .articleTitle {
   font-family: "Inter-SemiBold";
-  font-size: 1.15rem;
+  font-size: 1rem;
   margin: 0 0 12px 0;
 }
 
@@ -103,6 +108,11 @@
 
   .articleInstance {
     width: 30%;
+    margin: 15px;
+  }
+
+  .articlesWrapper {
+    justify-content: center;
   }
 
   .articlePhoto {
@@ -110,5 +120,9 @@
     height: auto;
     box-sizing: border-box;
     margin-bottom: 15px;
+  }
+
+  .articleTitle {
+    font-size: 1.15rem;
   }
 }

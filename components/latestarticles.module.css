@@ -14,7 +14,7 @@
 
 .articleContainer {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
