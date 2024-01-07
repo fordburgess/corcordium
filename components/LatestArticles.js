@@ -3,27 +3,6 @@ import Image from 'next/image';
 import styles from './latestarticles.module.css'
 import LatestArticle from './LatestArticle';
 
-// const Content = (articles) => {
-//   const content = [];
-//
-//   for (var i = 0; i < 3; i++) {
-//     content.push(
-//       <LatestArticle
-//       blurb={articles[i].content.content[1].content[0].value.split(".")[0]}
-//       key={articles[i].titlePhoto.sys.id}
-//       date={articles[i].date}
-//       title={articles[i].title}
-//       id={articles[i].titlePhoto.sys.id}
-//       index={i}
-//       image={articles[i].titlePhoto.fields.file.url}
-//       />
-//     )
-//   }
-//
-//   return content;
-// }
-
-
 const LatestArticles = ({ articles }) => {
   const [currentArticle, setCurrentArticle] = useState(0)
 
@@ -56,7 +35,7 @@ const LatestArticles = ({ articles }) => {
             articlesSorted.slice(0, 3).map((article, index) => {
               return (
                 <React.Fragment key={index}>
-                  {/* {
+                  {
                     currentArticle > 0 && (
                       <Image
                         onClick={() => scrollToArticle(currentArticle - 1)}
@@ -68,7 +47,7 @@ const LatestArticles = ({ articles }) => {
                         style={{ zIndex: 999 }}
                       />
                     )
-                  } */}
+                  }
                   <LatestArticle
                     blurb={article.content.content[1].content[0].value.split(".")[0]}
                     key={article.titlePhoto.sys.id}
@@ -78,7 +57,7 @@ const LatestArticles = ({ articles }) => {
                     index={index}
                     image={article.titlePhoto.fields.file.url}
                   />
-                  {/* {
+                  {
                     currentArticle < 2 && (
                       <Image
                         onClick={() => scrollToArticle(currentArticle + 1)}
@@ -89,7 +68,7 @@ const LatestArticles = ({ articles }) => {
                         className={styles.chevronRight}
                       />
                     )
-                  } */}
+                  }
                 </React.Fragment>
               )
             })
