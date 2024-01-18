@@ -15,11 +15,9 @@ export default function Home({ feed, latestArticles }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <HomepageHeader /> */}
       <LatestArticles articles={latestArticles}/>
       <FloatingPics />
       <ZineDisplay id="spicier"/>
-      {/* <InstaFeed posts={feed}/> */}
     </div>
   )
 }
