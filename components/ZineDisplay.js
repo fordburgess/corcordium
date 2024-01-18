@@ -23,7 +23,8 @@ const ZineDisplay = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>flip through my latest project!</h1>
+      <h1 className={styles.headerDesktop}>flip through my latest project!</h1>
+      <h1 className={styles.headerMobile}>my latest project!</h1>
       <div className={styles.wrapper}>
         <iframe className={styles.iframe} src={pdfLink}></iframe>
         <Link href="/projects" className={styles.desktopLink}>
