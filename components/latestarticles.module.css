@@ -3,6 +3,7 @@
   box-sizing: border-box;
   overflow-y: visible;
   position: relative;
+  overflow-x: hidden;
   margin-bottom: 20px;
 }
 
@@ -29,8 +30,8 @@
 .chevronRight {
   display: block;
   position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 35%;
+  transform: translateY(-35%);
 }
 
 .chevronLeft {
