@@ -40,7 +40,7 @@ const Projects = () => {
       images: ['/media/GeorgieHenley_1.webp', '/media/GeorgieHenley_2.webp']
     },
     {
-      title: "Oscal Pollock for Man About Town, shot by Jemima Marriott",
+      title: "Oscar Pollock for Man About Town, shot by Jemima Marriott",
       description: "Styled by Doug Broad, Grooming by Jon Chapman, Assistant Leelou Reboh, Art Director Mike Morton, Words by Ella Hodson",
       link: "https://www.instagram.com/p/Cz_irwvINFV/?igsh=eDR5YzhxcmNubWQ3",
       images: ['/media/OscarPollock_1.webp', '/media/OscarPollock_2.webp']
