@@ -18,18 +18,30 @@ const LandingPage = () => {
           <Image className={styles.logoMobile} height={150} width={150} src="/media/logo-small-white.png" alt="logo"/>
           <h1 className={styles.greetingHeader}>hi! welcome to<br /> corcordium!</h1>
         </div>
-        <Link href="/home" onClick={() => setIsTransitioning(true)}>
-          <Image className={styles.downArrowMobile} height={100} width={70} src="/media/down-arrow-white.png" alt="logo" />
-        </Link>
+        {
+          isTransitioning ? (
+            <div className={styles.spinnerMobile}></div>
+          ) : (
+            <Link href="/home" onClick={() => setIsTransitioning(true)}>
+              <Image className={styles.downArrowMobile} height={100} width={70} src="/media/down-arrow-white.png" alt="logo" />
+            </Link>
+          )
+        }
       </div>
       <div className={styles.rightSection}>
         <div className={styles.desktopGreeting}>
           <Image className={styles.logoDesktop} src="/media/logo-small.png" height={120} width={120}/>
           <h1 className={styles.greetingHeader}>hi! welcome to<br /> corcordium!</h1>
         </div>
-        <Link href="/home" onClick={() => setIsTransitioning(true)}>
-          <Image src="/media/down-arrow.png" alt="arrow" height={150} width={150} className={styles.downArrowDesktop}/>
-        </Link>
+        {
+          isTransitioning ? (
+            <div className={styles.spinnerDesktop}></div>
+          ) : (
+            <Link href="/home" onClick={() => setIsTransitioning(true)}>
+              <Image src="/media/down-arrow.png" alt="arrow" height={150} width={150} className={styles.downArrowDesktop}/>
+            </Link>
+          )
+        }
         <div className={styles.linksContainer}>
           <p>fashion</p>
           <p>journalism</p>

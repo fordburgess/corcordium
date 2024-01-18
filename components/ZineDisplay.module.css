@@ -5,11 +5,15 @@
   overflow-x: hidden;
 }
 
-.header {
+.headerMobile {
   font-family: Roboto-Light;
   padding: 0 0 0 20px;
   font-size: 1.5rem;
   margin-bottom: 50px;
+}
+
+.headerDesktop {
+  display: none;
 }
 
 .wrapper {
@@ -50,10 +54,16 @@
     padding-bottom: 100px;
   }
 
-  .header {
+  .headerDesktop {
+    font-family: Roboto-Light;
+    display: block;
     padding-left: 50px;
     font-size: 2.25rem;
     margin-bottom: 50px;
+  }
+
+  .headerMobile {
+    display: none;
   }
 
   .iframe {
