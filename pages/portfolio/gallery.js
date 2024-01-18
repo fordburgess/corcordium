@@ -1,18 +1,13 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
-import { images } from '../../next.config';
 import cx from 'classnames'
 var contentful = require("contentful")
+import { useMediaQuery } from '@mui/material';
 
 function Gallery({ photos }) {
   const [loading, setLoading] = useState(false);
-
-  // setTimeout(() => {
-  //   setLoading(false)
-  // }, 2000);
+  const mobile = useMediaQuery('max-width: 900px');
 
   const projId = (string) => {
     var id = null
@@ -43,7 +38,7 @@ function Gallery({ photos }) {
         <p className={styles.title}>photography</p>
         <div className={styles.imageContainer}>
           {!loading ? (
-            photos.map((item, index) => {
+            photos.sort((a, b) => parseInt(a.fields.description.split(" ")[mobile ? 0 : 1]) - parseInt(b.fields.description.split(" ")[mobile ? 0 : 1])).map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
@@ -85,7 +80,7 @@ Gallery.getInitialProps = async (ctx) => {
     })
   })
 
-  data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
+  // data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
 
   return {
     photos: data
