@@ -8,6 +8,7 @@ import { useMediaQuery } from '@mui/material'
 var contentful = require("contentful")
 
 const Articles = ({ articles }) => {
+  const mobile = useMediaQuery('(max-width: 900px');
 
   return (
     <div className={styles.container}>
@@ -15,7 +16,7 @@ const Articles = ({ articles }) => {
       <div className={styles.articlesWrapper}>
         {
           articles.map((article) => {
-            var titleImageLink = "https://" + article.titlePhoto.fields.file.url;
+            var titleImageLink = "https://" + `${mobile ? article.titlePhotoMobile.fields.file.url : article.titlePhoto.fields.file.url}`;
             var formattedDate = dateFormat(Date.parse(article.date), "dd/mm/yyyy").split("/");
             var monthYear = formattedDate[1] + "-" + formattedDate[2].slice(2);
             var blurb = article.content.content[1].content[0].value.split(".")[0];

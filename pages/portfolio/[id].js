@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef} from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './project.module.css';
-import Logo from '../../media/logo.png';
-import AltLogo from '../../media/AltLogo.png';
-import Instagram from '../../media/insta.svg'
-import { getPhotos } from '../../lib/photos';
-import { Hidden } from '@mui/material'
 import cx from 'classnames';
 import Projects from '../../temporaryJSONfiles/projects.json'
 var contentful = require("contentful")
@@ -70,8 +64,6 @@ const Project = ({ project }) => {
         photoCarouselRef.current.scrollLeft = activePhoto.offsetLeft - (photoCarouselRef.current.offsetWidth / 2) + (activePhoto.offsetWidth / 2);
       }
     }
-
-    console.log(project.images[currIndex].file.details.image.width / 5);
 
   }, [currIndex]);
 

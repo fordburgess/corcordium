@@ -30,19 +30,22 @@ function Gallery({ photos }) {
       case "banshee":
         id = 3
         break;
+      case "portraits":
+        id = 4
+        break;
     }
     return id;
   }
 
   return (
-    <>
+
       <div className={styles.container}>
         <p className={styles.title}>photography</p>
         <div className={styles.imageContainer}>
           {!loading ? (
             photos.map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
-              var title = item.fields.title.split("-")[0].toLowerCase();;
+              var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
               var height = item.fields.file.details.image.height;
               var width = item.fields.file.details.image.width;
@@ -59,7 +62,7 @@ function Gallery({ photos }) {
           )}
         </div>
       </div>
-    </>
+
   )
 }
 
@@ -75,7 +78,7 @@ Gallery.getInitialProps = async (ctx) => {
   .then(function(res) {
     res.items.forEach(item => {
       if (item.fields.title !== undefined) {
-        if (item.fields.title.includes("portrait") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
+        if (item.fields.title.includes("portraits") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
           data.push(item)
         }
       }

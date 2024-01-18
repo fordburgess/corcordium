@@ -6,8 +6,6 @@ import NewHeader from './NewHeader';
 
 export default function Layout({ children }) {
   const router = useRouter();
-  var arr = router.pathname.split("/")
-  console.log(router.pathname)
 
   if (router.pathname !== "/" && router.pathname !== "/articles/[id]") {
     return (
