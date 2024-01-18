@@ -17,7 +17,6 @@ const Projects = () => {
 
   const getBlazerPdf = async () => {
     var pdfResponse = await client.getAsset("s2l5LMWuLonHb7i3yIOHs", { select: 'fields.file' });
-    console.log({ blazerpdf: pdfResponse })
     setBlazerPdf('https:' + pdfResponse.fields.file.url)
   }
 

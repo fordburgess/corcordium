@@ -1,18 +1,13 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Logo from '../../media/logo1.png'
 import styles from './gallery.module.css';
-import { images } from '../../next.config';
 import cx from 'classnames'
 var contentful = require("contentful")
+import { useMediaQuery } from '@mui/material';
 
 function Gallery({ photos }) {
   const [loading, setLoading] = useState(false);
-
-  // setTimeout(() => {
-  //   setLoading(false)
-  // }, 2000);
+  const mobile = useMediaQuery('max-width: 900px');
 
   const projId = (string) => {
     var id = null
@@ -30,19 +25,22 @@ function Gallery({ photos }) {
       case "banshee":
         id = 3
         break;
+      case "portraits":
+        id = 4
+        break;
     }
     return id;
   }
 
   return (
-    <>
+
       <div className={styles.container}>
         <p className={styles.title}>photography</p>
         <div className={styles.imageContainer}>
           {!loading ? (
-            photos.map((item, index) => {
+            photos.sort((a, b) => parseInt(a.fields.description.split(" ")[mobile ? 0 : 1]) - parseInt(b.fields.description.split(" ")[mobile ? 0 : 1])).map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
-              var title = item.fields.title.split("-")[0].toLowerCase();;
+              var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
               var height = item.fields.file.details.image.height;
               var width = item.fields.file.details.image.width;
@@ -59,7 +57,7 @@ function Gallery({ photos }) {
           )}
         </div>
       </div>
-    </>
+
   )
 }
 
@@ -75,14 +73,14 @@ Gallery.getInitialProps = async (ctx) => {
   .then(function(res) {
     res.items.forEach(item => {
       if (item.fields.title !== undefined) {
-        if (item.fields.title.includes("portrait") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
+        if (item.fields.title.includes("portraits") || item.fields.title.includes("banshee") || item.fields.title.includes("Innocente") || item.fields.title.includes("Movement") || item.fields.title.includes("Restriction")) {
           data.push(item)
         }
       }
     })
   })
 
-  data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
+  // data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
 
   return {
     photos: data
