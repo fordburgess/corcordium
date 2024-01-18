@@ -7,6 +7,8 @@
   font-family: Georgia;
   width: 100vw;
   overflow-x: hidden;
+  transform: translateY(100%);
+  transition: transform 0.2s ease-out;
 }
 
 .title {
