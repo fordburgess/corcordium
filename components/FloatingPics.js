@@ -229,6 +229,7 @@ const FloatingPics = () => {
           else if (title.includes("restriction")) projectNumber = 1;
           else if (title.includes("movement")) projectNumber = 2;
           else if (title.includes("banshee")) projectNumber = 3;
+          else if (title.includes("portrait")) projectNumber = 4;
 
           return (
             <Link key={index} href={`/portfolio/${projectNumber}`}>
