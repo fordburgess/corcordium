@@ -62,8 +62,10 @@ const NewHeader = () => {
       {
         router.pathname == "/home" && (
           <div className={styles.iconLinks}>
-            <Link href={cvUrl} target="_blank"><Image alt="cv" src="/media/cv-icon.png" height={100} width={100}/></Link>
-            <Link href="/contact"><Image alt="contact" src="/media/mail-icon.png" height={100} width={100}/></Link>
+            {/* <Link href={cvUrl} target="_blank"><Image alt="cv" src="/media/cv-icon.png" height={100} width={100}/></Link>
+            <Link href="/contact"><Image alt="contact" src="/media/mail-icon.png" height={100} width={100}/></Link> */}
+            <Link target="_blank" className={styles.mailAndCV} href={cvUrl}><p>cv</p></Link>
+            <Link style={{ marginLeft: '40px' }} className={styles.mailAndCV} href="/contact"><p>contact</p></Link>
           </div>
         )
       }
