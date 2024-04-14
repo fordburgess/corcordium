@@ -31,27 +31,27 @@ const NewHeader = () => {
   return (
     <div className={cx(styles.container, router.pathname == "/articles/[id]" && styles.articleHeader)}>
       {
-        !router.pathname.includes("/home") && router.pathname !== '/articles/[id]' ? (
+        !router.pathname.includes("/") && router.pathname !== '/articles/[id]' ? (
           <>
             <div className={styles.bufferDiv}></div>
-            <Link href="/home">
+            <Link href="/">
               <Image className={styles.desktopLogoMain} style={{ marginLeft: "-35px" }} src="/media/long-logo.png" alt="logo" height={100} width={230} />
               <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={80} width={80} />
             </Link>
           </>
         ) : (
           <>
-            <Link href="/home" className={styles.desktopLogoLink}>
+            <Link href="/" className={styles.desktopLogoLink}>
               <Image className={styles.desktopLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={120} width={120} />
             </Link>
-            <Link href="/home">
+            <Link href="/">
               <Image className={styles.mobileLogo} style={{ marginTop: "-17px" }} src="/media/logo-small.png" alt="logo" height={80} width={80} />
             </Link>
           </>
         )
       }
       {
-        router.pathname == "/home" && (
+        router.pathname == "/" && (
           <div className={styles.links}>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/articles/all"><p>writing</p></Link>
             <Link style={{ textDecoration: "none", color: "#000000"}}href="/portfolio/gallery"><p>photography</p></Link>
@@ -60,7 +60,7 @@ const NewHeader = () => {
         )
       }
       {
-        router.pathname == "/home" && (
+        router.pathname == "/" && (
           <div className={styles.iconLinks}>
             {/* <Link href={cvUrl} target="_blank"><Image alt="cv" src="/media/cv-icon.png" height={100} width={100}/></Link>
             <Link href="/contact"><Image alt="contact" src="/media/mail-icon.png" height={100} width={100}/></Link> */}
@@ -70,7 +70,7 @@ const NewHeader = () => {
         )
       }
       <div
-        className={cx(styles.navIcon, router.pathname !== "/home" && styles.desktopVisible)}
+        className={cx(styles.navIcon, router.pathname !== "/" && styles.desktopVisible)}
         onClick={() => setOpen(true)}
       >
         <div></div>

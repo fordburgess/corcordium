@@ -7,7 +7,7 @@ import NewHeader from './NewHeader';
 export default function Layout({ children }) {
   const router = useRouter();
 
-  if (router.pathname !== "/" && router.pathname !== "/articles/[id]" && router.pathname !== '/home') {
+  if (router.pathname !== "/" && router.pathname !== "/articles/[id]") {
     return (
       <>
         <style jsx global>
