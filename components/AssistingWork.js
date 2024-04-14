@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "./AssistingWork.module.css"
+import styles from "./styles/AssistingWork.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 

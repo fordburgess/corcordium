@@ -1,19 +1,19 @@
 @font-face {
   font-family: "Roboto-Light";
   src: local("Roboto-Light"),
-    url("../fonts/Roboto-Light.ttf") format("truetype");
+    url("../../fonts/Roboto-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Inter-SemiBold";
   src: local("Inter-SemiBold"),
-    url("../fonts/Inter-SemiBold.ttf") format("truetype");
+    url("../../fonts/Inter-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Inter-Regular";
   src: local("Inter-Regular"),
-    url("../fonts/Inter-Regular.ttf") format("truetype");
+    url("../../fonts/Inter-Regular.ttf") format("truetype");
 }
 
 .container {
