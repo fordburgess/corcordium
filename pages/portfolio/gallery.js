@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import styles from './gallery.module.css';
 import cx from 'classnames'
 var contentful = require("contentful")
 import { useMediaQuery } from '@mui/material';
 
-function Gallery({ photos }) {
+function Gallery({ photos1, photos2 }) {
   const [loading, setLoading] = useState(false);
   const mobile = useMediaQuery('max-width: 900px');
 
@@ -37,8 +38,8 @@ function Gallery({ photos }) {
       <div className={styles.container}>
         <p className={styles.title}>photography</p>
         <div className={styles.imageContainer}>
-          {!loading ? (
-            photos.sort((a, b) => parseInt(a.fields.description.split(" ")[mobile ? 0 : 1]) - parseInt(b.fields.description.split(" ")[mobile ? 0 : 1])).map((item, index) => {
+          {
+            photos1.map((item, index) => {
               var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
@@ -47,14 +48,43 @@ function Gallery({ photos }) {
               var wide = width > height;
 
               return (
-                  <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
-                    <img src={photoUrl} alt="portfolio" key={index} className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}/>
-                  </Link>
+                <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                  <Image
+                    src={photoUrl}
+                    alt="portfolio"
+                    key={index}
+                    height={height}
+                    width={width}
+                    priority
+                    className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
+                  />
+                </Link>
               )
             })
-          ) : (
-            <h1>Loading</h1>
-          )}
+          }
+          {
+            photos2.map((item, index) => {
+              var photoUrl = "https:" + item.fields.file.url
+              var title = item.fields.title.split("-")[0].toLowerCase();
+              var projectLink = `${projId(title)}`;
+              var height = item.fields.file.details.image.height;
+              var width = item.fields.file.details.image.width;
+              var wide = width > height;
+
+              return (
+                <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                  <Image
+                    src={photoUrl}
+                    alt="portfolio"
+                    key={index}
+                    height={height}
+                    width={width}
+                    className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
+                  />
+                </Link>
+              )
+            })
+          }
         </div>
       </div>
 
@@ -80,10 +110,11 @@ Gallery.getInitialProps = async (ctx) => {
     })
   })
 
-  // data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
+  data = data.sort((a, b) => parseInt(a.fields.description) - parseInt(b.fields.description));
 
   return {
-    photos: data
+    photos1: data.slice(0, 20),
+    photos2: data.slice(20, data.length)
   }
 }
 
