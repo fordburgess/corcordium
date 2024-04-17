@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
+import ImageLoader from '../../components/ImageLoader';
 import styles from './gallery.module.css';
 import cx from 'classnames'
 var contentful = require("contentful")
@@ -40,48 +41,51 @@ function Gallery({ photos1, photos2 }) {
         <div className={styles.imageContainer}>
           {
             photos1.map((item, index) => {
-              var photoUrl = "https:" + item.fields.file.url
+              // var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
-              var height = item.fields.file.details.image.height;
-              var width = item.fields.file.details.image.width;
-              var wide = width > height;
+              // var height = item.fields.file.details.image.height;
+              // var width = item.fields.file.details.image.width;
+              // var wide = width > height;
 
               return (
-                <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
-                  <Image
-                    src={photoUrl}
-                    alt="portfolio"
-                    key={index}
-                    height={height}
-                    width={width}
-                    priority
-                    className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
-                  />
-                </Link>
+                <ImageLoader image={item} projId={projectLink}/>
+                // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                //   <Image
+                //     src={photoUrl}
+                //     alt="portfolio"
+                //     key={index}
+                //     height={height}
+                //     width={width}
+                //     priority
+                //     className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
+                //     onLoad={() => console.log("Loaded!")}
+                //   />
+                // </Link>
               )
             })
           }
           {
             photos2.map((item, index) => {
-              var photoUrl = "https:" + item.fields.file.url
+              // var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
-              var height = item.fields.file.details.image.height;
-              var width = item.fields.file.details.image.width;
-              var wide = width > height;
+              // var height = item.fields.file.details.image.height;
+              // var width = item.fields.file.details.image.width;
+              // var wide = width > height;
 
               return (
-                <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
-                  <Image
-                    src={photoUrl}
-                    alt="portfolio"
-                    key={index}
-                    height={height}
-                    width={width}
-                    className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
-                  />
-                </Link>
+                <ImageLoader image={item} projId={projectLink}/>
+                // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                //   <Image
+                //     src={photoUrl}
+                //     alt="portfolio"
+                //     key={index}
+                //     height={height}
+                //     width={width}
+                //     className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
+                //   />
+                // </Link>
               )
             })
           }
