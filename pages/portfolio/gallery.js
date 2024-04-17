@@ -73,7 +73,6 @@ function Gallery({ photos1, photos2, photos3 }) {
           {
           loadedImages >= 20 &&
             photos2.map((item, index) => {
-              // var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
               var projectLink = `${projId(title)}`;
               // var height = item.fields.file.details.image.height;
