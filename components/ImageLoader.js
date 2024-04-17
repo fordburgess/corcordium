@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
+import { Blurhash } from "react-blurhash";
+import { encode } from "blurhash";
 import Image from 'next/image'
 import Link from 'next/link'
 import cx from 'classnames'
 import styles from '../pages/portfolio/gallery.module.css';
 
-const ImageLoader = ({ image, projId }) => {
+const ImageLoader = ({ image, projId, setLoadedImages }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handleLoad = () => {
     setIsLoaded(true);
+    setLoadedImages(prev => prev + 1);
   }
 
   var photoUrl = "https:" + image.fields.file.url
@@ -23,10 +26,10 @@ const ImageLoader = ({ image, projId }) => {
       {
         !isLoaded && (
           <div
+            className={cx(styles.wrapperLink, wide && styles.wide)}
             style={{
-              height: '200px',
-              width: '200px',
-              backgroundColor: 'gray'
+              height: '100%',
+              backgroundColor: '#F0ECE9'
             }}
           >
           </div>

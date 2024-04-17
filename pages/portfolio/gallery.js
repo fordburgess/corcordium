@@ -7,8 +7,9 @@ import cx from 'classnames'
 var contentful = require("contentful")
 import { useMediaQuery } from '@mui/material';
 
-function Gallery({ photos1, photos2 }) {
+function Gallery({ photos1, photos2, photos3 }) {
   const [loading, setLoading] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(0);
   const mobile = useMediaQuery('max-width: 900px');
 
   const projId = (string) => {
@@ -34,6 +35,10 @@ function Gallery({ photos1, photos2 }) {
     return id;
   }
 
+  useEffect(() => {
+    console.log(loadedImages)
+  }, [loadedImages])
+
   return (
 
       <div className={styles.container}>
@@ -49,7 +54,7 @@ function Gallery({ photos1, photos2 }) {
               // var wide = width > height;
 
               return (
-                <ImageLoader image={item} projId={projectLink}/>
+                <ImageLoader image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
                 // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
                 //   <Image
                 //     src={photoUrl}
@@ -66,6 +71,7 @@ function Gallery({ photos1, photos2 }) {
             })
           }
           {
+          loadedImages >= 20 &&
             photos2.map((item, index) => {
               // var photoUrl = "https:" + item.fields.file.url
               var title = item.fields.title.split("-")[0].toLowerCase();
@@ -75,7 +81,32 @@ function Gallery({ photos1, photos2 }) {
               // var wide = width > height;
 
               return (
-                <ImageLoader image={item} projId={projectLink}/>
+                <ImageLoader image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
+                // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
+                //   <Image
+                //     src={photoUrl}
+                //     alt="portfolio"
+                //     key={index}
+                //     height={height}
+                //     width={width}
+                //     className={cx(styles.image, wide ? styles.horizontal : styles.vertical)}
+                //   />
+                // </Link>
+              )
+            })
+          }
+          {
+          loadedImages >= 50 &&
+            photos3.map((item, index) => {
+              // var photoUrl = "https:" + item.fields.file.url
+              var title = item.fields.title.split("-")[0].toLowerCase();
+              var projectLink = `${projId(title)}`;
+              // var height = item.fields.file.details.image.height;
+              // var width = item.fields.file.details.image.width;
+              // var wide = width > height;
+
+              return (
+                <ImageLoader image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
                 // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
                 //   <Image
                 //     src={photoUrl}
@@ -118,7 +149,8 @@ Gallery.getInitialProps = async (ctx) => {
 
   return {
     photos1: data.slice(0, 20),
-    photos2: data.slice(20, data.length)
+    photos2: data.slice(20, 50),
+    photos3: data.slice(50, data.length)
   }
 }
 
