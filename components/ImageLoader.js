@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Blurhash } from "react-blurhash";
-import { encode } from "blurhash";
+// import { Blurhash } from "react-blurhash";
+// import { encode } from "blurhash";
 import Image from 'next/image'
 import Link from 'next/link'
 import cx from 'classnames'
