@@ -81,7 +81,7 @@ function Gallery({ photos1, photos2, photos3 }) {
               // var wide = width > height;
 
               return (
-                <ImageLoader image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
+                <ImageLoader key={index} image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
                 // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
                 //   <Image
                 //     src={photoUrl}
@@ -106,7 +106,7 @@ function Gallery({ photos1, photos2, photos3 }) {
               // var wide = width > height;
 
               return (
-                <ImageLoader image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
+                <ImageLoader key={index} image={item} projId={projectLink} setLoadedImages={setLoadedImages}/>
                 // <Link key={photoUrl} href={projectLink} className={cx(styles.wrapperLink, wide && styles.wide)}>
                 //   <Image
                 //     src={photoUrl}
