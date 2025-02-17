@@ -34,7 +34,7 @@ export default function Home({ feed, latestArticles }) {
       <Head>
         <title>Corcordium</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo-small.png" />
       </Head>
       <LandingPage />
       <div id="header-container" style={{ position: 'relative', zIndex: 1000}}>
