@@ -33,6 +33,7 @@ const LatestArticles = ({ articles }) => {
       <div className={styles.articleContainer} id="article-container">
           {
             articlesSorted.slice(0, 3).map((article, index) => {
+              console.log(article.sell)
               return (
                 <React.Fragment key={index}>
                   {
@@ -49,7 +50,7 @@ const LatestArticles = ({ articles }) => {
                     )
                   }
                   <LatestArticle
-                    blurb={article.content.content[1].content[0].value.split(".")[0]}
+                    blurb={article.sell}
                     key={article.titlePhoto.sys.id}
                     date={article.date}
                     title={article.title}

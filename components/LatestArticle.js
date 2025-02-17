@@ -12,7 +12,7 @@ const LatestArticle = (props) => {
   const imageRef = useRef(null)
 
   var path = `/articles/${props.id}`
-  var blurb = props.blurb.split(" ").slice(0, 20).join(" ")
+  var blurb = props.blurb;
 
   useEffect(() => {
     const handleScroll = () => {
